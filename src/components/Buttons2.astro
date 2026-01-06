@@ -1,12 +1,25 @@
 ---
+type ButtonSize = "xlarge" | "large" | "medium" | "small";
+type ButtonVariant =
+  | "green"
+  | "green-inverted"
+  | "orange"
+  | "black"
+  | "purple"
+  | "text"
+  | "textlink";
+
 // Henter parametrene fra Astro.props
-const { variant = "green", size = "large" } = Astro.props;
+const { variant = "green", size = "large" } = Astro.props as {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+};
 
 // Base styles for alle links - kun Tailwind classes
 const baseClasses =
   "inline-block rounded-[var(--radius-CTA)] break-words whitespace-normal min-w-fit max-w-full text-center";
 
-const sizeClasses = {
+const sizeClasses: Record<ButtonSize, string> = {
   xlarge:
     "text-[1.375rem] md:text-[1.5rem] lg:text-[2rem] font-semibold uppercase px-[2.5rem] py-[1.25rem]",
   large:
@@ -17,7 +30,7 @@ const sizeClasses = {
     "text-[0.875rem] md:text-[1rem] lg:text-[1.125rem] font-medium uppercase px-[0.75rem] py-[0.5rem]",
 };
 
-const variantClasses = {
+const variantClasses: Record<ButtonVariant, string> = {
   green:
     "bg-[var(--color-green--400)] text-[var(--color-green--100)] hover:bg-[var(--color-green--100)] hover:text-[var(--color-green--400)] transition-all duration-300",
 
