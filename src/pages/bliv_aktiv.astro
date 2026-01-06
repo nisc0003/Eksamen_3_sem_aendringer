@@ -1,0 +1,99 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import Card from "../components/Card.astro";
+---
+
+<MainLayout title="Bliv Aktiv">
+  <section class="mr-section_right ml-section_left pb-20 pt-10">
+    <div
+      class="flex flex-col items-center lg:flex-row lg:justify-between gap-6 lg:gap-12 mb-12"
+    >
+      <div class="flex flex-col gap-4 max-w-3xl">
+        <Heading
+          htmlheading="h1"
+          size="medium"
+          stylingclasses="text-center lg:text-left"
+        >
+          BLIV AKTIV I KAMPEM MOD MADSPILD
+        </Heading>
+        <Text stylingclasses="text-center lg:text-left">
+          Der er mange måder at støtte kampen mod madspild på. Bliv frivillig,
+          deltag i vores events, eller lær mere om vores initiativer.
+        </Text>
+      </div>
+      <Link href="/form" variant="green" size="medium"> Tilmeld dig </Link>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Card
+        slug="frivillig"
+        title="Bliv frivillig"
+        image="/img/frivillig.webp"
+        id="madlavning-workshops"
+        link="/tilmeldt"
+      />
+
+      <Card
+        slug="stoettemedlem"
+        title="Bliv støttemedlem"
+        image="/img/stoettemedlem.webp"
+        id="frivillig-events"
+        link="/tilmeldt"
+      />
+
+      <Card
+        slug="samarbejdspartner"
+        title="Bliv samarbejdspartner"
+        image="/img/samarbejdspartner.webp"
+        id="kokkekurser"
+        link="/tilmeldt"
+      />
+
+      <Card
+        slug="erhvervspartner"
+        title="Bliv erhvervspartner"
+        image="/img/erhvervspartner.webp"
+        id="bekaempmadspild-maerkning"
+        link="/tilmeldt"
+      />
+
+      <Card
+        slug="spred-budskabet"
+        title="Spred budskabet"
+        image="/img/spred_budskab.webp"
+        id="maddistribution"
+        link="/tilmeldt"
+      />
+    </div>
+  </section>
+  <!-- kontakt os sektion -->
+  <section>
+    <div class="bg-green--400 pr-section_right pl-section_left mb-75 py-10">
+      <div class="mr-section_right ml-section_left grid gap-6">
+        <Heading htmlheading="h3" size="medium" stylingclasses="text-white">
+          Kontakt os
+        </Heading>
+        <Text
+          stylingclasses="text-white"
+          size="small"
+          ,
+          font="sans"
+          ,
+          weight="medium"
+          ,
+          >Er du i tvivl om noget eller vil du gerne vide mere? Skriv endelig
+          til os!</Text
+        >
+        <div>
+          <Button href="/form" variant="green-inverted" size="medium">
+            Send os en mail
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

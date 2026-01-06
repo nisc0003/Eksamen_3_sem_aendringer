@@ -1,11 +1,276 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainLayout from "../layouts/MainLayout.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Link from "../components/Link.astro";
+import Card from "../components/Card.astro";
+import Sponsors from "../components/Sponsors.astro";
+import Button2 from "../components/Buttons2.astro";
+import Articles from "../components/Articles.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout title="Stop Spild Af Mad">
+  <main>
+    <section
+      class="flex flex-col md:flex-row mb-section_buttom gap-5 relative -mt-40"
+    >
+      <div class="200 md:mr-25">
+        <img src="/img/hero.webp" alt="" />
+      </div>
+
+      <section class="place-self-center">
+        <div class="sm:place-self-center lg:place-self-auto">
+          <Heading size="xlarge">STOP SPILD</Heading>
+          <div class="flex flex-row">
+            <Heading size="xlarge">AF MAD</Heading>
+            <img
+              src="/img/logo_green.svg"
+              alt=""
+              class="h-9 place-self-end md:h-25 ml-10"
+            />
+          </div>
+        </div>
+        <Text size="xlarge">Danmarks største bevægelse i mod madspild</Text>
+
+        <div class="flex flex-col gap-10 mt-5">
+          <Link href="bliv_aktiv" variant="green">GIV ET BIDRAG </Link>
+          <Link href="hvad_vi_kan_goere" variant="green-inverted"
+            >TIPS TIL BEDRE MAD-VANER</Link
+          >
+        </div>
+      </section>
+    </section>
+
+    <Sponsors
+      bg="bg-green-100"
+      tag="SPONSORER"
+      sponsor1="EU"
+      sponsor2="NORDISK RÅD"
+      sponsor3="MILJØSTYRELSEN"
+      sponsor4="TUBORG FONDET"
+      sponsor5="GYLDENDAL"
+      sponsor6="NORDEA"
+    />
+
+    <!-- <section class="mb-12">
+      <Heading htmlheading="h1" size="large" stylingclasses="mb-4">
+        Stop Spild Af Mad
+      </Heading>
+      <Text>
+        Sammen kan vi gøre en forskel. Udforsk hvordan du kan bidrage til kampen
+        mod madspild.
+      </Text>
+    </section> -->
+
+    <!-- <section class="mb-12">
+      <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
+        Kom i gang
+      </Heading>
+    </section> -->
+
+    <section
+      class="flex flex-col mb-section_buttom mt-section_top gap-5 mx-15 md:ml-section_left md:mr-section_right"
+    >
+      <Heading htmlheading="h2" size="medium">QUIZ DIG SELV I MADSPILD</Heading>
+      <div class="flex-row gap-5 md:grid grid-cols-2">
+        <div class="bg-(--color-yellow--100) flex flex-row">
+          <section class="flex flex-col gap-25 place-content-center mx-auto">
+            <div class="flex flex-col gap-5">
+              <div class="mb-10 mt-5">
+                <Heading>Spørgsmål 1</Heading>
+                <Text>Spørgsmålet</Text>
+              </div>
+
+              <div class="flex flex-row gap-10">
+                <Text>A</Text>
+                <Text>Middagsrester og gammel frugt</Text>
+              </div>
+
+              <div class="flex flex-row gap-10">
+                <Text>B</Text>
+                <Text>Osteskorper og kaffegrums </Text>
+              </div>
+
+              <div class="flex flex-row gap-10">
+                <Text>C</Text>
+                <Text>Alt affald der kommer fra mad er madspild</Text>
+              </div>
+            </div>
+
+            <div class="mb-5">
+              <Link variant="black">Se Svar →</Link>
+            </div>
+          </section>
+        </div>
+        <img src="/img/quiz.webp" alt="" class="place-self-center" />
+      </div>
+
+      <!-- <Link>SE SVAR </Link> -->
+    </section>
+
+    <Sponsors
+      bg="bg-orange-100"
+      tag="AMBASADØRER"
+      sponsor1="CLAUS HOLM"
+      sponsor2="JAKOB ELLEMAN-JENSEN"
+      sponsor3="PIA OLSEN DYHR"
+      sponsor4="NICOLAI SCHOU"
+      sponsor5="MARK ANTHONY AQUINO"
+      sponsor6="MATHILDE LØWE"
+    />
+
+    <section
+      class="flex flex-col gap-5 md:grid md:grid-cols-2 mb-section_buttom mt-section_top mx-15 md:ml-section_left md:mr-section_right"
+    >
+      <div class="flex flex-col gap-5">
+        <Heading htmlheading="h2" size="medium">HVEM ER VI?</Heading>
+
+        <div class="flex flex-col gap-5">
+          <Text
+            >Stop Spild Af Mad er en non-profit organisation og
+            forbrugerbevægelse, som kæmper mod madspild. Siden 2008 har vi
+            medvirket til at bringe massivt fokus på madspild i Danmark, samt
+            opnået en lang række resultater i både Danmark, EU, Norden og FN.
+          </Text>
+          <Text
+            >Stop Spild Af Mad har både nationale og internationale samarbejder.
+            Vi bakkes op af over 60.000 danskere, samt en lang række
+            toppolitikere og anerkendte madpersonligheder. Vi arbejder aktivt
+            med FN’s verdensmål for bæredygtig udvikling: UN Sustainable
+            Development Goal 12.3.</Text
+          >
+        </div>
+      </div>
+
+      <div class="flex flex-col place-content-between">
+        <img src="/img/index_frugt.webp" alt="" class="" />
+        <div class="place-self-center">
+          <Link href="/wip" variant="orange">LÆS MERE OM OS</Link>
+        </div>
+      </div>
+    </section>
+
+    <Sponsors
+      bg="bg-yellow-100"
+      tag="PARTNERE"
+      sponsor1="REMA 1000"
+      sponsor2="ARLA"
+      sponsor3="NORDIC GREENS"
+      sponsor4="WEFOOD"
+      sponsor5="ARLA"
+      sponsor6="OBG NORDICA"
+    />
+
+    <Articles />
+
+    <section class="mb-section_buttom mt-section_top">
+      <div class="flex flex-col place-items-center gap-3">
+        <Heading htmlheading="h2" size="medium"
+          >PRISER OG ANDERKENDELSER</Heading
+        >
+        <Text
+          >Stop Spild Af Mad og dens stifter Selina Juul har fået en lang række
+          priser og anerkendelser, bl.a.:</Text
+        >
+        <Link href="wip" variant="purple">SE FLERE PRISER</Link>
+      </div>
+
+      <section class="carousel">
+        <div class="group">
+          <img
+            src="/img/pris1.webp"
+            alt=""
+            class="carousel_img grow-0 shrink-0 basis-5em"
+          />
+          <img
+            src="/img/pris2.webp"
+            alt=""
+            class="carousel_img grow-0 shrink-0 basis-5em"
+          />
+          <img
+            src="/img/pris3.webp"
+            alt=""
+            class="carousel_img grow-0 shrink-0 basis-5em"
+          />
+        </div>
+
+        <div class="group">
+          <img
+            src="/img/pris1.webp"
+            alt=""
+            class="carousel_img grow-0 shrink-0 basis-5em"
+          />
+          <img
+            src="/img/pris2.webp"
+            alt=""
+            class="carousel_img grow-0 shrink-0 basis-5em"
+          />
+          <img
+            src="/img/pris3.webp"
+            alt=""
+            class="carousel_img grow-0 shrink-0 basis-5em"
+          />
+        </div>
+      </section>
+    </section>
+
+    <section
+      class="bg-(--color-purple--100) w-full place-content-center py-5 grid grid-rows-2 grid-cols-2 md:flex md:flex-row gap-22"
+    >
+      <div class="flex flex-col max-w-65 text-center">
+        <Heading>200+</Heading>
+        <Text>projekter og aktiviteter mod madspild siden 2008</Text>
+      </div>
+
+      <div class="flex flex-col max-w-65 text-center">
+        <Heading>7.000+</Heading>
+        <Text>danske og internationale medieomtaler siden 2008</Text>
+      </div>
+
+      <div class="flex flex-col max-w-65 text-center">
+        <Heading>300+</Heading>
+        <Text>tons overskudsmad videreformidlet til udsatte siden 2011</Text>
+      </div>
+
+      <div class="flex flex-col max-w-65 text-center">
+        <Heading>126.000+</Heading>
+        <Text>følgere på samlede sociale medier</Text>
+      </div>
+    </section>
+  </main>
+</MainLayout>
+
+<style>
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 5s infinite linear;
+    padding-right: 1em;
+  }
+
+  .carousel_img {
+    flex: 0 0 5em;
+    align-content: center;
+    padding: 1em;
+  }
+
+  @keyframes spin {
+    from {
+      translate: 0;
+    }
+    to {
+      translate: -100%;
+    }
+  }
+</style>

@@ -1,0 +1,670 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Link from "../components/Link.astro";
+import Button from "../components/Button.astro";
+import Sponsors from "../components/Sponsors.astro";
+---
+
+<MainLayout title="Komponentbibliotek">
+  <main class="container mx-auto p-4 md:p-8">
+    <div class="mb-16">
+      <Heading htmlheading="h1" size="xlarge">Komponentbibliotek</Heading>
+      <Text size="large" stylingclasses="italic mt-4"
+        >Her kan du finde alle de komponenter, der er brugt i dette projekt.</Text
+      >
+    </div>
+
+    <!-- ============================================================================================== -->
+    <!-- HEADINGS SECTION -->
+    <!-- ============================================================================================== -->
+    <section class="mb-16">
+      <Heading htmlheading="h2" size="large" stylingclasses="mb-8"
+        >Headings - Alle varianter</Heading
+      >
+
+      <!-- Display Font -->
+      <div class="mb-12">
+        <div class="bg-(--color-green--400) text-white p-6 rounded-t-lg">
+          <Heading htmlheading="h3" size="medium" stylingclasses="text-white"
+            >Display Font</Heading
+          >
+        </div>
+        <div class="bg-white p-8 rounded-b-lg border border-gray-200 space-y-4">
+          <Heading htmlheading="h1" size="xlarge" font="display" weight="light"
+            >xlarge - light</Heading
+          >
+          <Heading htmlheading="h2" size="large" font="display" weight="medium"
+            >large - medium</Heading
+          >
+          <Heading
+            htmlheading="h3"
+            size="medium"
+            font="display"
+            weight="semibold">medium - semibold</Heading
+          >
+          <Heading htmlheading="h4" size="small" font="display" weight="bold"
+            >small - bold</Heading
+          >
+          <Heading htmlheading="h5" size="xsmall" font="display" weight="medium"
+            >xsmall - medium</Heading
+          >
+        </div>
+      </div>
+
+      <!-- Sans Font -->
+      <div class="mb-12">
+        <div class="bg-(--color-orange--400) text-white p-6 rounded-t-lg">
+          <Heading htmlheading="h3" size="medium" stylingclasses="text-white"
+            >Sans Font</Heading
+          >
+        </div>
+        <div class="bg-white p-8 rounded-b-lg border border-gray-200 space-y-4">
+          <Heading htmlheading="h1" size="xlarge" font="sans" weight="light"
+            >xlarge - light</Heading
+          >
+          <Heading htmlheading="h2" size="large" font="sans" weight="medium"
+            >large - medium</Heading
+          >
+          <Heading htmlheading="h3" size="medium" font="sans" weight="semibold"
+            >medium - semibold</Heading
+          >
+          <Heading htmlheading="h4" size="small" font="sans" weight="bold"
+            >small - bold</Heading
+          >
+          <Heading htmlheading="h5" size="xsmall" font="sans" weight="medium"
+            >xsmall - medium</Heading
+          >
+        </div>
+      </div>
+
+      <!-- SansTight Font -->
+      <div class="mb-12">
+        <div class="bg-black text-white p-6 rounded-t-lg">
+          <Heading htmlheading="h3" size="medium" stylingclasses="text-white"
+            >SansTight Font</Heading
+          >
+        </div>
+        <div class="bg-white p-8 rounded-b-lg border border-gray-200 space-y-4">
+          <Heading
+            htmlheading="h1"
+            size="xlarge"
+            font="sanstight"
+            weight="light">xlarge - light</Heading
+          >
+          <Heading
+            htmlheading="h2"
+            size="large"
+            font="sanstight"
+            weight="medium">large - medium</Heading
+          >
+          <Heading
+            htmlheading="h3"
+            size="medium"
+            font="sanstight"
+            weight="semibold">medium - semibold</Heading
+          >
+          <Heading htmlheading="h4" size="small" font="sanstight" weight="bold"
+            >small - bold</Heading
+          >
+          <Heading
+            htmlheading="h5"
+            size="xsmall"
+            font="sanstight"
+            weight="medium">xsmall - medium</Heading
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================================== -->
+    <!-- TEXT SECTION -->
+    <!-- ============================================================================================== -->
+    <section class="mb-16">
+      <Heading htmlheading="h2" size="large" stylingclasses="mb-8"
+        >Text - Alle varianter</Heading
+      >
+
+      <!-- Sans Font -->
+      <div class="mb-12">
+        <div class="bg-accent-1-400 p-6 rounded-t-lg">
+          <Heading htmlheading="h3" size="medium">Sans Font</Heading>
+        </div>
+        <div class="bg-white p-8 rounded-b-lg border border-gray-200 space-y-4">
+          <Text size="xlarge" font="sans" weight="light"
+            >xlarge - light - Lorem ipsum dolor sit amet consectetur adipisicing
+            elit.</Text
+          >
+          <Text size="large" font="sans" weight="medium"
+            >large - medium - Lorem ipsum dolor sit amet consectetur adipisicing
+            elit.</Text
+          >
+          <Text size="medium" font="sans" weight="medium"
+            >medium - medium - Lorem ipsum dolor sit amet consectetur
+            adipisicing elit.</Text
+          >
+          <Text size="small" font="sans" weight="bold"
+            >small - bold - Lorem ipsum dolor sit amet consectetur adipisicing
+            elit.</Text
+          >
+        </div>
+      </div>
+
+      <!-- Display Font -->
+      <div class="mb-12">
+        <div class="bg-accent-2-400 p-6 rounded-t-lg">
+          <Heading htmlheading="h3" size="medium">Display Font</Heading>
+        </div>
+        <div class="bg-white p-8 rounded-b-lg border border-gray-200 space-y-4">
+          <Text size="xlarge" font="display" weight="light"
+            >xlarge - light - Lorem ipsum dolor sit amet consectetur adipisicing
+            elit.</Text
+          >
+          <Text size="large" font="display" weight="medium"
+            >large - medium - Lorem ipsum dolor sit amet consectetur adipisicing
+            elit.</Text
+          >
+          <Text size="medium" font="display" weight="medium"
+            >medium - medium - Lorem ipsum dolor sit amet consectetur
+            adipisicing elit.</Text
+          >
+          <Text size="small" font="display" weight="bold"
+            >small - bold - Lorem ipsum dolor sit amet consectetur adipisicing
+            elit.</Text
+          >
+        </div>
+      </div>
+
+      <!-- SansTight Font -->
+      <div class="mb-12">
+        <div class="bg-accent-3-400 p-6 rounded-t-lg">
+          <Heading htmlheading="h3" size="medium">SansTight Font</Heading>
+        </div>
+        <div class="bg-white p-8 rounded-b-lg border border-gray-200 space-y-4">
+          <Text size="xlarge" font="sanstight" weight="light"
+            >xlarge - light - Lorem ipsum dolor sit amet consectetur adipisicing
+            elit.</Text
+          >
+          <Text size="large" font="sanstight" weight="medium"
+            >large - medium - Lorem ipsum dolor sit amet consectetur adipisicing
+            elit.</Text
+          >
+          <Text size="medium" font="sanstight" weight="medium"
+            >medium - medium - Lorem ipsum dolor sit amet consectetur
+            adipisicing elit.</Text
+          >
+          <Text size="small" font="sanstight" weight="bold"
+            >small - bold - Lorem ipsum dolor sit amet consectetur adipisicing
+            elit.</Text
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================================== -->
+    <!-- LINKS SECTION -->
+    <!-- ============================================================================================== -->
+    <section class="mb-16">
+      <Heading htmlheading="h2" size="large" stylingclasses="mb-8"
+        >Links - Alle varianter</Heading
+      >
+
+      <!-- GREEN VARIANT -->
+      <div class="mb-12">
+        <div
+          class="bg-(--color-green--400) text-(--color-green--100) p-4 md:p-6 rounded-t-lg"
+        >
+          <Heading
+            htmlheading="h3"
+            size="medium"
+            stylingclasses="text-[var(--color-green--100)]">Green Links</Heading
+          >
+        </div>
+        <div class="bg-white p-4 md:p-8 rounded-b-lg border border-gray-200">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >small</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="green" size="small">Link cta</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >medium</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="green" size="medium">Link cta</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >large</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="green" size="large">Link cta</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >xlarge</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="green" size="xlarge">Link cta</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GREEN INVERTED VARIANT -->
+      <div class="mb-12">
+        <div
+          class="bg-(--color-green--100) text-(--color-green--400) p-4 md:p-6 rounded-t-lg"
+        >
+          <Heading
+            htmlheading="h3"
+            size="medium"
+            stylingclasses="text-[var(--color-green--400)]"
+            >Green Links (Inverted)</Heading
+          >
+        </div>
+        <div class="bg-white p-4 md:p-8 rounded-b-lg border border-gray-200">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >small</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="green-inverted" size="small"
+                  >Link cta</Link
+                >
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >medium</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="green-inverted" size="medium"
+                  >Link cta</Link
+                >
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >large</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="green-inverted" size="large"
+                  >Link cta</Link
+                >
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >xlarge</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="green-inverted" size="xlarge"
+                  >Link cta</Link
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORANGE VARIANT -->
+      <div class="mb-12">
+        <div
+          class="bg-(--color-orange--400) text-(--color-orange--100) p-4 md:p-6 rounded-t-lg"
+        >
+          <Heading
+            htmlheading="h3"
+            size="medium"
+            stylingclasses="text-[var(--color-orange--100)]"
+            >Orange Links</Heading
+          >
+        </div>
+        <div class="bg-white p-4 md:p-8 rounded-b-lg border border-gray-200">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >small</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="orange" size="small">Link cta</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >medium</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="orange" size="medium">Link cta</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >large</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="orange" size="large">Link cta</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >xlarge</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="orange" size="xlarge">Link cta</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLACK VARIANT -->
+      <div class="mb-12">
+        <div class="bg-black text-white p-4 md:p-6 rounded-t-lg">
+          <Heading
+            htmlheading="h3"
+            size="medium"
+            stylingclasses="text-[var(--color-white)]">Black Links</Heading
+          >
+        </div>
+        <div class="bg-white p-4 md:p-8 rounded-b-lg border border-gray-200">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >small</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="black" size="small">Link cta</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >medium</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="black" size="medium">Link cta</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >large</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="black" size="large">Link cta</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >xlarge</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="black" size="xlarge">Link cta</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PURPLE VARIANT -->
+      <div class="mb-12">
+        <div
+          class="bg-(--color-purple--400) text-(--color-purple--100) p-4 md:p-6 rounded-t-lg"
+        >
+          <Heading
+            htmlheading="h3"
+            size="medium"
+            stylingclasses="text-[var(--color-purple--100)]"
+            >Purple Links</Heading
+          >
+        </div>
+        <div class="bg-white p-4 md:p-8 rounded-b-lg border border-gray-200">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >small</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="purple" size="small">Link cta</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >medium</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="purple" size="medium">Link cta</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >large</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="purple" size="large">Link cta</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >xlarge</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="purple" size="xlarge">Link cta</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEXT VARIANT -->
+      <div class="mb-12">
+        <div class="bg-gray-100 p-4 md:p-6 rounded-t-lg">
+          <Heading htmlheading="h3" size="medium">Text Links</Heading>
+        </div>
+        <div class="bg-white p-4 md:p-8 rounded-b-lg border border-gray-200">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >small</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="text" size="small">Læs mere →</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >medium</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="text" size="medium">Læs mere →</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >large</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="text" size="large">Læs mere →</Link>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >xlarge</Text
+              >
+              <div class="flex justify-center">
+                <Link href="#" variant="text" size="xlarge">Læs mere →</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================================== -->
+    <!-- BUTTONS SECTION -->
+    <!-- ============================================================================================== -->
+    <section class="mb-16">
+      <Heading htmlheading="h2" size="large" stylingclasses="mb-8"
+        >Buttons - Black</Heading
+      >
+
+      <!-- BLACK BUTTON -->
+      <div class="mb-12">
+        <div class="bg-[var(--color-black)] text-white p-4 md:p-6 rounded-t-lg">
+          <Heading htmlheading="h3" size="medium" stylingclasses="text-white"
+            >Black Button</Heading
+          >
+        </div>
+        <div class="bg-white p-4 md:p-8 rounded-b-lg border border-gray-200">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >small</Text
+              >
+              <div class="flex justify-center">
+                <Button size="small">Klik her</Button>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >medium</Text
+              >
+              <div class="flex justify-center">
+                <Button size="medium">Klik her</Button>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >large</Text
+              >
+              <div class="flex justify-center">
+                <Button size="large">Klik her</Button>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >xlarge</Text
+              >
+              <div class="flex justify-center">
+                <Button size="xlarge">Klik her</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLACK BUTTON WITH ICON -->
+      <div class="mb-12">
+        <div class="bg-[var(--color-black)] text-white p-4 md:p-6 rounded-t-lg">
+          <Heading htmlheading="h3" size="medium" stylingclasses="text-white"
+            >Black Button with Icon</Heading
+          >
+        </div>
+        <div class="bg-white p-4 md:p-8 rounded-b-lg border border-gray-200">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >small</Text
+              >
+              <div class="flex justify-center">
+                <Button size="small" icon={true}>
+                  Klik her
+                  <!-- <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg> -->
+                </Button>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >medium</Text
+              >
+              <div class="flex justify-center">
+                <Button size="medium" icon={true}>
+                  Klik her
+                  <!-- <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg> -->
+                </Button>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >large</Text
+              >
+              <div class="flex justify-center">
+                <Button size="large" icon={true}>
+                  Klik her
+                  <!-- <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg> -->
+                </Button>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <Text size="small" weight="bold" stylingclasses="text-gray-600"
+                >xlarge</Text
+              >
+              <div class="flex justify-center">
+                <Button size="xlarge" icon={true}>
+                  Klik her
+                  <!-- <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg> -->
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Display Font -->
+      <div class="mb-12">
+        <div class="bg-(--color-green--400) text-white p-6 rounded-t-lg">
+          <Heading htmlheading="h3" size="medium" stylingclasses="text-white"
+            >ROLLING CAROUSEL</Heading
+          >
+        </div>
+        <div class="bg-white p-8 rounded-b-lg border border-gray-200 space-y-4">
+          <Sponsors />
+        </div>
+      </div>
+    </section>
+  </main>
+</MainLayout>

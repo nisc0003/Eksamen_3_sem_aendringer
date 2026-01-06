@@ -1,0 +1,369 @@
+---
+// Hovednavigation (desktop fuld menu, mobil burger)
+import Text from "./Text.astro";
+
+// Find nuværende sti for at fremhæve aktivt menupunkt
+const currentPath = Astro.url?.pathname.slice(1) ?? "";
+
+const isForside = currentPath === "";
+const isBlivAktiv =
+  currentPath === "bliv_aktiv" || currentPath === "bliv_aktiv/";
+const isHvadViKanGoere =
+  currentPath === "hvad_vi_kan_goere" || currentPath === "hvad_vi_kan_goere/";
+const isKomponentbibliotek =
+  currentPath === "komponentbibliotek" || currentPath === "komponentbibliotek/";
+const isform = currentPath === "form" || currentPath === "form/";
+
+// Tailwind-konstanter for konsistent, ikke-brydende nav-styling (skalerer fra lg til 2xl)
+const navBase =
+  "inline-flex items-center lg:h-10 xl:h-12 2xl:h-14 lg:px-2 xl:px-4 2xl:px-5 rounded-md font-sans transition-colors text-[var(--color-black)] hover:text-[var(--color-orange--400)] whitespace-nowrap";
+const navActive = "bg-[var(--color-yellow--200)] font-bold";
+const navInactive = "font-medium";
+---
+
+<header
+  x-data="{ showmenu: false, showsearch: false }"
+  class="bg-transparent sticky top-0 z-50 pt-4 lg:pt-6 xl:pt-8 2xl:pt-10"
+>
+  <div
+    class="w-full flex items-center justify-between"
+    style="padding-left: var(--margin-section_left); padding-right: var(--margin-section_right);"
+  >
+    <!-- Logo on the left -->
+    <div class="shrink-0">
+      <a href="/" class="logo-link inline-flex items-center">
+        <span class="sr-only">Stop Spild Af Mad</span>
+        <span class="logo-mark" aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <!-- Nav and actions on the right -->
+    <div class="flex items-center gap-2 lg:gap-3 xl:gap-4 2xl:gap-6">
+      <!-- Desktop menu (skjult på mobil) -->
+      <nav
+        class="hidden lg:flex items-center radius-NAV"
+        style="background-color: var(--color-yellow--100);"
+      >
+        <a href="/" class={`${navBase} ${isForside ? navActive : navInactive}`}>
+          <Text
+            size="small"
+            font="sans"
+            weight={currentPath === "" ? "bold" : "medium"}
+          >
+            Forside
+          </Text>
+        </a>
+
+        <a
+          href="/bliv_aktiv"
+          class={`${navBase} ${isBlivAktiv ? navActive : navInactive}`}
+        >
+          <Text
+            size="small"
+            font="sans"
+            weight={currentPath === "bliv_aktiv" ||
+            currentPath === "bliv_aktiv/"
+              ? "bold"
+              : "medium"}
+          >
+            Bliv aktiv
+          </Text>
+        </a>
+
+        <a
+          href="/hvad_vi_kan_goere"
+          class={`${navBase} ${isHvadViKanGoere ? navActive : navInactive}`}
+        >
+          <Text
+            size="small"
+            font="sans"
+            weight={currentPath === "hvad_vi_kan_goere" ||
+            currentPath === "hvad_vi_kan_goere/"
+              ? "bold"
+              : "medium"}
+          >
+            Hvad kan vi gøre
+          </Text>
+        </a>
+
+        <a
+          href="/komponentbibliotek"
+          class={`${navBase} ${isKomponentbibliotek ? navActive : navInactive}`}
+        >
+          <Text
+            size="small"
+            font="sans"
+            weight={currentPath === "komponentbibliotek" ||
+            currentPath === "komponentbibliotek/"
+              ? "bold"
+              : "medium"}
+          >
+            Komponentbibliotek
+          </Text>
+        </a>
+
+        <a
+          href="/form"
+          class={`${navBase} ${isform ? navActive : navInactive}`}
+        >
+          <Text
+            size="small"
+            font="sans"
+            weight={currentPath === "form" || currentPath === "form/"
+              ? "bold"
+              : "medium"}
+          >
+            Tilmeld dig
+          </Text>
+        </a>
+      </nav>
+
+      <!-- Søg + burger -->
+      <div class="flex items-center gap-2 lg:gap-3 xl:gap-4">
+        <!-- Search button -->
+        <button
+          x-on:click="showsearch = !showsearch"
+          class="radius-NAV flex items-center justify-center gap-1.5 lg:gap-2 px-2 lg:px-2 xl:px-4 2xl:px-5 h-10 lg:h-10 xl:h-12 2xl:h-14 transition-colors whitespace-nowrap"
+          style="background-color: var(--color-yellow--100);"
+          onmouseover="this.style.backgroundColor='var(--color-yellow--200)'"
+          onmouseout="this.style.backgroundColor='var(--color-yellow--100)'"
+          aria-label="Søg"
+        >
+          <Text
+            size="small"
+            font="sans"
+            weight="medium"
+            stylingclasses="text-black">søg</Text
+          >
+          <img
+            src="/img/search.svg"
+            alt="Search icon"
+            class="w-4 h-4 lg:w-4 lg:h-4 xl:w-5 xl:h-5"
+          />
+        </button>
+
+        <!-- Burger menu (only shows on mobile) -->
+        <button
+          class="lg:hidden w-10 h-10 flex items-center justify-center radius-NAV transition-colors"
+          style="border: 1px solid rgba(27, 27, 27, 0.1);"
+          onmouseover="this.style.backgroundColor='var(--color-yellow--100)'"
+          onmouseout="this.style.backgroundColor='transparent'"
+          x-on:click="showmenu = !showmenu"
+          aria-label="Menu"
+          x-bind:aria-expanded="showmenu"
+        >
+          <span class="sr-only">Menu</span>
+          <div class="space-y-[5px]">
+            <span
+              class="block h-[2px] w-5 transition-transform duration-200 bg-[var(--color-black)]"
+              x-bind:class="showmenu ? 'translate-y-[7px] rotate-45' : ''"
+            ></span>
+            <span
+              class="block h-[2px] w-5 transition-opacity duration-200 bg-[var(--color-black)]"
+              x-bind:class="showmenu ? 'opacity-0' : 'opacity-100'"></span>
+            <span
+              class="block h-[2px] w-5 transition-transform duration-200 bg-[var(--color-black)]"
+              x-bind:class="showmenu ? '-translate-y-[7px] -rotate-45' : ''"
+            ></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dark overlay when search is open -->
+  <div
+    x-show="showsearch"
+    x-transition.opacity
+    x-on:click="showsearch = false"
+    class="fixed inset-0 z-40"
+    style="display: none; background-color: rgba(27, 27, 27, 0.5);"
+  >
+  </div>
+
+  <!-- Search popup (just UI, no real search yet) -->
+  <div
+    x-show="showsearch"
+    x-transition
+    x-on:click.outside="showsearch = false"
+    class="fixed top-20 left-1/2 -translate-x-1/2 w-[90%] max-w-xl radius-contentBox shadow-2xl z-50 p-4 lg:p-5 xl:p-6"
+    style="display: none; background-color: var(--color-white);"
+  >
+    <div class="relative">
+      <input
+        type="search"
+        placeholder="Søg..."
+        class="w-full px-4 py-3 lg:px-5 lg:py-3 xl:px-6 xl:py-4 pr-12 border-2 radius-CTA focus:outline-none font-sans transition-colors text-sm lg:text-base"
+        style="border-color: var(--color-yellow--400);"
+        onfocus="this.style.borderColor='var(--color-yellow--200)'"
+        onblur="this.style.borderColor='var(--color-yellow--400)'"
+      />
+      <button
+        type="button"
+        class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 radius-CTA flex items-center justify-center transition-colors"
+        style="background-color: var(--color-yellow--400);"
+        onmouseover="this.style.backgroundColor='var(--color-yellow--200)'"
+        onmouseout="this.style.backgroundColor='var(--color-yellow--400)'"
+      >
+        <img
+          src="/img/search.svg"
+          alt="Search"
+          class="w-4 h-4 lg:w-4 lg:h-4 xl:w-5 xl:h-5"
+        />
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <nav
+    class="lg:hidden flex flex-col"
+    x-show="showmenu"
+    x-transition
+    x-on:click="showmenu = false"
+    x-on:click.outside="showmenu = false"
+    style="display: none;"
+  >
+    <ul
+      class="border-t-2 border-b-2 py-5"
+      style="border-color: rgba(27, 27, 27, 0.1); background-color: var(--color-black);"
+    >
+      <li class="border-b mx-8" style="border-color:var(--color-yellow--100);">
+        <a
+          href="/"
+          class="block text-center py-4"
+          style="color: var(--color-yellow--100);"
+        >
+          <Text
+            stylingclasses="text-left pb-2"
+            size="large"
+            font="sans"
+            weight={currentPath === "" ? "bold" : "light"}
+          >
+            Forside
+          </Text>
+        </a>
+      </li>
+
+      <li class="border-b mx-8" style="border-color:var(--color-yellow--100);">
+        <a
+          href="/bliv_aktiv"
+          class="block text-center py-4"
+          style="color: var(--color-yellow--100);"
+        >
+          <Text
+            stylingclasses="text-left py-2"
+            size="large"
+            font="sans"
+            weight={currentPath === "bliv_aktiv" ||
+            currentPath === "bliv_aktiv/"
+              ? "bold"
+              : "light"}
+          >
+            Bliv aktiv
+          </Text>
+        </a>
+      </li>
+
+      <li class="border-b mx-8" style="border-color:var(--color-yellow--100);">
+        <a
+          href="/hvad_vi_kan_goere"
+          class="block text-center py-4"
+          style="color: var(--color-yellow--100);"
+        >
+          <Text
+            stylingclasses="text-left py-2"
+            size="large"
+            font="sans"
+            weight={currentPath === "hvad_vi_kan_goere" ||
+            currentPath === "hvad_vi_kan_goere/"
+              ? "bold"
+              : "light"}
+          >
+            Hvad kan vi gøre
+          </Text>
+        </a>
+      </li>
+
+      <li class="border-b mx-8" style="border-color:var(--color-yellow--100);">
+        <a
+          href="/komponentbibliotek"
+          class="block text-center py-4"
+          style="color: var(--color-yellow--100);"
+        >
+          <Text
+            stylingclasses="text-left py-2"
+            size="large"
+            font="sans"
+            weight={currentPath === "komponentbibliotek" ||
+            currentPath === "komponentbibliotek/"
+              ? "bold"
+              : "light"}
+          >
+            Komponentbibliotek
+          </Text>
+        </a>
+      </li>
+
+      <li class="mx-8">
+        <a
+          href="/form"
+          class="block text-center py-4"
+          style="color: var(--color-yellow--100);"
+        >
+          <Text
+            stylingclasses="text-left pt-2"
+            size="large"
+            font="sans"
+            weight={currentPath === "form" || currentPath === "form/"
+              ? "bold"
+              : "light"}
+          >
+            Tilmeld dig
+          </Text>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  /* Logo uses SVG mask so we can change its color on hover */
+  .logo-mark {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--color-yellow--400);
+    mask: url(/img/Logo.svg) center / contain no-repeat;
+    -webkit-mask: url(/img/Logo.svg) center / contain no-repeat;
+    transition:
+      background-color 200ms ease,
+      transform 200ms ease;
+  }
+
+  .logo-link:hover .logo-mark {
+    background-color: var(--color-green--200);
+    transform: translateY(-1px);
+  }
+
+  /* Responsive logo sizing */
+  @media (min-width: 1024px) {
+    .logo-mark {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .logo-mark {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .logo-mark {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+</style>

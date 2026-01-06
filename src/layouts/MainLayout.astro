@@ -1,0 +1,53 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/tailwind.css";
+const { title } = Astro.props;
+---
+
+<html lang="da">
+  <head>
+    <meta name="robots" content="nofollow, noindex" />
+    <meta charset="utf-8" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/img/favicon-16x16.png"
+    />
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Stop Spild Af Mad er Danmarks største bevægelse mod madspild. Her kan du lærer om madspild og hvordan du kan undgå det i din hverdag"
+    />
+    <meta
+      name="keywords"
+      content="madspild, stop madspild, miljø, Stop Sild Af Mad, klima, bæredygtihed, tips, projekter mod madspild"
+    />
+
+    <title>{Astro.props.title}</title>
+    <link rel="stylesheet" href="https://use.typekit.net/cya8lpp.css" />
+    <!-- tilføj beskrivelse og favicon -->
+    <script
+      defer
+      src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"
+    ></script>
+  </head>
+  <body class="">
+    <Header />
+
+    <slot />
+
+    <Footer />
+  </body>
+  <script src="../assets/login.js"></script>
+</html>
+
+<style>
+  html ::-webkit-scrollbar {
+    display: none;
+  }
+</style>

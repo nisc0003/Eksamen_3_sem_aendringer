@@ -1,0 +1,46 @@
+---
+import Heading from "../components/Heading.astro";
+import Link from "../components/Link.astro";
+
+const { slug, title, image } = Astro.props;
+
+// Link til singleview med slug
+const singleviewUrl = `/singleview/${slug}`;
+---
+
+<article
+  class="group overflow-hidden transition-all duration-300 flex flex-col h-full @container [container-name:card]"
+>
+  <a href={singleviewUrl} class="block h-full">
+    <!-- IMAGE -->
+    <div class="relative overflow-hidden h-full w-full bg-gray-100">
+      <img
+        src={image}
+        alt={title}
+        class="object-cover transition-transform duration-500 group-hover:opacity-90 group-hover:scale-110 h-full w-full"
+      />
+    </div>
+
+    <!-- CONTENT:-->
+    <div class="flex flex-col h-full min-w-0 mt-4">
+      <Heading
+        htmlheading="h3"
+        size="xsmall"
+        font="sans"
+        stylingclasses="mb-2 group-hover:opacity-75 transition-transform duration-300 uppercase font-semibold leading-[1.1] text-balance break-words [hyphens:auto] "
+      >
+        {title}
+      </Heading>
+
+      <!-- Button:-->
+      <Link
+        href={singleviewUrl}
+        variant="black"
+        size="small"
+        class="mt-auto w-fit group-hover:opacity-75ZZZZ"
+      >
+        Læs mere
+      </Link>
+    </div>
+  </a>
+</article>
