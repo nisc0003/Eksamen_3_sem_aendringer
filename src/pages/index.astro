@@ -11,38 +11,46 @@ import Articles from "../components/Articles.astro";
 
 <MainLayout title="Stop Spild Af Mad">
   <main>
-    <section
-      class="flex flex-col -mt-17 mb-section_buttom relative md:grid md:grid-cols-2 md:mt-0 md:max-w-6xl md:mx-auto"
-    >
-      <div class="max-w-xs 200 sm:max-w-sm md:mr-20 md:-mt-17 md:max-w-lg lg:">
-        <img src="/img/hero.webp" alt="" />
-      </div>
-
-      <section
-        class="max-w-2xs mx-auto sm:bg-amber-400 sm:max-w-md md:bg-amber-500 md:max-w-md md:mt-17 md:mr-10 md:-ml-10 lg:bg-amber-600 lg:mt-40"
+    <section class="grid">
+      <div
+        class="mb-section_buttom grid md:grid-cols-2 -mt-16 lg:-mt-19 xl:-mt-24 2xl:-mt-28"
       >
-        <div class="lg:place-self-auto">
-          <Heading size="large">STOP SPILD</Heading>
-          <div class="flex flex-row">
-            <Heading size="large">AF MAD</Heading>
-            <img
-              src="/img/logo_green.svg"
-              alt=""
-              class="h-9 place-self-end ml-10 md:h-10 md:ml-8 md:mb-1"
-            />
+        <div class="place-self-left">
+          <img
+            src="/img/hero.webp"
+            alt="hånd der holder en pose abelsiner"
+            class="w-full pr-10"
+          />
+        </div>
+
+        <div
+          class="md:mt-20 lg:mt-30 xl:mt-40 md:pr-20 ml-section_left mr-section_right md:mr-0 md:ml-0"
+        >
+          <div class="lg:place-self-auto">
+            <Heading size="large">STOP SPILD</Heading>
+            <div class="flex flex-row">
+              <Heading size="large">AF MAD</Heading>
+              <img
+                src="/img/logo_green.svg"
+                alt=""
+                class="h-9 place-self-end ml-10 md:h-10 md:ml-8 md:mb-1"
+              />
+            </div>
+          </div>
+          <Text size="large" weight="light"
+            >Danmarks største bevægelse i mod madspild</Text
+          >
+
+          <div class="flex flex-col gap-2 mt-5">
+            <Link href="bliv_aktiv" variant="green">GIV ET BIDRAG </Link>
+            <Link
+              href="hvad_vi_kan_goere"
+              variant="green-inverted"
+              size="medium">TIPS TIL BEDRE MAD-VANER</Link
+            >
           </div>
         </div>
-        <Text size="large" weight="light"
-          >Danmarks største bevægelse i mod madspild</Text
-        >
-
-        <div class="flex flex-col gap-2 mt-5">
-          <Link href="bliv_aktiv" variant="green">GIV ET BIDRAG </Link>
-          <Link href="hvad_vi_kan_goere" variant="green-inverted" size="medium"
-            >TIPS TIL BEDRE MAD-VANER</Link
-          >
-        </div>
-      </section>
+      </div>
     </section>
 
     <Sponsors
