@@ -81,7 +81,7 @@ import Articles from "../components/Articles.astro";
     </section> -->
 
     <section
-      class="max-w-xs flex flex-col mb-section_buttom mt-section_top gap-5 mx-auto sm:bg-amber-400 sm:max-w-md md:bg-amber-500 md:max-w-6xl md:ml-section_left md:mr-section_right lg:bg-amber-600"
+      class="max-w-xs flex flex-col mb-section_buttom mt-section_top gap-5 mx-auto sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right"
     >
       <Heading htmlheading="h2" size="medium">QUIZ DIG SELV I MADSPILD</Heading>
       <div
@@ -149,7 +149,7 @@ import Articles from "../components/Articles.astro";
     />
 
     <section
-      class="max-w-xs flex flex-col gap-8 mb-section_buttom mt-section_top mx-auto sm:bg-amber-400 sm:max-w-md md:bg-amber-500 md:max-w-6xl md:ml-section_left md:mr-section_right lg:bg-amber-600"
+      class="max-w-xs flex flex-col gap-8 mb-section_buttom mt-section_top mx-auto sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right"
     >
       <Heading htmlheading="h2" size="medium">HVEM ER VI?</Heading>
 
@@ -200,7 +200,7 @@ import Articles from "../components/Articles.astro";
     <Articles />
 
     <section
-      class="max-w-xs mx-auto mb-section_buttom mt-section_top sm:bg-amber-400 sm:max-w-md md:bg-amber-500 md:max-w-6xl md:ml-section_left md:mr-section_right"
+      class="max-w-xs mx-auto mb-section_buttom mt-section_top mt-20 sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right md:mt-30"
     >
       <div class="flex flex-col gap-3 mb-5">
         <Heading htmlheading="h2" size="medium"
@@ -214,7 +214,7 @@ import Articles from "../components/Articles.astro";
 
       <Link href="wip" variant="purple">SE FLERE PRISER</Link>
 
-      <section class="carousel [scrollbar-width:none]">
+      <section class="carousel [scrollbar-width:none] md:mt-5">
         <div class="group">
           <img
             src="/img/pris1.webp"
@@ -253,9 +253,11 @@ import Articles from "../components/Articles.astro";
       </section>
     </section>
 
-    <section class="bg-(--color-purple--100) w-full py-5 lg:flex lg:flex-row">
+    <section
+      class="bg-(--color-purple--100) w-full py-5 lg:grid lg:grid-cols-2 lg:gap-5 lg:px-35"
+    >
       <div
-        class="max-w-xs mx-auto grid grid-cols-2 mb-5 sm:max-w-md sm:gap-10 md:max-w-6xl md:ml-section_left md:mr-section_right"
+        class="max-w-xs mx-auto grid grid-cols-2 mb-5 sm:max-w-md sm:gap-10 md:max-w-6xl md:ml-section_left md:mr-section_right lg:mx-0"
       >
         <div class="flex flex-col max-w-65 text-center">
           <Heading font="sans" size="small">200+</Heading>
@@ -273,7 +275,7 @@ import Articles from "../components/Articles.astro";
       </div>
 
       <div
-        class="max-w-xs mx-auto grid grid-cols-2 sm:max-w-md sm:gap-10 md:max-w-6xl md:ml-section_left md:mr-section_right"
+        class="max-w-xs mx-auto grid grid-cols-2 sm:max-w-md sm:gap-10 md:max-w-6xl md:ml-section_left md:mr-section_right lg:mx-0"
       >
         <div class="flex flex-col max-w-65 text-center">
           <Heading font="sans" size="small">300+</Heading>
