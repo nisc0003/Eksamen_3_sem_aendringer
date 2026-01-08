@@ -12,29 +12,33 @@ import Articles from "../components/Articles.astro";
 <MainLayout title="Stop Spild Af Mad">
   <main>
     <section
-      class="flex flex-col md:flex-row mb-section_buttom gap-5 relative -mt-40"
+      class="flex flex-col -mt-17 mb-section_buttom relative md:grid md:grid-cols-2 md:mt-0 md:max-w-6xl md:mx-auto"
     >
-      <div class="200 md:mr-25">
+      <div class="max-w-xs 200 sm:max-w-sm md:mr-20 md:-mt-17 md:max-w-lg lg:">
         <img src="/img/hero.webp" alt="" />
       </div>
 
-      <section class="place-self-center">
-        <div class="sm:place-self-center lg:place-self-auto">
-          <Heading size="xlarge">STOP SPILD</Heading>
+      <section
+        class="max-w-2xs mx-auto sm:bg-amber-400 sm:max-w-md md:bg-amber-500 md:max-w-md md:mt-17 md:mr-10 md:-ml-10 lg:bg-amber-600 lg:mt-40"
+      >
+        <div class="lg:place-self-auto">
+          <Heading size="large">STOP SPILD</Heading>
           <div class="flex flex-row">
-            <Heading size="xlarge">AF MAD</Heading>
+            <Heading size="large">AF MAD</Heading>
             <img
               src="/img/logo_green.svg"
               alt=""
-              class="h-9 place-self-end md:h-25 ml-10"
+              class="h-9 place-self-end ml-10 md:h-10 md:ml-8 md:mb-1"
             />
           </div>
         </div>
-        <Text size="xlarge">Danmarks største bevægelse i mod madspild</Text>
+        <Text size="large" weight="light"
+          >Danmarks største bevægelse i mod madspild</Text
+        >
 
-        <div class="flex flex-col gap-10 mt-5">
+        <div class="flex flex-col gap-2 mt-5">
           <Link href="bliv_aktiv" variant="green">GIV ET BIDRAG </Link>
-          <Link href="hvad_vi_kan_goere" variant="green-inverted"
+          <Link href="hvad_vi_kan_goere" variant="green-inverted" size="medium"
             >TIPS TIL BEDRE MAD-VANER</Link
           >
         </div>
@@ -69,40 +73,52 @@ import Articles from "../components/Articles.astro";
     </section> -->
 
     <section
-      class="flex flex-col mb-section_buttom mt-section_top gap-5 mx-15 md:ml-section_left md:mr-section_right"
+      class="max-w-xs flex flex-col mb-section_buttom mt-section_top gap-5 mx-auto sm:bg-amber-400 sm:max-w-md md:bg-amber-500 md:max-w-6xl md:ml-section_left md:mr-section_right"
     >
-      <Heading htmlheading="h2" size="medium">QUIZ DIG SELV I MADSPILD</Heading>
-      <div class="flex-row gap-5 md:grid grid-cols-2">
-        <div class="bg-(--color-yellow--100) flex flex-row">
-          <section class="flex flex-col gap-25 place-content-center mx-auto">
-            <div class="flex flex-col gap-5">
-              <div class="mb-10 mt-5">
-                <Heading>Spørgsmål 1</Heading>
-                <Text>Spørgsmålet</Text>
+      <Heading htmlheading="h2" size="small">QUIZ DIG SELV I MADSPILD</Heading>
+      <div class="flex-row gap-5 -mt-5 md:grid md:grid-cols-7 md:h-120">
+        <div
+          class="bg-(--color-yellow--100) flex flex-row rounded-lg my-5 px-5 md:col-span-4"
+        >
+          <section
+            class="max-w-xs flex flex-col gap-10 place-content-center mx-auto sm:max-w-sm md:max-w-md"
+          >
+            <div class="pt-5 flex flex-col gap-5 md:gap-3">
+              <div class="my-3">
+                <Text size="medium">SPØRGSMÅL 1</Text>
+                <Text weight="light" size="large"
+                  >Hvilke af disse mad rester tæller som madspild?</Text
+                >
               </div>
 
-              <div class="flex flex-row gap-10">
-                <Text>A</Text>
-                <Text>Middagsrester og gammel frugt</Text>
+              <div class="flex flex-row gap-7">
+                <Text size="large">A</Text>
+                <Text size="large">Middagsrester og gammel frugt</Text>
               </div>
 
-              <div class="flex flex-row gap-10">
-                <Text>B</Text>
-                <Text>Osteskorper og kaffegrums </Text>
+              <div class="flex flex-row gap-7">
+                <Text size="large">B</Text>
+                <Text size="large">Osteskorper og kaffegrums </Text>
               </div>
 
-              <div class="flex flex-row gap-10">
-                <Text>C</Text>
-                <Text>Alt affald der kommer fra mad er madspild</Text>
+              <div class="flex flex-row gap-7">
+                <Text size="large">C</Text>
+                <Text size="large"
+                  >Alt affald der kommer fra mad er madspild</Text
+                >
               </div>
             </div>
 
             <div class="mb-5">
-              <Link variant="black">Se Svar →</Link>
+              <Link variant="black" size="small">Se Svar →</Link>
             </div>
           </section>
         </div>
-        <img src="/img/quiz.webp" alt="" class="place-self-center" />
+        <img
+          src="/img/quiz.webp"
+          alt=""
+          class="place-self-center rounded-lg md:col-span-3 md:h-110"
+        />
       </div>
 
       <!-- <Link>SE SVAR </Link> -->
@@ -114,38 +130,45 @@ import Articles from "../components/Articles.astro";
       sponsor1="CLAUS HOLM"
       sponsor2="JAKOB ELLEMAN-JENSEN"
       sponsor3="PIA OLSEN DYHR"
-      sponsor4="NICOLAI SCHOU"
-      sponsor5="MARK ANTHONY AQUINO"
-      sponsor6="MATHILDE LØWE"
+      sponsor4="ADAM OG JAMES PRICE"
+      sponsor5="UFFE ELBÆK"
+      sponsor6="TIM VLADIMIR"
     />
 
     <section
-      class="flex flex-col gap-5 md:grid md:grid-cols-2 mb-section_buttom mt-section_top mx-15 md:ml-section_left md:mr-section_right"
+      class="max-w-xs flex flex-col gap-8 mb-section_buttom mt-section_top mx-auto sm:bg-amber-400 sm:max-w-md md:bg-amber-500 md:max-w-6xl md:ml-section_left md:mr-section_right"
     >
-      <div class="flex flex-col gap-5">
-        <Heading htmlheading="h2" size="medium">HVEM ER VI?</Heading>
+      <Heading htmlheading="h2" size="small">HVEM ER VI?</Heading>
 
-        <div class="flex flex-col gap-5">
-          <Text
-            >Stop Spild Af Mad er en non-profit organisation og
-            forbrugerbevægelse, som kæmper mod madspild. Siden 2008 har vi
-            medvirket til at bringe massivt fokus på madspild i Danmark, samt
-            opnået en lang række resultater i både Danmark, EU, Norden og FN.
+      <div class="lg:grid lg:grid-cols-2">
+        <div class="flex flex-col gap-3 md:mb-10">
+          <Text weight="light"
+            >Stop Spild Af Mad er en <strong
+              ><span style="font-weight: 600;">non-profit</span></strong
+            > organisation og forbrugerbevægelse, som kæmper mod madspild. Siden 2008
+            har vi medvirket til at bringe massivt fokus på madspild i Danmark, samt
+            opnået en lang række resultater i både <strong
+              ><span style="font-weight: 600;">Danmark</span></strong
+            >, <strong><span style="font-weight: 600;">EU</span></strong>, <strong
+              ><span style="font-weight: 600;">Norden</span></strong
+            > og <strong><span style="font-weight: 600;">FN</span></strong>.
           </Text>
-          <Text
+          <Text weight="light"
             >Stop Spild Af Mad har både nationale og internationale samarbejder.
-            Vi bakkes op af over 60.000 danskere, samt en lang række
-            toppolitikere og anerkendte madpersonligheder. Vi arbejder aktivt
-            med FN’s verdensmål for bæredygtig udvikling: UN Sustainable
-            Development Goal 12.3.</Text
+            Vi bakkes op af over <strong
+              ><span style="font-weight: 600;">60.000 danskere</span></strong
+            >, samt en lang række toppolitikere og anerkendte madpersonligheder.
+            Vi arbejder aktivt med <strong
+              ><span style="font-weight: 600;">FN’s verdensmål</span></strong
+            > for bæredygtig udvikling: UN Sustainable Development Goal 12.3.</Text
           >
         </div>
-      </div>
 
-      <div class="flex flex-col place-content-between">
-        <img src="/img/index_frugt.webp" alt="" class="" />
-        <div class="place-self-center">
-          <Link href="/wip" variant="orange">LÆS MERE OM OS</Link>
+        <div class="flex flex-col place-content-between gap-5">
+          <img src="/img/index_frugt.webp" alt="" class="" />
+          <div class="place-self-center">
+            <Link href="/wip" variant="orange">LÆS MERE OM OS</Link>
+          </div>
         </div>
       </div>
     </section>
@@ -163,19 +186,22 @@ import Articles from "../components/Articles.astro";
 
     <Articles />
 
-    <section class="mb-section_buttom mt-section_top">
-      <div class="flex flex-col place-items-center gap-3">
+    <section
+      class="max-w-xs mx-auto mb-section_buttom mt-section_top sm:bg-amber-400 sm:max-w-md md:bg-amber-500 md:max-w-6xl md:ml-section_left md:mr-section_right"
+    >
+      <div class="flex flex-col gap-3 mb-5">
         <Heading htmlheading="h2" size="medium"
           >PRISER OG ANDERKENDELSER</Heading
         >
-        <Text
+        <Text weight="lght"
           >Stop Spild Af Mad og dens stifter Selina Juul har fået en lang række
           priser og anerkendelser, bl.a.:</Text
         >
-        <Link href="wip" variant="purple">SE FLERE PRISER</Link>
       </div>
 
-      <section class="carousel">
+      <Link href="wip" variant="purple">SE FLERE PRISER</Link>
+
+      <section class="carousel [scrollbar-width:none]">
         <div class="group">
           <img
             src="/img/pris1.webp"
@@ -214,27 +240,41 @@ import Articles from "../components/Articles.astro";
       </section>
     </section>
 
-    <section
-      class="bg-(--color-purple--100) w-full place-content-center py-5 grid grid-rows-2 grid-cols-2 md:flex md:flex-row gap-22"
-    >
-      <div class="flex flex-col max-w-65 text-center">
-        <Heading>200+</Heading>
-        <Text>projekter og aktiviteter mod madspild siden 2008</Text>
+    <section class="bg-(--color-purple--100) w-full py-5 lg:flex lg:flex-row">
+      <div
+        class="max-w-xs mx-auto grid grid-cols-2 mb-5 sm:max-w-md sm:gap-10 md:max-w-6xl md:ml-section_left md:mr-section_right"
+      >
+        <div class="flex flex-col max-w-65 text-center">
+          <Heading font="sans" size="small">200+</Heading>
+          <Text weight="light" size="small"
+            >projekter og aktiviteter mod madspild siden 2008</Text
+          >
+        </div>
+
+        <div class="flex flex-col max-w-65 text-center">
+          <Heading font="sans" size="small">7.000+</Heading>
+          <Text weight="light" size="small"
+            >danske og internationale medieomtaler siden 2008</Text
+          >
+        </div>
       </div>
 
-      <div class="flex flex-col max-w-65 text-center">
-        <Heading>7.000+</Heading>
-        <Text>danske og internationale medieomtaler siden 2008</Text>
-      </div>
+      <div
+        class="max-w-xs mx-auto grid grid-cols-2 sm:max-w-md sm:gap-10 md:max-w-6xl md:ml-section_left md:mr-section_right"
+      >
+        <div class="flex flex-col max-w-65 text-center">
+          <Heading font="sans" size="small">300+</Heading>
+          <Text weight="light" size="small"
+            >tons overskudsmad videreformidlet til udsatte siden 2011</Text
+          >
+        </div>
 
-      <div class="flex flex-col max-w-65 text-center">
-        <Heading>300+</Heading>
-        <Text>tons overskudsmad videreformidlet til udsatte siden 2011</Text>
-      </div>
-
-      <div class="flex flex-col max-w-65 text-center">
-        <Heading>126.000+</Heading>
-        <Text>følgere på samlede sociale medier</Text>
+        <div class="flex flex-col max-w-65 text-center">
+          <Heading font="sans" size="small">126.000+</Heading>
+          <Text weight="light" size="small"
+            >følgere på samlede sociale medier</Text
+          >
+        </div>
       </div>
     </section>
   </main>
