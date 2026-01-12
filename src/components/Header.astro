@@ -9,7 +9,7 @@ const isForside = currentPath === "";
 const isBlivAktiv =
   currentPath === "bliv_aktiv" || currentPath === "bliv_aktiv/";
 const isHvadViKanGoere =
-  currentPath === "hvad_vi_kan_goere" || currentPath === "hvad_vi_kan_goere/";
+  currentPath === "vores_mission" || currentPath === "vores_mission/";
 const isKomponentbibliotek =
   currentPath === "komponentbibliotek" || currentPath === "komponentbibliotek/";
 const isform = currentPath === "form" || currentPath === "form/";
@@ -71,18 +71,33 @@ const navInactive = "font-medium";
         </a>
 
         <a
-          href="/hvad_vi_kan_goere"
+          href="/form"
+          class={`${navBase} ${isform ? navActive : navInactive}`}
+        >
+          <Text
+            size="small"
+            font="sans"
+            weight={currentPath === "form" || currentPath === "form/"
+              ? "bold"
+              : "medium"}
+          >
+            Tilmeld dig
+          </Text>
+        </a>
+
+        <a
+          href="/vores_mission"
           class={`${navBase} ${isHvadViKanGoere ? navActive : navInactive}`}
         >
           <Text
             size="small"
             font="sans"
-            weight={currentPath === "hvad_vi_kan_goere" ||
-            currentPath === "hvad_vi_kan_goere/"
+            weight={currentPath === "vores_mission" ||
+            currentPath === "vores_mission/"
               ? "bold"
               : "medium"}
           >
-            Hvad kan vi gøre
+            Vores mission
           </Text>
         </a>
 
@@ -99,21 +114,6 @@ const navInactive = "font-medium";
               : "medium"}
           >
             Komponentbibliotek
-          </Text>
-        </a>
-
-        <a
-          href="/form"
-          class={`${navBase} ${isform ? navActive : navInactive}`}
-        >
-          <Text
-            size="small"
-            font="sans"
-            weight={currentPath === "form" || currentPath === "form/"
-              ? "bold"
-              : "medium"}
-          >
-            Tilmeld dig
           </Text>
         </a>
       </nav>
@@ -137,12 +137,13 @@ const navInactive = "font-medium";
           >
           <img
             src="/img/search.svg"
-            alt="Search icon"
+            alt="Søg ikon"
             class="w-4 h-4 lg:w-4 lg:h-4 xl:w-5 xl:h-5"
           />
         </button>
 
         <!-- Burger menu (only shows on mobile) -->
+        <!-- Fixed Tailwind classes to use canonical values -->
         <button
           class="lg:hidden w-10 h-10 flex items-center justify-center radius-NAV transition-colors"
           style="border: 1px solid rgba(27, 27, 27, 0.1);"
@@ -153,17 +154,18 @@ const navInactive = "font-medium";
           x-bind:aria-expanded="showmenu"
         >
           <span class="sr-only">Menu</span>
-          <div class="space-y-[5px]">
+          <!-- Changed: space-y-[5px] → space-y-1.25, h-[2px] → h-0.5, bg-[var(--color-black)] → bg-black, translate-y-[7px] → translate-y-1.75 -->
+          <div class="space-y-1.25">
             <span
-              class="block h-[2px] w-5 transition-transform duration-200 bg-[var(--color-black)]"
-              x-bind:class="showmenu ? 'translate-y-[7px] rotate-45' : ''"
+              class="block h-0.5 w-5 transition-transform duration-200 bg-black"
+              x-bind:class="showmenu ? 'translate-y-1.75 rotate-45' : ''"
             ></span>
             <span
-              class="block h-[2px] w-5 transition-opacity duration-200 bg-[var(--color-black)]"
+              class="block h-0.5 w-5 transition-opacity duration-200 bg-black"
               x-bind:class="showmenu ? 'opacity-0' : 'opacity-100'"></span>
             <span
-              class="block h-[2px] w-5 transition-transform duration-200 bg-[var(--color-black)]"
-              x-bind:class="showmenu ? '-translate-y-[7px] -rotate-45' : ''"
+              class="block h-0.5 w-5 transition-transform duration-200 bg-black"
+              x-bind:class="showmenu ? '-translate-y-1.75 -rotate-45' : ''"
             ></span>
           </div>
         </button>
@@ -266,7 +268,7 @@ const navInactive = "font-medium";
 
       <li class="border-b mx-8" style="border-color:var(--color-yellow--100);">
         <a
-          href="/hvad_vi_kan_goere"
+          href="/form"
           class="block text-center py-4"
           style="color: var(--color-yellow--100);"
         >
@@ -274,24 +276,43 @@ const navInactive = "font-medium";
             stylingclasses="text-left py-2"
             size="large"
             font="sans"
-            weight={currentPath === "hvad_vi_kan_goere" ||
-            currentPath === "hvad_vi_kan_goere/"
+            weight={currentPath === "form" || currentPath === "form/"
               ? "bold"
               : "light"}
           >
-            Hvad kan vi gøre
+            Tilmeld dig
           </Text>
         </a>
       </li>
 
       <li class="border-b mx-8" style="border-color:var(--color-yellow--100);">
         <a
-          href="/komponentbibliotek"
+          href="/vores_mission"
           class="block text-center py-4"
           style="color: var(--color-yellow--100);"
         >
           <Text
             stylingclasses="text-left py-2"
+            size="large"
+            font="sans"
+            weight={currentPath === "vores_mission" ||
+            currentPath === "vores_mission/"
+              ? "bold"
+              : "light"}
+          >
+            Vores mission
+          </Text>
+        </a>
+      </li>
+
+      <li class="mx-8">
+        <a
+          href="/komponentbibliotek"
+          class="block text-center py-4"
+          style="color: var(--color-yellow--100);"
+        >
+          <Text
+            stylingclasses="text-left pt-2"
             size="large"
             font="sans"
             weight={currentPath === "komponentbibliotek" ||
@@ -300,25 +321,6 @@ const navInactive = "font-medium";
               : "light"}
           >
             Komponentbibliotek
-          </Text>
-        </a>
-      </li>
-
-      <li class="mx-8">
-        <a
-          href="/form"
-          class="block text-center py-4"
-          style="color: var(--color-yellow--100);"
-        >
-          <Text
-            stylingclasses="text-left pt-2"
-            size="large"
-            font="sans"
-            weight={currentPath === "form" || currentPath === "form/"
-              ? "bold"
-              : "light"}
-          >
-            Tilmeld dig
           </Text>
         </a>
       </li>

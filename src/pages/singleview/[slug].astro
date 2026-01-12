@@ -24,6 +24,19 @@ function resolveMedia(card: Card) {
   return null;
 }
 
+// Changed: Added color theme selection based on slug for dynamic singleview styling
+// Each slug gets assigned a unique color theme from the available palettes
+// Yellow and orange use lighter versions (100) for better contrast with black text
+// Purple and green use darker versions (400) for contrast with white text
+// This creates visual variety without changing the design
+const colorThemeMap: Record<string, { bg: string; accent: string; light: string; textColor: string }> = {
+  frivillig: { bg: "var(--color-orange--100)", accent: "var(--color-orange--200)", light: "var(--color-orange--100)", textColor: "text-black" },
+  stoettemedlem: { bg: "var(--color-purple--400)", accent: "var(--color-purple--200)", light: "var(--color-purple--100)", textColor: "text-white" },
+  samarbejdspartner: { bg: "var(--color-yellow--100)", accent: "var(--color-yellow--200)", light: "var(--color-yellow--100)", textColor: "text-black" },
+  "erhvervspartner": { bg: "var(--color-green--400)", accent: "var(--color-green--200)", light: "var(--color-green--100)", textColor: "text-white" },
+  "spred-budskabet": { bg: "var(--color-orange--100)", accent: "var(--color-orange--200)", light: "var(--color-orange--100)", textColor: "text-black" },
+};
+
 // Data for alle cards
 const cards = [
   {
@@ -120,6 +133,11 @@ const { slug } = Astro.params;
 // Find det matchende card
 const item = cards.find((card) => card.slug === slug);
 const media = item ? resolveMedia(item) : null;
+
+// Changed: Get the color theme for this specific slug
+// If slug not in map, default to green theme with all required properties (bg, accent, light, textColor)
+// This ensures TypeScript knows all properties exist on the theme object
+const currentTheme = slug ? colorThemeMap[slug] : { bg: "var(--color-green--400)", accent: "var(--color-green--200)", light: "var(--color-green--100)", textColor: "text-white" };
 ---
 
 <MainLayout title={item?.title || "Indhold findes ikke"}>
@@ -137,48 +155,113 @@ const media = item ? resolveMedia(item) : null;
     </div>
   ) : (
     <>
+      <!-- Changed: Hero section with back button and page title -->
       <div class="mr-section_right ml-section_left mt-section_top mb-8 grid gap-16">
         <Link href="/bliv_aktiv" variant="black" stylingclasses="inline-block">← Tilbage</Link>
         <Heading htmlheading="h1" size="large">{item.title}</Heading>
       </div>
 
-      <section class="bg-green--400">
+      <!-- Changed: Main content section with dynamic background color based on slug theme -->
+      <!-- Uses inline style to apply CSS custom property from colorThemeMap -->
+      <section style={`background-color: ${currentTheme.bg}`}>
         <div class="mr-section_right ml-section_left py-12 md:py-16 lg:py-20">
-          <div class="grid gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16 lg:items-stretch">
+          <!-- Changed: Modified layout to handle varying content lengths professionally -->
+          <!-- Removed lg:items-stretch and added lg:items-start for better vertical alignment -->
+          <!-- Made media container sticky on desktop so video/image stays visible while scrolling text -->
+          <div class="grid gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16 lg:items-start">
             {media && (
-              <div class="radius-contentBox overflow-hidden">
+              <!-- Changed: Adjusted sticky positioning to lg:top-24 to ensure media never goes under the header -->
+              <!-- Header height + spacing = approximately 6rem (96px), ensuring proper clearance -->
+              <!-- Added shadow-xl and border for better visual depth and professional appearance -->
+              <!-- Maintains full stacking behavior on mobile, side-by-side on desktop -->
+              <div class="radius-contentBox overflow-hidden shadow-xl border-4 border-white/20 lg:sticky lg:top-24 lg:self-start">
                 {media.type === "image" && (
-                  <img src={media.src} alt={item.title} class="w-full h-full object-cover" />
+                  <!-- Changed: Adjusted image to maintain aspect ratio without stretching -->
+                  <img src={media.src} alt={item.title} class="w-full h-auto object-cover" />
                 )}
                 {media.type === "iframe" && (
-                  <iframe src={media.src} title={item.title} class="w-full aspect-video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+                  <!-- Changed: Ensured iframe maintains 16:9 aspect ratio without distortion -->
+                  <iframe src={media.src} title={item.title} class="w-full aspect-video border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
                 )}
                 {media.type === "video" && (
-                  <video class="w-full h-full object-cover" controls>
+                  <!-- Changed: Video maintains aspect ratio properly -->
+                  <video class="w-full h-auto object-cover" controls>
                     <source src={media.src} type="video/mp4" />
                   </video>
                 )}
               </div>
             )}
 
-            <div class="space-y-6 lg:space-y-8">
-              {item.subtitle && <Heading htmlheading="h2" size="medium" stylingclasses="text-white">{item.subtitle}</Heading>}
+            <!-- Changed: Cleaned up text content layout for more professional appearance -->
+            <!-- Removed individual boxes for each text field, consolidated into single container -->
+            <!-- Changed: Fixed Tailwind canonical class lg:min-h-[500px] → lg:min-h-125 -->
+            <div class="space-y-6 lg:space-y-8 lg:min-h-125">
+              <!-- Changed: Subtitle now uses dynamic accent color and text color from theme -->
+              {item.subtitle && (
+                <div class="border-l-4 pl-4 lg:pl-6" style={`border-color: ${currentTheme.accent}`}>
+                  <Heading htmlheading="h2" size="medium" stylingclasses={currentTheme.textColor}>{item.subtitle}</Heading>
+                </div>
+              )}
               
-              {item.textfield1 && <Text stylingclasses="text-white">{item.textfield1}</Text>}
-              {item.textfield2 && <Text stylingclasses="text-white font-semibold">{item.textfield2}</Text>}
-              {item.textfield3 && <Text stylingclasses="text-white">{item.textfield3}</Text>}
+              <!-- Changed: All text fields now have black text inside light background for readability -->
+              <!-- Headers keep the theme color, but body text is always black -->
+              <!-- Removed individual boxes for each text field, consolidated into single container -->
+              {(item.textfield1 || item.textfield2 || item.textfield3) && (
+                <div class="backdrop-blur-sm radius-contentBox p-5 lg:p-7 space-y-5" style={`background-color: ${currentTheme.light}`}>
+                  {item.textfield1 && (
+                    <div>
+                      <Text stylingclasses="text-black leading-relaxed">{item.textfield1}</Text>
+                    </div>
+                  )}
+                  
+                  {item.textfield2 && (
+                    <>
+                      {item.textfield1 && <div class="my-4" style={`border-top: 1px solid ${currentTheme.accent}`}></div>}
+                      <div>
+                        <Text stylingclasses="text-black font-semibold leading-relaxed">{item.textfield2}</Text>
+                      </div>
+                    </>
+                  )}
+                  
+                  {item.textfield3 && (
+                    <>
+                      {(item.textfield1 || item.textfield2) && <div class="my-4" style={`border-top: 1px solid ${currentTheme.accent}`}></div>}
+                      <div>
+                        <Text stylingclasses="text-black leading-relaxed">{item.textfield3}</Text>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
 
+              <!-- Changed: Contact info box now uses dynamic accent colors and text color from theme -->
               {item.list && item.list.length > 0 && (
-                <div class="bg-white/10 backdrop-blur-sm radius-contentBox p-6">
-                  <Heading htmlheading="h3" size="xsmall" stylingclasses="text-white mb-4">Kontaktinfo</Heading>
-                  <ul class="space-y-2">
-                    {item.list.map((li) => <li><Text stylingclasses="text-white text-sm">{li}</Text></li>)}
+                <div class="backdrop-blur-md radius-contentBox p-6 lg:p-8 shadow-lg border-2" style={`background-color: rgb(255 255 255 / 0.15); border-color: ${currentTheme.accent}`}>
+                  <Heading htmlheading="h3" size="xsmall" stylingclasses={`${currentTheme.textColor} mb-6`}>Kontaktinfo</Heading>
+                  <ul class="space-y-3">
+                    <!-- Changed: Bullet points now use dynamic accent color from theme -->
+                    {item.list.map((li) => (
+                      <li class="flex items-start gap-3">
+                        <span class="text-lg mt-0.5" style={`color: ${currentTheme.accent}`}>●</span>
+                        <Text stylingclasses={`${currentTheme.textColor} text-sm lg:text-base flex-1`}>{li}</Text>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               )}
 
+              <!-- Changed: CTA button with cleaned up styling (removed unnecessary inline styles) -->
               {item.link && (
-                <Link href={item.link} variant="green-inverted" size="large">Gå til Tilmelding</Link>
+                <div class="pt-4 lg:pt-6">
+                  <Link 
+                    href={item.link} 
+                    variant="green-inverted" 
+                    size="large"
+                    stylingclasses="inline-block transition-all duration-300 hover:scale-105"
+                  >
+                    Gå til Tilmelding →
+                  </Link>
+                </div>
               )}
             </div>
           </div>

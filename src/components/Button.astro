@@ -1,8 +1,21 @@
 ---
-// Henter parametrene fra Astro.props
-const { variant, size = "large", icon = false } = Astro.props;
+// Changed: Added type definitions to fix TypeScript errors with prop indexing
+type ButtonSize = "xlarge" | "large" | "medium" | "small";
+type ButtonVariant = "black" | "green" | "green-inverted";
 
-const sizeClasses = {
+// Changed: Removed optional modifiers to ensure variant and size always have valid values for indexing
+// Henter parametrene fra Astro.props
+const {
+  variant = "black",
+  size = "large",
+  icon = false,
+} = Astro.props as {
+  variant: ButtonVariant;
+  size: ButtonSize;
+  icon: boolean;
+};
+
+const sizeClasses: Record<ButtonSize, string> = {
   xlarge:
     "text-[1.375rem] md:text-[1.5rem] lg:text-[2rem] font-semibold uppercase px-6 py-4",
   large:
@@ -13,7 +26,7 @@ const sizeClasses = {
     "text-[0.875rem] md:text-[1rem] lg:text-[1.125rem] font-semibold uppercase px-4 py-2",
 };
 
-const variantClasses = {
+const variantClasses: Record<ButtonVariant, string> = {
   black:
     "bg-[var(--color-black)] text-[var(--color-white)] hover:opacity-75 transition-all duration-300",
   green:

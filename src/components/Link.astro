@@ -1,17 +1,34 @@
 ---
+// Changed: Added type definitions to fix TypeScript errors with prop indexing
+type LinkSize = "xlarge" | "large" | "medium" | "small";
+type LinkVariant =
+  | "green"
+  | "green-inverted"
+  | "orange"
+  | "black"
+  | "purple"
+  | "yellow"
+  | "text"
+  | "textlink";
+
 // Henter parametrene fra Astro.props
 const {
   href = "#",
   target = "_self",
   variant = "green",
   size = "large",
-} = Astro.props;
+} = Astro.props as {
+  href?: string;
+  target?: string;
+  variant?: LinkVariant;
+  size?: LinkSize;
+};
 
 // Base styles for alle links - kun Tailwind classes
 const baseClasses =
   "inline-block w-fit h-fit rounded-[var(--radius-CTA)] break-words whitespace-normal min-w-fit max-w-full text-center";
 
-const sizeClasses = {
+const sizeClasses: Record<LinkSize, string> = {
   xlarge:
     "text-[1.375rem] md:text-[1.5rem] lg:text-[2rem] font-semibold uppercase px-[2.5rem] py-[1.25rem]",
   large:
@@ -22,7 +39,7 @@ const sizeClasses = {
     "text-[0.875rem] md:text-[1rem] font-medium uppercase px-[1rem] py-[0.5rem]",
 };
 
-const variantClasses = {
+const variantClasses: Record<LinkVariant, string> = {
   green:
     "bg-[var(--color-green--400)] text-[var(--color-green--100)] hover:bg-[var(--color-green--100)] hover:text-[var(--color-green--400)] transition-all duration-300",
 

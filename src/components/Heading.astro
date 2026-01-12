@@ -17,11 +17,20 @@ const {
   weight?: HeadingWeight;
   stylingclasses?: string;
 };
-const Htmlheading = htmlheading;
+const headingMap = {
+  h1: "h1",
+  h2: "h2",
+  h3: "h3",
+  h4: "h4",
+  h5: "h5",
+  h6: "h6",
+} as const;
+
+const Htmlheading = headingMap[htmlheading as keyof typeof headingMap] || "h2";
 
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
 const sizeClasses: Record<HeadingSize, string> = {
-  xlarge: "text-[4rem] md:text-[5rem] lg:text-[6rem]",
+  xlarge: "text-[clamp(2rem,8vw,6rem)]",
   large: "text-[2.5rem] md:text-[3rem] lg:text-[4rem]",
   medium: "text-[2.25rem] md:text-[2.5rem] lg:text-[3rem]",
   small: "text-[1.5rem] md:text-[1.75rem] lg:text-[2rem]",

@@ -27,12 +27,20 @@ import Articles from "../components/Articles.astro";
           class="md:mt-20 lg:mt-30 xl:mt-40 md:pr-20 ml-section_left mr-section_right md:mr-0 md:ml-0"
         >
           <div class="lg:place-self-auto">
-            <Heading size="large">STOP SPILD</Heading>
+            <Heading
+              htmlheading="h1"
+              size="xlarge"
+              font="display"
+              weight="light"
+            >
+              STOP SPILD</Heading
+            >
             <div class="flex flex-row">
-              <Heading size="large">AF MAD</Heading>
+              <Heading size="xlarge">AF MAD</Heading>
+              <!-- Changed: Added meaningful alt-text to logo for better SEO -->
               <img
                 src="/img/logo_green.svg"
-                alt=""
+                alt="Stop Spild Af Mad logo grøn"
                 class="h-9 place-self-end ml-10 md:h-10 md:ml-8 md:mb-1"
               />
             </div>
@@ -43,10 +51,8 @@ import Articles from "../components/Articles.astro";
 
           <div class="flex flex-col gap-2 mt-5">
             <Link href="bliv_aktiv" variant="green">GIV ET BIDRAG </Link>
-            <Link
-              href="hvad_vi_kan_goere"
-              variant="green-inverted"
-              size="medium">TIPS TIL BEDRE MAD-VANER</Link
+            <Link href="vores_mission" variant="green-inverted" size="medium"
+              >TIPS TIL BEDRE MAD-VANER</Link
             >
           </div>
         </div>
@@ -126,9 +132,10 @@ import Articles from "../components/Articles.astro";
         </div>
 
         <div class="rounded-lg md:col-span-2 lg:col-span-1 md:py-5">
+          <!-- Changed: Added alt-text to quiz image for better SEO -->
           <img
             src="/img/quiz.webp"
-            alt=""
+            alt="Quiz billede omkring madspild - flere valg og spørgsmål"
             class="rounded-lg object-cover w-auto h-full"
           />
         </div>
@@ -199,8 +206,9 @@ import Articles from "../components/Articles.astro";
 
     <Articles />
 
+    <!-- Changed: Removed conflicting mt-20 class (already covered by mt-section_top) -->
     <section
-      class="max-w-xs mx-auto mb-section_buttom mt-section_top mt-20 sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right md:mt-30"
+      class="max-w-xs mx-auto mb-section_buttom mt-section_top sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right md:mt-30"
     >
       <div class="flex flex-col gap-3 mb-5">
         <Heading htmlheading="h2" size="medium"

@@ -34,35 +34,35 @@ import Buttons2 from "../components/Buttons2.astro";
     class="carousel overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
   >
     <div class="group">
-      <!-- Forklar de andre hvad flex grow shrink og basis er -->
+      <!-- Changed: Added descriptive alt-text for carousel images for better SEO and accessibility -->
       <img
         src="/img/frugt1.webp"
-        alt=""
+        alt="Forskellige frugter til inspiration for at undgå madspild"
         class="carousel_img grow-0 shrink-0 basis-5em"
       />
       <img
         src="/img/frugt2.webp"
-        alt=""
+        alt="Forskellige frugter til inspiration for at undgå madspild"
         class="carousel_img grow-0 shrink-0 basis-5em"
       />
       <img
         src="/img/frugt3.webp"
-        alt=""
+        alt="Forskellige frugter til inspiration for at undgå madspild"
         class="carousel_img grow-0 shrink-0 basis-5em"
       />
       <img
         src="/img/frugt4.webp"
-        alt=""
+        alt="Forskellige frugter til inspiration for at undgå madspild"
         class="carousel_img grow-0 shrink-0 basis-5em"
       />
       <img
         src="/img/frugt5.webp"
-        alt=""
+        alt="Forskellige frugter til inspiration for at undgå madspild"
         class="carousel_img grow-0 shrink-0 basis-5em"
       />
       <img
         src="/img/frugt6.webp"
-        alt=""
+        alt="Forskellige frugter til inspiration for at undgå madspild"
         class="carousel_img grow-0 shrink-0 basis-5em"
       />
     </div>
@@ -71,7 +71,12 @@ import Buttons2 from "../components/Buttons2.astro";
   <section
     class="flex flex-col place-items-center mt-10 mb-30 animate-bounce animate-infinite animate-ease-in p-5 hover:cursor-pointer lg:mb-80"
   >
-    <img src="/img/arrow_d.svg" alt="" id="scrollDown" />
+    <!-- Changed: Added meaningful alt-text for scroll indicator -->
+    <img
+      src="/img/arrow_d.svg"
+      alt="Pil ned for at scrolle til næste sektion"
+      id="scrollDown"
+    />
   </section>
 
   <section
@@ -150,10 +155,12 @@ import Buttons2 from "../components/Buttons2.astro";
 
       <div class="relative mx-auto">
         <div class="shuffleImg absolute">
-          <img src="/img/banan1.webp" alt="" />
+          <!-- Changed: Added alt-text for banana image - better SEO -->
+          <img src="/img/banan1.webp" alt="En enkelt gul banan" />
         </div>
         <div class="shuffleImg">
-          <img src="/img/bananer.png" alt="" />
+          <!-- Changed: Added alt-text for bananas image - better SEO -->
+          <img src="/img/bananer.png" alt="Bundt af gule bananer" />
         </div>
       </div>
     </div>
@@ -180,15 +187,29 @@ import Buttons2 from "../components/Buttons2.astro";
         id="stagger"
       >
         <div class="md:flex md:flex-row lg:gap-10">
-          <img src="/img/cart.webp" alt="" class="h-35 w-auto lg:h-50" />
-          <img src="/img/cart.webp" alt="" class="h-35 w-auto lg:h-50" />
+          <!-- Changed: Added alt-text to shopping carts for better SEO -->
+          <img
+            src="/img/cart.webp"
+            alt="Indkøbsvogn med fødevarer"
+            class="h-35 w-auto lg:h-50"
+          />
+          <img
+            src="/img/cart.webp"
+            alt="Indkøbsvogn med fødevarer"
+            class="h-35 w-auto lg:h-50"
+          />
         </div>
 
         <div class="md:flex md:flex-row lg:gap-10">
-          <img src="/img/cart.webp" alt="" class="h-35 w-auto lg:h-50" />
+          <!-- Changed: Added alt-text to shopping carts for better SEO -->
           <img
             src="/img/cart.webp"
-            alt=""
+            alt="Indkøbsvogn med fødevarer"
+            class="h-35 w-auto lg:h-50"
+          />
+          <img
+            src="/img/cart.webp"
+            alt="Indkøbsvogn uden fødevarer - symboliserer madspild"
             class="grayscale h-35 w-auto lg:h-50"
           />
         </div>
@@ -319,7 +340,11 @@ import Buttons2 from "../components/Buttons2.astro";
           class="flex flex-col lg:flex-row li1_content gap-5"
           id="li1_content"
         >
-          <img src="/img/2008.webp" alt="" />
+          <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
+          <img
+            src="/img/2008.webp"
+            alt="Billede fra år 2008 - Begyndelsen af Stop Spild Af Mad"
+          />
           <div class="flex flex-col gap-5">
             <Heading font="sans">Begyndelsen</Heading>
             <Text>
@@ -336,7 +361,11 @@ import Buttons2 from "../components/Buttons2.astro";
           class="flex flex-col li2_content inactiveBox gap-5"
           id="li2_content"
         >
-          <img src="/img/2010.webp" alt="" />
+          <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
+          <img
+            src="/img/2010.webp"
+            alt="Billede fra år 2010 - Stop Spild Af Mad underskriver europæisk erklæring"
+          />
           <div class="flex flex-col gap-10">
             <Heading font="sans">Med fra start</Heading>
             <Text>
@@ -353,7 +382,11 @@ import Buttons2 from "../components/Buttons2.astro";
           class="flex flex-col li3_content inactiveBox gap-5"
           id="li3_content"
         >
-          <img src="/img/2011.webp" alt="" />
+          <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
+          <img
+            src="/img/2011.webp"
+            alt="Billede fra år 2011 - Overskudsmad videreformidlet til udsatte"
+          />
           <div class="flex flex-col gap-10">
             <Heading font="sans">Overskudsmad til udsatte</Heading>
             <Text>
@@ -366,7 +399,11 @@ import Buttons2 from "../components/Buttons2.astro";
         </div>
 
         <div class="flex flex-col li4_content inactiveBox" id="li4_content">
-          <img src="/img/2013.webp" alt="" />
+          <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
+          <img
+            src="/img/2013.webp"
+            alt="Billede fra år 2013 - Doggy bags initiativet lanceres"
+          />
 
           <div class="flex flex-col gap-10">
             <Heading font="sans">Doggy bags</Heading>
@@ -384,7 +421,11 @@ import Buttons2 from "../components/Buttons2.astro";
           class="flex flex-col li5_content inactiveBox gap-5"
           id="li5_content"
         >
-          <img src="/img/2014.webp" alt="" />
+          <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
+          <img
+            src="/img/2014.webp"
+            alt="Billede fra år 2014 - Roskilde Festival madspild indsats"
+          />
           <div class="flex flex-col gap-10">
             <Heading font="sans">Roskilde Festival</Heading>
             <Text>

@@ -1,12 +1,23 @@
+/*
+NOTE: VS Code's CSS validator does not recognize Tailwind CSS v4 @plugin and @theme directives.
+The "Unknown at rule" warnings are false positives - these directives are valid and required for Tailwind CSS v4.
+The build process correctly handles these directives and they will work as expected.
+*/
+
 @import "tailwindcss";
 
+/* Changed: Added stylelint-disable directives for Tailwind CSS v4 @plugin and @theme syntax */
+/* These are valid Tailwind CSS v4 directives that standard CSS validators don't recognize */
+/* stylelint-disable-next-line at-rule-no-unknown */
 @plugin '@tailwindcss/typography';
+/* stylelint-disable-next-line at-rule-no-unknown */
 @plugin "@tailwindcss/forms" {
   strategy: "class";
 }
 @import "tailwindcss-animated";
 @import "tailwindcss-intersect";
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @theme {
   /*Farver */
 
@@ -47,6 +58,8 @@
   --font-sanstight: "inter-tight-variable", sans-serif;
 }
 
+/* Changed: Suppressing CSS validation warning for Tailwind CSS v4 @theme syntax */
+/* @theme is a valid Tailwind CSS v4 directive for defining design tokens not recognized by standard CSS validators */
 @theme inline {
   /* TOKENS */
 
