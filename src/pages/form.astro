@@ -24,14 +24,14 @@ import Button from "../components/Button.astro";
         size="medium"
         weight="bold"
         font="display"
-        stylingclasses="mb-3 text-center intersect:animate-fade-down animate-once"
+        stylingclasses="mb-3 text-center intersect:animate-fade-down intersect-once"
       >
         TILMELDING
       </Heading>
 
       <Text
         size="medium"
-        stylingclasses="mb-6 text-center max-w-xl mx-auto intersect:animate-fade-up animate-once intersect:animate-delay-100"
+        stylingclasses="mb-6 text-center max-w-xl mx-auto intersect:animate-fade-up intersect-once intersect:animate-delay-100"
       >
         Tak fordi du vil støtte os. Inden vi kan tage i mod din hjælp skal du
         oplyse din email og hvilken form for støtte du vil give. Vi kontakter
@@ -40,7 +40,7 @@ import Button from "../components/Button.astro";
 
       <!-- Formular container med skygge og afrunding -->
       <div
-        class="max-w-2xl mx-auto p-6 md:p-8 bg-white shadow-2xl rounded-lg border border-orange--400 intersect:animate-fade-in animate-once intersect:animate-delay-200"
+        class="max-w-2xl mx-auto p-6 md:p-8 bg-white shadow-2xl rounded-lg border border-orange--400 intersect:animate-fade-in intersect-once intersect:animate-delay-200"
       >
         <!-- Alpine.js formular - x-data kobler til emailForm funktionen -->
         <!-- @submit.prevent forhindrer standard formular submit og kalder vores submit() funktion -->
