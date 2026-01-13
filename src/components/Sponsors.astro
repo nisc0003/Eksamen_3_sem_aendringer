@@ -17,10 +17,7 @@ const { time = "10s" } = Astro.props;
      Roterende sponsor/partner/ambassadør logoer
      Tre parallelle rækker med infinite scroll
      ============================================ -->
-<section
-  class:list={[bg, defaultclasses]}
-  data-animate-intersect="animate-fade-left animate-once"
->
+<section class:list={[bg, defaultclasses]}>
   <section class="group">
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor1}</Text>

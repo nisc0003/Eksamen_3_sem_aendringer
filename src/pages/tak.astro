@@ -21,7 +21,7 @@ import Link from "../components/Link.astro";
     <img
       src="/img/logo_full_green.svg"
       alt="Stop Spild Af Mad logo"
-      data-animate-intersect="animate-fade-down animate-once"
+      class="intersect:animate-fade-down animate-once"
     />
   </section>
 
@@ -30,20 +30,17 @@ import Link from "../components/Link.astro";
        Bestæftigelse på tilmelding
        ============================================ -->
   <section
-    class="py-20 bg-(--color-green--400) place-items-center mb-section_buttom mt-section_top"
-    data-animate-intersect="animate-fade-up animate-once"
+    class="py-20 bg-(--color-green--400) place-items-center mb-section_buttom mt-section_top intersect:animate-fade-up animate-once"
   >
     <Heading
       size="xlarge"
-      stylingclasses="text-green-100"
-      data-animate-intersect="animate-fade-down animate-once"
+      stylingclasses="text-green-100 intersect:animate-fade-down animate-once"
     >
       TAK FOR DIN STØTTE
     </Heading>
     <Text
       size="xlarge"
-      stylingclasses="text-green-100"
-      data-animate-intersect="animate-fade-up animate-once animate-delay-100"
+      stylingclasses="text-green-100 intersect:animate-fade-up animate-once intersect:animate-delay-100"
       >Vi kontakter dig på mail inden for 4-8 hverdage</Text
     >
   </section>
@@ -53,8 +50,7 @@ import Link from "../components/Link.astro";
        Links til forside og bliv aktiv
        ============================================ -->
   <section
-    class="flex flex-col place-self-center place-items-center gap-5"
-    data-animate-intersect="animate-fade-in animate-once"
+    class="flex flex-col place-self-center place-items-center gap-5 intersect:animate-fade-in animate-once"
   >
     <Text>Gå tilbage til:</Text>
     <div class="flex flex-row gap-5">

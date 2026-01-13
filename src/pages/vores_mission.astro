@@ -21,19 +21,19 @@ import Articles from "../components/Articles.astro";
        Overskrift med navigation til tips og historie
        ============================================ -->
   <section
-    class="flex-col flex lg:flex-row mr-section_right ml-section_left place-content-between top mb-10 mt-15 animate-fade-in"
-    data-animate-intersect="animate-fade-down animate-once"
+    class="flex-col flex lg:flex-row mr-section_right ml-section_left place-content-between top mb-10 mt-15"
   >
     <Heading
       htmlheading="h2"
       size="medium"
       stylingclasses="mb-6 lg:max-w-lg"
-      data-animate-intersect="animate-fade-right animate-once"
     >
       DELTAG I KAMPEN I MOD MADSPILD
     </Heading>
 
-    <div class="flex flex-col gap-3 lg:items-end">
+    <div
+      class="flex flex-col gap-3 lg:items-end"
+    >
       <div onclick="ScrollToTips()">
         <Link variant="yellow" size="small"> LÆS OM VORES TIPS </Link>
       </div>
@@ -106,7 +106,6 @@ import Articles from "../components/Articles.astro";
     <div
       class="mx-auto max-w-sm flex flex-col place-content-between md:max-w-xl lg:max-w-4xl lg:mb-40"
       id="tips"
-      data-animate-intersect="animate-fade-up animate-once"
     >
       <div class="lg:grid lg:grid-cols-2 lg:gap-5">
         <div class="lg:col-2">
@@ -114,7 +113,6 @@ import Articles from "../components/Articles.astro";
             htmlheading="h2"
             size="medium"
             stylingclasses="mb-6"
-            data-animate-intersect="animate-fade-down animate-once"
           >
             Hvad kan vi gøre?
           </Heading>
@@ -174,10 +172,9 @@ import Articles from "../components/Articles.astro";
        ============================================ -->
   <section
     class="mb-section_buttom mt-section_top mx-auto max-w-sm flex flex-col md:max-w-4xl lg:max-w-4xl"
-    data-animate-intersect="animate-fade-up animate-once"
   >
     <div id="tip1" class="lg:grid lg:grid-cols-2 lg:gap-20 lg:mb-40">
-      <div data-animate-intersect="animate-fade-right animate-once">
+      <div>
         <Link variant="green-inverted" size="small">Tip 1</Link>
         <Heading
           htmlheading="h2"
@@ -202,7 +199,6 @@ import Articles from "../components/Articles.astro";
 
       <div
         class="relative mx-auto"
-        data-animate-intersect="animate-fade-left animate-once animate-delay-200"
       >
         <div class="shuffleImg absolute">
           <!-- Changed: Added alt-text for banana image - better SEO -->
@@ -222,7 +218,6 @@ import Articles from "../components/Articles.astro";
     <section
       class="mx-auto mb-section_buttom mt-section_top max-w-sm md:max-w-xl lg:max-w-4xl lg:mx-0 lg:mb-40"
       id="tip2"
-      data-animate-intersect="animate-fade-up animate-once"
     >
       <Link variant="orange" size="small">TIP 2</Link>
       <Heading
@@ -230,7 +225,6 @@ import Articles from "../components/Articles.astro";
         font="sans"
         size="medium"
         stylingclasses="my-6"
-        data-animate-intersect="animate-fade-down animate-once"
       >
         Køb in med omtanke
       </Heading>
@@ -284,7 +278,6 @@ import Articles from "../components/Articles.astro";
     <section
       class="mb-section_buttom mt-section_top mx-auto max-w-sm md:max-w-xl lg:max-w-4xl lg:mb-80"
       id="tip3"
-      data-animate-intersect="animate-fade-up animate-once"
     >
       <div class="">
         <div class="">
@@ -294,7 +287,6 @@ import Articles from "../components/Articles.astro";
             font="sans"
             size="small"
             stylingclasses="my-6"
-            data-animate-intersect="animate-fade-down animate-once"
           >
             Doggy Bags
           </Heading>
@@ -334,7 +326,6 @@ import Articles from "../components/Articles.astro";
 
           <div
             class=""
-            data-animate-intersect="animate-fade-left animate-once animate-delay-200"
           >
             <div class="flex flex-col gap-5 md:h-100 lg:h-125">
               <div id="mapContainer" class="map-container">
@@ -365,18 +356,15 @@ import Articles from "../components/Articles.astro";
   <section
     class="mx-auto max-w-sm md:max-w-xl text-center mb-section_buttom mt-section_top lg:max-w-4xl"
     id="historie"
-    data-animate-intersect="animate-fade-in animate-once"
   >
     <Heading
       htmlheading="h1"
       size="medium"
       stylingclasses="mb-6"
-      data-animate-intersect="animate-fade-down animate-once"
     >
       VORES HISTORIE
     </Heading>
     <Text
-      data-animate-intersect="animate-fade-up animate-once animate-delay-100"
       >Vi er meget stolte af hvor meget Stop Spild Af Mad har mulighed for at
       udrette.
       <br />
@@ -390,7 +378,6 @@ import Articles from "../components/Articles.astro";
        ============================================ -->
   <section
     class="mx-auto max-w-sm md:max-w-xl lg:mr-section_right lg:ml-section_left"
-    data-animate-intersect="animate-fade-left animate-once"
   >
     <div
       class="tidslinje sm:flex sm:flex-col lg:flex-row lg:max-h-100 lg:w-auto"

@@ -20,16 +20,20 @@ import Articles from "../components/Articles.astro";
          Hovedbanner med hero billede og CTA knapper
          ============================================ -->
     <section
-      class="grid md:h-screen md:overflow-hidden -mt-16 lg:-mt-19 xl:-mt-23 2xl:-mt-28 md:mb-0 animate-fade-in"
-      data-animate-intersect="animate-fade-in"
+      class="grid md:h-screen md:overflow-hidden -mt-16 lg:-mt-19 xl:-mt-23 2xl:-mt-28 md:mb-0"
+      x-data="{ scrollY: 0 }"
+      @scroll.window="scrollY = window.scrollY"
     >
       <div class="mb-section_buttom grid md:grid-cols-2">
-        <div class="place-self-left md:h-screen md:overflow-hidden">
+        <div
+          class="place-self-left md:h-screen md:overflow-hidden intersect:animate-fade-right animate-once intersect:animate-duration-1000"
+        >
           <!-- PERFORMANCE: Hero image - eager load, optimized dimensions -->
           <img
             src="/img/hero.webp"
             alt="Hånd der holder en pose appelsiner - Stop madspild"
-            class="w-full pr-10 md:h-full md:object-cover md:object-top"
+            class="w-full pr-10 md:h-full md:object-cover md:object-top animate-fade-right animate-once animate-duration-1000 animate-ease-out"
+            x-bind:style="`transform: translateY(${scrollY * 0.15}px)`"
             width="461"
             height="731"
             loading="eager"
@@ -39,7 +43,7 @@ import Articles from "../components/Articles.astro";
         </div>
 
         <div
-          class="md:pr-20 ml-section_left mr-section_right md:mr-0 md:ml-0 md:flex md:flex-col md:justify-center"
+          class="md:pr-20 ml-section_left mr-section_right md:mr-0 md:ml-0 md:flex md:flex-col md:justify-center animate-fade-down animate-once animate-duration-700"
         >
           <div class="lg:place-self-auto">
             <Heading
@@ -62,13 +66,16 @@ import Articles from "../components/Articles.astro";
               />
             </div>
           </div>
-          <Text size="large" weight="light"
+          <Text
+            size="large"
+            weight="light"
+            stylingclasses="animate-fade-up animate-once animate-duration-700 animate-delay-300"
             >Danmarks største bevægelse i mod madspild</Text
           >
 
           <!-- ANIMATION: CTA buttons slide-up -->
           <div
-            class="flex flex-col gap-2 mt-5 animate-fade-up animate-delay-300"
+            class="flex flex-col gap-2 mt-5 animate-fade-up animate-once animate-duration-700 animate-delay-500"
           >
             <Link href="bliv_aktiv" variant="green">GIV ET BIDRAG </Link>
             <Link href="vores_mission" variant="green-inverted" size="medium"
@@ -99,15 +106,9 @@ import Articles from "../components/Articles.astro";
          Gul baggrund med quiz spørgsmål og billede
          ============================================ -->
     <section
-      class="max-w-xs flex flex-col mb-section_buttom mt-section_top gap-5 mx-auto sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right"
-      data-animate-intersect="animate-fade-in animate-once"
+      class="max-w-xs flex flex-col mb-section_buttom mt-section_top gap-5 mx-auto sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right intersect:animate-fade-right intersect-once intersect:animate-duration-1000 intersect:animate-delay-400"
     >
-      <Heading
-        htmlheading="h2"
-        size="medium"
-        data-animate-intersect="animate-fade-down animate-once"
-        >QUIZ DIG SELV I MADSPILD</Heading
-      >
+      <Heading htmlheading="h2" size="medium">QUIZ DIG SELV I MADSPILD</Heading>
       <div
         class="flex-row gap-5 -mt-5 md:grid md:grid-cols-5 lg:grid-cols-2 lg:gap-10"
       >
@@ -186,21 +187,12 @@ import Articles from "../components/Articles.astro";
          Om organisationen, historie og partnere
          ============================================ -->
     <section
-      class="max-w-xs flex flex-col gap-8 mb-section_buttom mt-section_top mx-auto sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right"
-      data-animate-intersect="animate-fade-left animate-once"
+      class="max-w-xs flex flex-col gap-8 mb-section_buttom mt-section_top mx-auto sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right intersect:animate-fade-left animate-once intersect:animate-duration-1000"
     >
-      <Heading
-        htmlheading="h2"
-        size="medium"
-        data-animate-intersect="animate-fade-right animate-once"
-        >HVEM ER VI?</Heading
-      >
+      <Heading htmlheading="h2" size="medium">HVEM ER VI?</Heading>
 
       <div class="lg:grid lg:grid-cols-2 lg:gap-10">
-        <div
-          class="flex flex-col gap-3 md:mb-10 lg:max-w-md lg:mb-0"
-          data-animate-intersect="animate-fade-up animate-once animate-delay-100"
-        >
+        <div class="flex flex-col gap-3 md:mb-10 lg:max-w-md lg:mb-0">
           <Text weight="light"
             >Stop Spild Af Mad er en <strong
               ><span style="font-weight: 600;">non-profit</span></strong
@@ -267,19 +259,15 @@ import Articles from "../components/Articles.astro";
          Præmier og udmærkelser modtaget
          ============================================ -->
     <section
-      class="max-w-xs mx-auto mb-section_buttom mt-section_top sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right"
-      data-animate-intersect="animate-fade-right animate-once"
+      class="max-w-xs mx-auto mb-section_buttom mt-section_top sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right intersect:animate-fade-left animate-once intersect:animate-duration-1000"
     >
       <div class="flex flex-col gap-3 mb-5">
-        <Heading
-          htmlheading="h2"
-          size="medium"
-          data-animate-intersect="animate-fade-down animate-once"
+        <Heading htmlheading="h2" size="medium"
           >PRISER OG ANDERKENDELSER</Heading
         >
         <Text
           weight="lght"
-          data-animate-intersect="animate-fade-up animate-once animate-delay-100"
+          stylingclasses="intersect:animate-fade-up animate-once intersect:animate-delay-100"
           >Stop Spild Af Mad og dens stifter Selina Juul har fået en lang række
           priser og anerkendelser, bl.a.:</Text
         >
@@ -356,8 +344,7 @@ import Articles from "../components/Articles.astro";
          Lilla baggrund med vigtige nøgletal
          ============================================ -->
     <section
-      class="bg-(--color-purple--100) w-full py-5 lg:grid lg:grid-cols-2 lg:gap-5 lg:px-35 shadow-lg"
-      data-animate-intersect="animate-fade-up animate-once"
+      class="bg-(--color-purple--100) w-full py-5 lg:grid lg:grid-cols-2 lg:gap-5 lg:px-35 shadow-lg intersect:animate-fade-up animate-once"
     >
       <div
         class="max-w-xs mx-auto grid grid-cols-2 mb-5 sm:max-w-md sm:gap-10 md:max-w-6xl md:ml-section_left md:mr-section_right lg:mx-0"
