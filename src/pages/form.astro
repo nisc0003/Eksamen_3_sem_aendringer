@@ -6,9 +6,15 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 ---
 
-<MainLayout title="Kontakt os">
-  <!-- Hovedsektion med tilmeldingsformular -->
-  <section class="mr-section_right ml-section_left pb-20 pt-10">
+<!-- ========================================
+     SEO: Custom description for contact form
+     ======================================== -->
+<MainLayout
+  title="Kontakt Os"
+  description="Kontakt Stop Spild Af Mad og bliv en del af kampen mod madspild. Tilmeld dig som frivillig, støttemedlem eller samarbejdspartner."
+>
+  <!-- ANIMATION: Form section fades in on page load -->
+  <section class="mr-section_right ml-section_left pb-20 pt-10 animate-fade-in">
     <div class="max-w-3xl mx-auto">
       <Heading
         htmlheading="h1"

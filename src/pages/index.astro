@@ -3,28 +3,40 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
-import Card from "../components/Card.astro";
+
 import Sponsors from "../components/Sponsors.astro";
-import Button2 from "../components/Buttons2.astro";
+/* CODE CLEANUP: Removed unused Button2 import */
 import Articles from "../components/Articles.astro";
 ---
 
-<MainLayout title="Stop Spild Af Mad">
+<!-- SEO: Homepage description -->
+<MainLayout
+  title="Forside"
+  description="Stop Spild Af Mad er Danmarks største bevægelse mod madspild. Bliv en del af kampen og lær hvordan du kan gøre en forskel i hverdagen."
+>
   <main>
-    <section class="grid">
-      <div
-        class="mb-section_buttom grid md:grid-cols-2 -mt-16 lg:-mt-19 xl:-mt-24 2xl:-mt-28"
-      >
-        <div class="place-self-left">
+    <!-- ANIMATION: Hero fade-in -->
+    <section
+      class="grid md:h-screen md:overflow-hidden -mt-16 lg:-mt-19 xl:-mt-23 2xl:-mt-28 md:mb-0 animate-fade-in"
+      data-animate-intersect="animate-fade-in"
+    >
+      <div class="mb-section_buttom grid md:grid-cols-2">
+        <div class="place-self-left md:h-screen md:overflow-hidden">
+          <!-- PERFORMANCE: Hero image - eager load, optimized dimensions -->
           <img
             src="/img/hero.webp"
-            alt="hånd der holder en pose abelsiner"
-            class="w-full pr-10"
+            alt="Hånd der holder en pose appelsiner - Stop madspild"
+            class="w-full pr-10 md:h-full md:object-cover md:object-top"
+            width="461"
+            height="731"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
           />
         </div>
 
         <div
-          class="md:mt-20 lg:mt-30 xl:mt-40 md:pr-20 ml-section_left mr-section_right md:mr-0 md:ml-0"
+          class="md:pr-20 ml-section_left mr-section_right md:mr-0 md:ml-0 md:flex md:flex-col md:justify-center"
         >
           <div class="lg:place-self-auto">
             <Heading
@@ -37,11 +49,13 @@ import Articles from "../components/Articles.astro";
             >
             <div class="flex flex-row">
               <Heading size="xlarge">AF MAD</Heading>
-              <!-- Changed: Added meaningful alt-text to logo for better SEO -->
+              <!-- CLS: Explicit dimensions prevent layout shift -->
               <img
                 src="/img/logo_green.svg"
                 alt="Stop Spild Af Mad logo grøn"
                 class="h-9 place-self-end ml-10 md:h-10 md:ml-8 md:mb-1"
+                width="40"
+                height="40"
               />
             </div>
           </div>
@@ -49,7 +63,10 @@ import Articles from "../components/Articles.astro";
             >Danmarks største bevægelse i mod madspild</Text
           >
 
-          <div class="flex flex-col gap-2 mt-5">
+          <!-- ANIMATION: CTA buttons slide-up -->
+          <div
+            class="flex flex-col gap-2 mt-5 animate-fade-up animate-delay-300"
+          >
             <Link href="bliv_aktiv" variant="green">GIV ET BIDRAG </Link>
             <Link href="vores_mission" variant="green-inverted" size="medium"
               >TIPS TIL BEDRE MAD-VANER</Link
@@ -70,31 +87,17 @@ import Articles from "../components/Articles.astro";
       sponsor6="NORDEA"
     />
 
-    <!-- <section class="mb-12">
-      <Heading htmlheading="h1" size="large" stylingclasses="mb-4">
-        Stop Spild Af Mad
-      </Heading>
-      <Text>
-        Sammen kan vi gøre en forskel. Udforsk hvordan du kan bidrage til kampen
-        mod madspild.
-      </Text>
-    </section> -->
-
-    <!-- <section class="mb-12">
-      <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
-        Kom i gang
-      </Heading>
-    </section> -->
-
+    <!-- ANIMATION: Quiz section fade-in on scroll -->
     <section
       class="max-w-xs flex flex-col mb-section_buttom mt-section_top gap-5 mx-auto sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right"
+      data-animate-intersect="animate-fade-in animate-once"
     >
       <Heading htmlheading="h2" size="medium">QUIZ DIG SELV I MADSPILD</Heading>
       <div
         class="flex-row gap-5 -mt-5 md:grid md:grid-cols-5 lg:grid-cols-2 lg:gap-10"
       >
         <div
-          class="bg-(--color-yellow--100) flex flex-row rounded-lg my-5 px-5 md:col-span-3 lg:col-span-1 lg:px-10"
+          class="bg-(--color-yellow--100) flex flex-row rounded-lg my-5 px-5 md:col-span-3 lg:col-span-1 lg:px-10 shadow-lg"
         >
           <section
             class="max-w-xs flex flex-col gap-10 place-content-center mx-auto sm:max-w-sm md:max-w-md"
@@ -132,11 +135,15 @@ import Articles from "../components/Articles.astro";
         </div>
 
         <div class="rounded-lg md:col-span-2 lg:col-span-1 md:py-5">
-          <!-- Changed: Added alt-text to quiz image for better SEO -->
+          <!-- PERFORMANCE: Quiz image lazy load -->
           <img
             src="/img/quiz.webp"
             alt="Quiz billede omkring madspild - flere valg og spørgsmål"
             class="rounded-lg object-cover w-auto h-full"
+            width="358"
+            height="405"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
@@ -155,8 +162,10 @@ import Articles from "../components/Articles.astro";
       sponsor6="TIM VLADIMIR"
     />
 
+    <!-- ANIMATION: 'Hvem er vi' slide-in -->
     <section
       class="max-w-xs flex flex-col gap-8 mb-section_buttom mt-section_top mx-auto sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right"
+      data-animate-intersect="animate-fade-left animate-once"
     >
       <Heading htmlheading="h2" size="medium">HVEM ER VI?</Heading>
 
@@ -185,7 +194,16 @@ import Articles from "../components/Articles.astro";
         </div>
 
         <div class="flex flex-col place-content-between gap-5">
-          <img src="/img/index_frugt.webp" alt="" class="" />
+          <!-- PERFORMANCE: Lazy load fruit image -->
+          <img
+            src="/img/index_frugt.webp"
+            alt="Frisk frugt og grøntsager - Stop madspild"
+            class=""
+            width="600"
+            height="400"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="place-self-center">
             <Link href="/wip" variant="orange">LÆS MERE OM OS</Link>
           </div>
@@ -206,9 +224,10 @@ import Articles from "../components/Articles.astro";
 
     <Articles />
 
-    <!-- Changed: Removed conflicting mt-20 class (already covered by mt-section_top) -->
+    <!-- ANIMATION: Prizes section fade-in -->
     <section
-      class="max-w-xs mx-auto mb-section_buttom mt-section_top sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right md:mt-30"
+      class="max-w-xs mx-auto mb-section_buttom mt-section_top sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right"
+      data-animate-intersect="animate-fade-right animate-once"
     >
       <div class="flex flex-col gap-3 mb-5">
         <Heading htmlheading="h2" size="medium"
@@ -222,47 +241,74 @@ import Articles from "../components/Articles.astro";
 
       <Link href="wip" variant="purple">SE FLERE PRISER</Link>
 
+      <!-- PERFORMANCE: Carousel images lazy load -->
       <section class="carousel [scrollbar-width:none] md:mt-5">
         <div class="group">
           <img
             src="/img/pris1.webp"
-            alt=""
+            alt="Pris 1 - Stop Spild Af Mad anerkendelse"
             class="carousel_img grow-0 shrink-0 basis-5em"
+            loading="lazy"
+            width="336"
+            height="148"
+            decoding="async"
           />
           <img
             src="/img/pris2.webp"
-            alt=""
+            alt="Pris 2 - Stop Spild Af Mad anerkendelse"
             class="carousel_img grow-0 shrink-0 basis-5em"
+            loading="lazy"
+            width="200"
+            height="200"
+            decoding="async"
           />
           <img
             src="/img/pris3.webp"
-            alt=""
+            alt="Pris 3 - Stop Spild Af Mad anerkendelse"
             class="carousel_img grow-0 shrink-0 basis-5em"
+            loading="lazy"
+            width="200"
+            height="200"
+            decoding="async"
           />
         </div>
 
-        <div class="group">
+        <div class="group" aria-hidden="true">
           <img
             src="/img/pris1.webp"
             alt=""
             class="carousel_img grow-0 shrink-0 basis-5em"
+            loading="lazy"
+            width="336"
+            height="148"
+            decoding="async"
           />
           <img
             src="/img/pris2.webp"
             alt=""
             class="carousel_img grow-0 shrink-0 basis-5em"
+            loading="lazy"
+            width="200"
+            height="200"
+            decoding="async"
           />
           <img
             src="/img/pris3.webp"
             alt=""
             class="carousel_img grow-0 shrink-0 basis-5em"
+            loading="lazy"
+            width="200"
+            height="200"
+            decoding="async"
           />
         </div>
       </section>
     </section>
 
+    <!-- ANIMATION: Statistics fade-up -->
     <section
-      class="bg-(--color-purple--100) w-full py-5 lg:grid lg:grid-cols-2 lg:gap-5 lg:px-35"
+      class="bg-(--color-purple--100) w-full py-5 lg:grid lg:grid-cols-2 lg:gap-5 lg:px-35 shadow-lg"
+      data-animate-intersect="animate-fade-up animate-once"
     >
       <div
         class="max-w-xs mx-auto grid grid-cols-2 mb-5 sm:max-w-md sm:gap-10 md:max-w-6xl md:ml-section_left md:mr-section_right lg:mx-0"

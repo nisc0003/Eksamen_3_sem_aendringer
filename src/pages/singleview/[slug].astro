@@ -138,9 +138,14 @@ const media = item ? resolveMedia(item) : null;
 // If slug not in map, default to green theme with all required properties (bg, accent, light, textColor)
 // This ensures TypeScript knows all properties exist on the theme object
 const currentTheme = slug ? colorThemeMap[slug] : { bg: "var(--color-green--400)", accent: "var(--color-green--200)", light: "var(--color-green--100)", textColor: "text-white" };
+
+/* ========================================
+   SEO: Dynamic description based on content
+   ======================================== */
+const pageDescription = item?.textfield1 || "Lær mere om hvordan du kan støtte Stop Spild Af Mad og være med til at gøre en forskel i kampen mod madspild.";
 ---
 
-<MainLayout title={item?.title || "Indhold findes ikke"}>
+<MainLayout title={item?.title || "Indhold findes ikke"} description={pageDescription}>
   {!item ? (
     <div class="mr-section_right ml-section_left mt-section_top mb-section_buttom max-w-xl mx-auto">
       <div class="bg-yellow--100 radius-contentBox p-8 md:p-10 shadow-md text-center">
@@ -155,15 +160,14 @@ const currentTheme = slug ? colorThemeMap[slug] : { bg: "var(--color-green--400)
     </div>
   ) : (
     <>
-      <!-- Changed: Hero section with back button and page title -->
-      <div class="mr-section_right ml-section_left mt-section_top mb-8 grid gap-16">
+      <!-- ANIMATION: Hero section fades in on page load -->
+      <div class="mr-section_right ml-section_left mt-section_top mb-8 grid gap-16 animate-fade-in">
         <Link href="/bliv_aktiv" variant="black" stylingclasses="inline-block">← Tilbage</Link>
         <Heading htmlheading="h1" size="large">{item.title}</Heading>
       </div>
 
-      <!-- Changed: Main content section with dynamic background color based on slug theme -->
-      <!-- Uses inline style to apply CSS custom property from colorThemeMap -->
-      <section style={`background-color: ${currentTheme.bg}`}>
+      <!-- SEO & ANIMATION: Main content with dynamic background and fade-up animation -->
+      <section style={`background-color: ${currentTheme.bg}`} data-animate-intersect="animate-fade-up animate-once">
         <div class="mr-section_right ml-section_left py-12 md:py-16 lg:py-20">
           <!-- Changed: Modified layout to handle varying content lengths professionally -->
           <!-- Removed lg:items-stretch and added lg:items-start for better vertical alignment -->
@@ -176,8 +180,15 @@ const currentTheme = slug ? colorThemeMap[slug] : { bg: "var(--color-green--400)
               <!-- Maintains full stacking behavior on mobile, side-by-side on desktop -->
               <div class="radius-contentBox overflow-hidden shadow-xl border-4 border-white/20 lg:sticky lg:top-24 lg:self-start">
                 {media.type === "image" && (
-                  <!-- Changed: Adjusted image to maintain aspect ratio without stretching -->
-                  <img src={media.src} alt={item.title} class="w-full h-auto object-cover" />
+                  <!-- SEO & PERFORMANCE: Alt-text and lazy loading for images -->
+                  <img 
+                    src={media.src} 
+                    alt={item.title} 
+                    class="w-full h-auto object-cover" 
+                    width="800" 
+                    height="600" 
+                    loading="lazy"
+                  />
                 )}
                 {media.type === "iframe" && (
                   <!-- Changed: Ensured iframe maintains 16:9 aspect ratio without distortion -->

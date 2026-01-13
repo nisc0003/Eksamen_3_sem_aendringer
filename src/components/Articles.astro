@@ -5,9 +5,11 @@ import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 ---
 
+<!-- ANIMATION: Articles fade-in on scroll -->
 <section
   class="max-w-sm flex flex-col gap-5 mb-section_buttom mt-section_top mx-auto sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right lg:mr-section_right lg:ml-section_left"
   id="articles-section"
+  data-animate-intersect="animate-fade-up animate-once"
 >
   <Heading size="small" font="sans">LÆR MERE OM KAMPEN IMOD MADSPILD</Heading>
 
@@ -17,7 +19,7 @@ import Link from "../components/Link.astro";
     <div
       class="w-full lg:w-1/2 aspect-video rounded-lg overflow-hidden bg-black relative"
     >
-      <!-- BBC: Image + Play Button Container -->
+      <!-- PERFORMANCE: BBC video lazy loads on click -->
       <div
         id="bbc_thumbnail_container"
         class="w-full h-full relative"
@@ -25,28 +27,35 @@ import Link from "../components/Link.astro";
       >
         <img
           src="/img/bbc.webp"
-          alt="BBC video thumbnail"
+          alt="BBC video om Stop Spild Af Mad - Klik for at afspille"
           id="bbc_vid"
           class="media-img w-full h-full object-cover cursor-pointer hover:brightness-110 transition-all"
           data-media="bbc"
+          width="640"
+          height="360"
+          loading="lazy"
         />
         <img
           src="/img/play_green.svg"
-          alt="Afspil video"
+          alt="Afspil video ikon"
           id="bbc_vid2"
           class="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 cursor-pointer hover:scale-125 transition-all"
           data-media="bbc"
+          width="64"
+          height="64"
+          loading="lazy"
         />
       </div>
 
       <!-- BBC iframe -->
       <iframe
         id="bbc_video"
-        src="https://www.youtube.com/embed/KlFNp88T2cA?si=_a686rnqOCrMVhRZ"
+        data-src="https://www.youtube.com/embed/KlFNp88T2cA?si=_a686rnqOCrMVhRZ&autoplay=1"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
+        loading="lazy"
         class="video hidden w-full h-full"
         data-media="bbc"
         style="border: none"></iframe>
@@ -210,6 +219,11 @@ import Link from "../components/Link.astro";
 
     const showBBCVideo = () => {
       if (!bbcThumbnailContainer || !bbcVideo) return;
+      // PERFORMANCE: Only load YouTube iframe when user clicks
+      if (bbcVideo.getAttribute("data-src")) {
+        bbcVideo.setAttribute("src", bbcVideo.getAttribute("data-src"));
+        bbcVideo.removeAttribute("data-src");
+      }
       bbcThumbnailContainer.classList.add("hidden");
       bbcVideo.classList.remove("hidden");
     };

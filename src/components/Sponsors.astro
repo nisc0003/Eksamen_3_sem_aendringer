@@ -12,66 +12,122 @@ const defaultclasses = "carousel mb-section_buttom mt-section_top";
 const { time = "10s" } = Astro.props;
 ---
 
-<section class:list={[bg, defaultclasses]}>
+<!-- ANIMATION: Sponsors slide-in -->
+<section
+  class:list={[bg, defaultclasses]}
+  data-animate-intersect="animate-fade-left animate-once"
+>
   <section class="group">
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor1}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <!-- CLS: Diamond dimensions prevent shift -->
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor2}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor3}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor4}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor5}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor6}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
       <img
         src="/img/diamond.svg"
         alt=""
         aria-hidden="true"
         class="lastDiamond"
+        width="16"
+        height="16"
       />
     </div>
   </section>
@@ -79,62 +135,113 @@ const { time = "10s" } = Astro.props;
   <section class="group">
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor1}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor2}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor3}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor4}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor5}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor6}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
       <img
         src="/img/diamond.svg"
         alt=""
         aria-hidden="true"
         class="lastDiamond"
+        width="16"
+        height="16"
       />
     </div>
   </section>
@@ -142,8 +249,13 @@ const { time = "10s" } = Astro.props;
   <section class="group">
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor1}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
@@ -153,47 +265,83 @@ const { time = "10s" } = Astro.props;
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor3}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor4}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor5}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-      <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+      <img
+        src="/img/diamond.svg"
+        alt=""
+        aria-hidden="true"
+        width="16"
+        height="16"
+      />
     </div>
 
     <Text weight="light" size="small">{tag}</Text>
-    <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
-    <img src="/img/diamond.svg" alt="" aria-hidden="true" />
+    <img
+      src="/img/diamond.svg"
+      alt=""
+      aria-hidden="true"
+      width="16"
+      height="16"
+    />
 
     <div class="flex flex-row carousel_sponsor whitespace-nowrap">
       <Text weight="light" size="small">{sponsor6}</Text>
-      <!-- Changed: Made decorative diamond separator accessible with aria-hidden for screen readers -->
       <img
         src="/img/diamond.svg"
         alt=""
         aria-hidden="true"
         class="lastDiamond"
+        width="16"
+        height="16"
       />
     </div>
   </section>

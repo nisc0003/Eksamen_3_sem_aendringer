@@ -2,17 +2,26 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
-import Button from "../components/Button.astro";
+/* CODE CLEANUP: Removed unused Button import */
 import Link from "../components/Link.astro";
 ---
 
-<MainLayout>
-  <section class="flex flex-col items-center mt-section_top">
+<!-- ========================================
+     SEO: Custom description for thank you page
+     ======================================== -->
+<MainLayout
+  title="Tak for din tilmelding"
+  description="Tak for din støtte til Stop Spild Af Mad. Sammen gør vi en forskel i kampen mod madspild."
+>
+  <!-- ANIMATION: Content fades in -->
+  <section class="flex flex-col items-center mt-section_top animate-fade-in">
     <img src="/img/logo_full_green.svg" alt="" />
   </section>
 
+  <!-- ANIMATION: Banner section slides up -->
   <section
     class="py-20 bg-(--color-green--400) place-items-center mb-section_buttom mt-section_top"
+    data-animate-intersect="animate-fade-up animate-once"
   >
     <Heading size="xlarge" stylingclasses="text-green-100">
       TAK FOR DIN STØTTE

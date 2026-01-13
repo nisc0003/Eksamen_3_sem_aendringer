@@ -4,16 +4,22 @@ import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 ---
 
+<!-- ANIMATION: Footer fade-in on scroll -->
 <footer
   class="bg-primary-500 flex flex-col gap-8 mr-section_right ml-section_left mb-section_buttom mt-section_top"
+  data-animate-intersect="animate-fade-up animate-once"
 >
   <div class="md:flex md:flex-row md:gap-5 md:justify-between">
     <div class="mb-8 md:mb-0 md:w-xs">
+      <!-- SEO: Improved alt-text for footer logo -->
       <a href="/"
         ><img
           class="w-25"
           src="/img/Logo_med_type.webp"
-          alt="Logo med forenignens navn"
+          alt="Stop Spild Af Mad logo med tekst"
+          width="200"
+          height="80"
+          loading="lazy"
         /></a
       >
       <Text
@@ -155,35 +161,58 @@ import Link from "../components/Link.astro";
         weight="medium">FØLG OS PÅ VORES SOCIALS</Heading
       >
 
+      <!-- CLS: Social icons with dimensions -->
       <div class="flex flax-row gap-2 sm:justify-end">
-        <a href="https://www.facebook.com/Madspild"
+        <a
+          href="https://www.facebook.com/Madspild"
+          rel="noopener noreferrer"
+          target="_blank"
           ><img
             class="w-12"
             src="/img/facebook_logo.webp"
-            alt="besøg vores facebook profil"
+            alt="Besøg vores Facebook profil"
+            width="48"
+            height="48"
+            loading="lazy"
           /></a
         >
         <a
           href="https://www.instagram.com/explore/search/keyword/?q=%23stopspildafmad"
+          rel="noopener noreferrer"
+          target="_blank"
           ><img
             class="w-12"
             src="/img/instagram_logo.webp"
-            alt="besøg vores instagram hashtag"
+            alt="Besøg vores Instagram hashtag"
+            width="48"
+            height="48"
+            loading="lazy"
           /></a
         >
         <a
           href="https://www.linkedin.com/company/stopspildafmad/posts/?feedView=all"
+          rel="noopener noreferrer"
+          target="_blank"
           ><img
             class="w-12"
             src="/img/linkedin_logo.webp"
-            alt="besøg vores linkedin profil"
+            alt="Besøg vores LinkedIn profil"
+            width="48"
+            height="48"
+            loading="lazy"
           /></a
         >
-        <a href="https://www.youtube.com/user/StopSpildAfMad"
+        <a
+          href="https://www.youtube.com/user/StopSpildAfMad"
+          rel="noopener noreferrer"
+          target="_blank"
           ><img
             class="w-12"
             src="/img/youtube_logo.webp"
-            alt="besøg vores youtube kanal"
+            alt="Besøg vores YouTube kanal"
+            width="48"
+            height="48"
+            loading="lazy"
           /></a
         >
       </div>

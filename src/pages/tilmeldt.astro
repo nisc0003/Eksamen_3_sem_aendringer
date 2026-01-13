@@ -5,9 +5,16 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 ---
 
-<MainLayout title="Tilmeldt">
+<!-- ========================================
+     SEO: Custom description for confirmation page
+     ======================================== -->
+<MainLayout
+  title="Tilmeldt"
+  description="Du er nu tilmeldt Stop Spild Af Mads nyhedsbrev. Tak for din interesse i kampen mod madspild."
+>
+  <!-- ANIMATION: Content fades in -->
   <section
-    class="mr-section_right ml-section_left mb-section_buttom mt-section_top"
+    class="mr-section_right ml-section_left mb-section_buttom mt-section_top animate-fade-in"
   >
     <div class="max-w-3xl mx-auto text-center py-12">
       <Heading

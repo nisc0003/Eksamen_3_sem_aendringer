@@ -1,20 +1,24 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import { Image } from "astro:assets";
+/* CODE CLEANUP: Removed unused imports - Image, Header, Buttons2 */
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import Card from "../components/Card.astro";
-import Header from "../components/Header.astro";
 import Articles from "../components/Articles.astro";
-import Buttons2 from "../components/Buttons2.astro";
 ---
 
-<!-- SM: er 640px i width -->
-<MainLayout title="Vores mission">
+<!-- ========================================
+     SEO: Custom description for mission page
+     ======================================== -->
+<MainLayout
+  title="Vores Mission"
+  description="Lær om Stop Spild Af Mads mission, vores historie siden 2008, og få tips til at bekæmpe madspild i hverdagen."
+>
+  <!-- ANIMATION: Hero section fades in on page load -->
   <section
-    class="flex-col flex lg:flex-row mr-section_right ml-section_left place-content-between top mb-10 mt-15"
+    class="flex-col flex lg:flex-row mr-section_right ml-section_left place-content-between top mb-10 mt-15 animate-fade-in"
   >
     <Heading htmlheading="h2" size="medium" stylingclasses="mb-6 lg:max-w-lg">
       DELTAG I KAMPEN I MOD MADSPILD
@@ -79,12 +83,14 @@ import Buttons2 from "../components/Buttons2.astro";
     />
   </section>
 
+  <!-- ANIMATION: Tips section fades in when visible -->
   <section
     class="mt-5 flex flex-col lg:mr-section_right lg:ml-section_left mb-section_buttom"
   >
     <div
       class="mx-auto max-w-sm flex flex-col place-content-between md:max-w-xl lg:max-w-4xl lg:mb-40"
       id="tips"
+      data-animate-intersect="animate-fade-up animate-once"
     >
       <div class="lg:grid lg:grid-cols-2 lg:gap-5">
         <div class="lg:col-2">
@@ -99,28 +105,43 @@ import Buttons2 from "../components/Buttons2.astro";
             hverdagen, som hjælper til med at mindske mængden af madspild:</Text
           >
 
+          <!-- SEO & ACCESSIBILITY: Using semantic button elements with proper styling -->
           <div class="flex flex-col gap-3 mt-5 lg:mt-20">
-            <!-- <Button> KØB ENKELT VARE </Button> -->
-            <div onclick="ScrollToTip1()" class="cursor-pointer">
-              <Buttons2 variant="green" size="small"> KØB ENKELT VARE</Buttons2>
-            </div>
-            <div onclick="ScrollToTip2()" class="cursor-pointer">
-              <Buttons2 variant="orange" size="small">
-                KØB IND MED OMTANKE</Buttons2
+            <button
+              onclick="ScrollToTip1()"
+              class="cursor-pointer text-left w-full bg-green--400 hover:bg-green--200 text-white px-4 py-3 rounded-CTA transition-colors duration-300"
+            >
+              <Text size="small" weight="medium" stylingclasses="text-white"
+                >KØB ENKELT VARE</Text
               >
-            </div>
-            <div onclick="ScrollToTip3()" class="cursor-pointer">
-              <Buttons2 variant="purple" size="small"> DOGGY BAGS</Buttons2>
-            </div>
-            <!-- <Button> KØB IND MED OMTANKE </Button>
-        <Button> DOGGY BAGS</Button> -->
+            </button>
+            <button
+              onclick="ScrollToTip2()"
+              class="cursor-pointer text-left w-full bg-orange--400 hover:bg-orange--200 text-white px-4 py-3 rounded-CTA transition-colors duration-300"
+            >
+              <Text size="small" weight="medium" stylingclasses="text-white"
+                >KØB IND MED OMTANKE</Text
+              >
+            </button>
+            <button
+              onclick="ScrollToTip3()"
+              class="cursor-pointer text-left w-full bg-purple--400 hover:bg-purple--200 text-white px-4 py-3 rounded-CTA transition-colors duration-300"
+            >
+              <Text size="small" weight="medium" stylingclasses="text-white"
+                >DOGGY BAGS</Text
+              >
+            </button>
           </div>
         </div>
 
+        <!-- SEO & PERFORMANCE: Alt-text and lazy loading -->
         <img
           src="/img/food_bag.webp"
-          alt=""
+          alt="Pose med frugt og grøntsager - Stop madspild"
           class="mx-auto mt-10 order-3 h-90 md:h-100 md:mt-15 lg:h-fit lg:w-fit lg:col-1 lg:row-1 lg:-mt-10"
+          width="400"
+          height="600"
+          loading="lazy"
         />
       </div>
     </div>
@@ -303,8 +324,10 @@ import Buttons2 from "../components/Buttons2.astro";
     >
   </section>
 
+  <!-- ANIMATION: Timeline section fades in when scrolled into view -->
   <section
     class="mx-auto max-w-sm md:max-w-xl lg:mr-section_right lg:ml-section_left"
+    data-animate-intersect="animate-fade-left animate-once"
   >
     <div
       class="tidslinje sm:flex sm:flex-col lg:flex-row lg:max-h-100 lg:w-auto"
@@ -340,10 +363,13 @@ import Buttons2 from "../components/Buttons2.astro";
           class="flex flex-col lg:flex-row li1_content gap-5"
           id="li1_content"
         >
-          <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
+          <!-- SEO & PERFORMANCE: Improved alt-text and lazy loading -->
           <img
             src="/img/2008.webp"
             alt="Billede fra år 2008 - Begyndelsen af Stop Spild Af Mad"
+            width="600"
+            height="400"
+            loading="lazy"
           />
           <div class="flex flex-col gap-5">
             <Heading font="sans">Begyndelsen</Heading>
@@ -441,7 +467,14 @@ import Buttons2 from "../components/Buttons2.astro";
           class="flex flex-col li6_content inactiveBox gap-5"
           id="li6_content"
         >
-          <img src="/img/2016.webp" alt="" />
+          <!-- SEO & PERFORMANCE: Alt-text and lazy loading -->
+          <img
+            src="/img/2016.webp"
+            alt="Billede fra år 2016 - Stop Spild Af Mad bliver forening"
+            width="600"
+            height="400"
+            loading="lazy"
+          />
           <div class="flex flex-col gap-10">
             <Heading font="sans">Officielt en forening</Heading>
             <Text>
@@ -459,7 +492,14 @@ import Buttons2 from "../components/Buttons2.astro";
           class="flex flex-col li7_content inactiveBox gap-5"
           id="li7_content"
         >
-          <img src="/img/2019.webp" alt="" />
+          <!-- SEO & PERFORMANCE: Alt-text and lazy loading -->
+          <img
+            src="/img/2019.webp"
+            alt="Billede fra år 2019 - Selina Juul holder TEDx Talk"
+            width="600"
+            height="400"
+            loading="lazy"
+          />
           <div class="flex flex-col gap-10">
             <Heading font="sans">Tedx Talks</Heading>
             <Text>
@@ -479,7 +519,14 @@ import Buttons2 from "../components/Buttons2.astro";
           class="flex flex-col li8_content inactiveBox gap-5"
           id="li8_content"
         >
-          <img src="/img/2024.webp" alt="" />
+          <!-- SEO & PERFORMANCE: Alt-text and lazy loading -->
+          <img
+            src="/img/2024.webp"
+            alt="Billede fra år 2024 - Prinsesse Marie bliver protektor"
+            width="600"
+            height="400"
+            loading="lazy"
+          />
           <div class="flex flex-col gap-10">
             <Heading font="sans">Kongelig Protektion</Heading>
             <Text>

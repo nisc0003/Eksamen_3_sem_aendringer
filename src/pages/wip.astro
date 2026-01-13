@@ -3,8 +3,16 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Heading from "../components/Heading.astro";
 ---
 
-<MainLayout>
-  <div class="flex place-content-center place-items-center-safe h-150">
+<!-- ========================================
+     SEO: Custom description for WIP page
+     ======================================== -->
+<MainLayout
+  title="Under konstruktion"
+  description="Denne side er under konstruktion. Kom snart tilbage for mere indhold fra Stop Spild Af Mad."
+>
+  <!-- ANIMATION: Content bounces in for playful effect -->\n <div
+    class="flex place-content-center place-items-center-safe h-150 animate-bounce animate-once"
+  >
     <Heading> WORK IN PROGRESS </Heading>
   </div>
 </MainLayout>
