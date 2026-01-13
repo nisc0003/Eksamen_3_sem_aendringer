@@ -13,7 +13,10 @@ import Button from "../components/Button.astro";
   title="Kontakt Os"
   description="Kontakt Stop Spild Af Mad og bliv en del af kampen mod madspild. Tilmeld dig som frivillig, støttemedlem eller samarbejdspartner."
 >
-  <!-- ANIMATION: Form section fades in on page load -->
+  <!-- ============================================
+       TILMELDINGS FORMULAR
+       Kontaktformular til frivillige og partnere
+       ============================================ -->
   <section class="mr-section_right ml-section_left pb-20 pt-10 animate-fade-in">
     <div class="max-w-3xl mx-auto">
       <Heading
@@ -22,11 +25,16 @@ import Button from "../components/Button.astro";
         weight="bold"
         font="display"
         stylingclasses="mb-3 text-center"
+        data-animate-intersect="animate-fade-down animate-once"
       >
         TILMELDING
       </Heading>
 
-      <Text size="medium" stylingclasses="mb-6 text-center max-w-xl mx-auto">
+      <Text
+        size="medium"
+        stylingclasses="mb-6 text-center max-w-xl mx-auto"
+        data-animate-intersect="animate-fade-up animate-once animate-delay-100"
+      >
         Tak fordi du vil støtte os. Inden vi kan tage i mod din hjælp skal du
         oplyse din email og hvilken form for støtte du vil give. Vi kontakter
         dig efterfølgende og bekræfter din tilmelding.
@@ -35,6 +43,7 @@ import Button from "../components/Button.astro";
       <!-- Formular container med skygge og afrunding -->
       <div
         class="max-w-2xl mx-auto p-6 md:p-8 bg-white shadow-2xl rounded-lg border border-orange--400"
+        data-animate-intersect="animate-fade-in animate-once animate-delay-200"
       >
         <!-- Alpine.js formular - x-data kobler til emailForm funktionen -->
         <!-- @submit.prevent forhindrer standard formular submit og kalder vores submit() funktion -->

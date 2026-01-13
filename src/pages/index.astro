@@ -15,7 +15,10 @@ import Articles from "../components/Articles.astro";
   description="Stop Spild Af Mad er Danmarks største bevægelse mod madspild. Bliv en del af kampen og lær hvordan du kan gøre en forskel i hverdagen."
 >
   <main>
-    <!-- ANIMATION: Hero fade-in -->
+    <!-- ============================================
+         HERO SEKTION - "Stop Spild Af Mad"
+         Hovedbanner med hero billede og CTA knapper
+         ============================================ -->
     <section
       class="grid md:h-screen md:overflow-hidden -mt-16 lg:-mt-19 xl:-mt-23 2xl:-mt-28 md:mb-0 animate-fade-in"
       data-animate-intersect="animate-fade-in"
@@ -76,6 +79,10 @@ import Articles from "../components/Articles.astro";
       </div>
     </section>
 
+    <!-- ============================================
+         SPONSORER - "Støttet af" (Grøn baggrund)
+         Roterende sponsor logoer
+         ============================================ -->
     <Sponsors
       bg="bg-green-100"
       tag="SPONSORER"
@@ -87,12 +94,20 @@ import Articles from "../components/Articles.astro";
       sponsor6="NORDEA"
     />
 
-    <!-- ANIMATION: Quiz section fade-in on scroll -->
+    <!-- ============================================
+         QUIZ SEKTION - "Quiz dig selv i madspild"
+         Gul baggrund med quiz spørgsmål og billede
+         ============================================ -->
     <section
       class="max-w-xs flex flex-col mb-section_buttom mt-section_top gap-5 mx-auto sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right"
       data-animate-intersect="animate-fade-in animate-once"
     >
-      <Heading htmlheading="h2" size="medium">QUIZ DIG SELV I MADSPILD</Heading>
+      <Heading
+        htmlheading="h2"
+        size="medium"
+        data-animate-intersect="animate-fade-down animate-once"
+        >QUIZ DIG SELV I MADSPILD</Heading
+      >
       <div
         class="flex-row gap-5 -mt-5 md:grid md:grid-cols-5 lg:grid-cols-2 lg:gap-10"
       >
@@ -151,6 +166,10 @@ import Articles from "../components/Articles.astro";
       <!-- <Link>SE SVAR </Link> md:h-110 lg:h-115 md:max-w-xs -->
     </section>
 
+    <!-- ============================================
+         AMBASSADØRER - "Stop Spild Af Mad støtter"
+         Orange baggrund med ambassadør navne
+         ============================================ -->
     <Sponsors
       bg="bg-orange-100"
       tag="AMBASADØRER"
@@ -162,15 +181,26 @@ import Articles from "../components/Articles.astro";
       sponsor6="TIM VLADIMIR"
     />
 
-    <!-- ANIMATION: 'Hvem er vi' slide-in -->
+    <!-- ============================================
+         HVEM ER VI - "Stop Spild Af Mad organisation"
+         Om organisationen, historie og partnere
+         ============================================ -->
     <section
       class="max-w-xs flex flex-col gap-8 mb-section_buttom mt-section_top mx-auto sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right"
       data-animate-intersect="animate-fade-left animate-once"
     >
-      <Heading htmlheading="h2" size="medium">HVEM ER VI?</Heading>
+      <Heading
+        htmlheading="h2"
+        size="medium"
+        data-animate-intersect="animate-fade-right animate-once"
+        >HVEM ER VI?</Heading
+      >
 
       <div class="lg:grid lg:grid-cols-2 lg:gap-10">
-        <div class="flex flex-col gap-3 md:mb-10 lg:max-w-md lg:mb-0">
+        <div
+          class="flex flex-col gap-3 md:mb-10 lg:max-w-md lg:mb-0"
+          data-animate-intersect="animate-fade-up animate-once animate-delay-100"
+        >
           <Text weight="light"
             >Stop Spild Af Mad er en <strong
               ><span style="font-weight: 600;">non-profit</span></strong
@@ -211,6 +241,10 @@ import Articles from "../components/Articles.astro";
       </div>
     </section>
 
+    <!-- ============================================
+         PARTNERE - "Samarbejdspartnere"
+         Gul baggrund med partner logoer
+         ============================================ -->
     <Sponsors
       bg="bg-yellow-100"
       tag="PARTNERE"
@@ -222,18 +256,30 @@ import Articles from "../components/Articles.astro";
       sponsor6="OBG NORDICA"
     />
 
+    <!-- ============================================
+         ARTIKLER OG VIDEOER - "Lær mere om kampen imod madspild"
+         Video player og artikeloversigt
+         ============================================ -->
     <Articles />
 
-    <!-- ANIMATION: Prizes section fade-in -->
+    <!-- ============================================
+         PRISER OG ANERKENDELSER
+         Præmier og udmærkelser modtaget
+         ============================================ -->
     <section
       class="max-w-xs mx-auto mb-section_buttom mt-section_top sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right"
       data-animate-intersect="animate-fade-right animate-once"
     >
       <div class="flex flex-col gap-3 mb-5">
-        <Heading htmlheading="h2" size="medium"
+        <Heading
+          htmlheading="h2"
+          size="medium"
+          data-animate-intersect="animate-fade-down animate-once"
           >PRISER OG ANDERKENDELSER</Heading
         >
-        <Text weight="lght"
+        <Text
+          weight="lght"
+          data-animate-intersect="animate-fade-up animate-once animate-delay-100"
           >Stop Spild Af Mad og dens stifter Selina Juul har fået en lang række
           priser og anerkendelser, bl.a.:</Text
         >
@@ -305,7 +351,10 @@ import Articles from "../components/Articles.astro";
       </section>
     </section>
 
-    <!-- ANIMATION: Statistics fade-up -->
+    <!-- ============================================
+         STATISTIK - "Madspild i tal"
+         Lilla baggrund med vigtige nøgletal
+         ============================================ -->
     <section
       class="bg-(--color-purple--100) w-full py-5 lg:grid lg:grid-cols-2 lg:gap-5 lg:px-35 shadow-lg"
       data-animate-intersect="animate-fade-up animate-once"

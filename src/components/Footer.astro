@@ -4,12 +4,19 @@ import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 ---
 
-<!-- ANIMATION: Footer fade-in on scroll -->
+<!-- ============================================
+     FOOTER
+     Global footer med kontakt, navigation og sociale medier
+     ============================================ -->
 <footer
   class="bg-primary-500 flex flex-col gap-8 mr-section_right ml-section_left mb-section_buttom mt-section_top"
   data-animate-intersect="animate-fade-up animate-once"
 >
   <div class="md:flex md:flex-row md:gap-5 md:justify-between">
+    <!-- ============================================
+         LOGO OG BESKRIVELSE
+         Organisation information
+         ============================================ -->
     <div class="mb-8 md:mb-0 md:w-xs">
       <!-- SEO: Improved alt-text for footer logo -->
       <a href="/"
@@ -83,6 +90,10 @@ import Link from "../components/Link.astro";
         </ul>
       </div>
 
+      <!-- ============================================
+           NAVIGATION - "Læs mere"
+           Links til vigtige sider
+           ============================================ -->
       <div class="">
         <Heading
           stylingclasses="mb-2"
@@ -141,6 +152,10 @@ import Link from "../components/Link.astro";
   <div class="border border-green--100 rounded-sm mb-3"></div>
 
   <div class="sm:grid sm:grid-cols-2">
+    <!-- ============================================
+         STØT VORES SAG
+         CTA til støtte
+         ============================================ -->
     <div class="mb-8">
       <Heading
         stylingclasses="mb-2"
@@ -152,6 +167,10 @@ import Link from "../components/Link.astro";
       <Link href="#" variant="green" size="small">SE STØTTEFORMER</Link>
     </div>
 
+    <!-- ============================================
+         SOCIALE MEDIER
+         Links til sociale platforme
+         ============================================ -->
     <div>
       <Heading
         stylingclasses="mb-2 sm:text-right"

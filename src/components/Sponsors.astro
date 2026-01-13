@@ -12,7 +12,11 @@ const defaultclasses = "carousel mb-section_buttom mt-section_top";
 const { time = "10s" } = Astro.props;
 ---
 
-<!-- ANIMATION: Sponsors slide-in -->
+<!-- ============================================
+     SPONSORS KOMPONENT
+     Roterende sponsor/partner/ambassadør logoer
+     Tre parallelle rækker med infinite scroll
+     ============================================ -->
 <section
   class:list={[bg, defaultclasses]}
   data-animate-intersect="animate-fade-left animate-once"

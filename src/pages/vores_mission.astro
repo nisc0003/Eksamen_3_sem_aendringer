@@ -16,11 +16,20 @@ import Articles from "../components/Articles.astro";
   title="Vores Mission"
   description="Lær om Stop Spild Af Mads mission, vores historie siden 2008, og få tips til at bekæmpe madspild i hverdagen."
 >
-  <!-- ANIMATION: Hero section fades in on page load -->
+  <!-- ============================================
+       HERO SEKTION - "Deltag i kampen mod madspild"
+       Overskrift med navigation til tips og historie
+       ============================================ -->
   <section
     class="flex-col flex lg:flex-row mr-section_right ml-section_left place-content-between top mb-10 mt-15 animate-fade-in"
+    data-animate-intersect="animate-fade-down animate-once"
   >
-    <Heading htmlheading="h2" size="medium" stylingclasses="mb-6 lg:max-w-lg">
+    <Heading
+      htmlheading="h2"
+      size="medium"
+      stylingclasses="mb-6 lg:max-w-lg"
+      data-animate-intersect="animate-fade-right animate-once"
+    >
       DELTAG I KAMPEN I MOD MADSPILD
     </Heading>
 
@@ -34,6 +43,10 @@ import Articles from "../components/Articles.astro";
     </div>
   </section>
 
+  <!-- ============================================
+       FRUGT BILLEDER - Inspirations carousel
+       Roterende billeder af frugter og grøntsager
+       ============================================ -->
   <section
     class="carousel overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
   >
@@ -83,7 +96,10 @@ import Articles from "../components/Articles.astro";
     />
   </section>
 
-  <!-- ANIMATION: Tips section fades in when visible -->
+  <!-- ============================================
+       TIPS SEKTION - "Hvad kan vi gøre?"
+       Praktiske tips til at mindske madspild
+       ============================================ -->
   <section
     class="mt-5 flex flex-col lg:mr-section_right lg:ml-section_left mb-section_buttom"
   >
@@ -94,7 +110,12 @@ import Articles from "../components/Articles.astro";
     >
       <div class="lg:grid lg:grid-cols-2 lg:gap-5">
         <div class="lg:col-2">
-          <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
+          <Heading
+            htmlheading="h2"
+            size="medium"
+            stylingclasses="mb-6"
+            data-animate-intersect="animate-fade-down animate-once"
+          >
             Hvad kan vi gøre?
           </Heading>
 
@@ -147,11 +168,16 @@ import Articles from "../components/Articles.astro";
     </div>
   </section>
 
+  <!-- ============================================
+       TIP 1 - Køb enkelt-varer
+       Om mængderabatter og madspild
+       ============================================ -->
   <section
     class="mb-section_buttom mt-section_top mx-auto max-w-sm flex flex-col md:max-w-4xl lg:max-w-4xl"
+    data-animate-intersect="animate-fade-up animate-once"
   >
     <div id="tip1" class="lg:grid lg:grid-cols-2 lg:gap-20 lg:mb-40">
-      <div>
+      <div data-animate-intersect="animate-fade-right animate-once">
         <Link variant="green-inverted" size="small">Tip 1</Link>
         <Heading
           htmlheading="h2"
@@ -174,7 +200,10 @@ import Articles from "../components/Articles.astro";
         </div>
       </div>
 
-      <div class="relative mx-auto">
+      <div
+        class="relative mx-auto"
+        data-animate-intersect="animate-fade-left animate-once animate-delay-200"
+      >
         <div class="shuffleImg absolute">
           <!-- Changed: Added alt-text for banana image - better SEO -->
           <img src="/img/banan1.webp" alt="En enkelt gul banan" />
@@ -186,12 +215,23 @@ import Articles from "../components/Articles.astro";
       </div>
     </div>
 
+    <!-- ============================================
+         TIP 2 - Køb ind med omtanke
+         Statistik om madspild fra indkøb
+         ============================================ -->
     <section
       class="mx-auto mb-section_buttom mt-section_top max-w-sm md:max-w-xl lg:max-w-4xl lg:mx-0 lg:mb-40"
       id="tip2"
+      data-animate-intersect="animate-fade-up animate-once"
     >
       <Link variant="orange" size="small">TIP 2</Link>
-      <Heading htmlheading="h2" font="sans" size="medium" stylingclasses="my-6">
+      <Heading
+        htmlheading="h2"
+        font="sans"
+        size="medium"
+        stylingclasses="my-6"
+        data-animate-intersect="animate-fade-down animate-once"
+      >
         Køb in med omtanke
       </Heading>
 
@@ -237,9 +277,14 @@ import Articles from "../components/Articles.astro";
       </div>
     </section>
 
+    <!-- ============================================
+         TIP 3 - Doggy Bags
+         Restauranter med Doggy Bag samarbejde
+         ============================================ -->
     <section
       class="mb-section_buttom mt-section_top mx-auto max-w-sm md:max-w-xl lg:max-w-4xl lg:mb-80"
       id="tip3"
+      data-animate-intersect="animate-fade-up animate-once"
     >
       <div class="">
         <div class="">
@@ -249,6 +294,7 @@ import Articles from "../components/Articles.astro";
             font="sans"
             size="small"
             stylingclasses="my-6"
+            data-animate-intersect="animate-fade-down animate-once"
           >
             Doggy Bags
           </Heading>
@@ -286,7 +332,10 @@ import Articles from "../components/Articles.astro";
             >
             </div> -->
 
-          <div class="">
+          <div
+            class=""
+            data-animate-intersect="animate-fade-left animate-once animate-delay-200"
+          >
             <div class="flex flex-col gap-5 md:h-100 lg:h-125">
               <div id="mapContainer" class="map-container">
                 <img
@@ -309,14 +358,25 @@ import Articles from "../components/Articles.astro";
     </section>
   </section>
 
+  <!-- ============================================
+       VORES HISTORIE
+       Tidslinje med vigtige milepæle siden 2008
+       ============================================ -->
   <section
     class="mx-auto max-w-sm md:max-w-xl text-center mb-section_buttom mt-section_top lg:max-w-4xl"
     id="historie"
+    data-animate-intersect="animate-fade-in animate-once"
   >
-    <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
+    <Heading
+      htmlheading="h1"
+      size="medium"
+      stylingclasses="mb-6"
+      data-animate-intersect="animate-fade-down animate-once"
+    >
       VORES HISTORIE
     </Heading>
     <Text
+      data-animate-intersect="animate-fade-up animate-once animate-delay-100"
       >Vi er meget stolte af hvor meget Stop Spild Af Mad har mulighed for at
       udrette.
       <br />
@@ -324,7 +384,10 @@ import Articles from "../components/Articles.astro";
     >
   </section>
 
-  <!-- ANIMATION: Timeline section fades in when scrolled into view -->
+  <!-- ============================================
+       TIDSLINJE - Interactive timeline
+       Vigtige begivenheder fra 2008 til 2020
+       ============================================ -->
   <section
     class="mx-auto max-w-sm md:max-w-xl lg:mr-section_right lg:ml-section_left"
     data-animate-intersect="animate-fade-left animate-once"

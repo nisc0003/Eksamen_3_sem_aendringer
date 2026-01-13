@@ -13,25 +13,49 @@ import Link from "../components/Link.astro";
   title="Tak for din tilmelding"
   description="Tak for din støtte til Stop Spild Af Mad. Sammen gør vi en forskel i kampen mod madspild."
 >
-  <!-- ANIMATION: Content fades in -->
+  <!-- ============================================
+       LOGO SEKTION
+       Stor logo som bestæftigelse
+       ============================================ -->
   <section class="flex flex-col items-center mt-section_top animate-fade-in">
-    <img src="/img/logo_full_green.svg" alt="" />
+    <img
+      src="/img/logo_full_green.svg"
+      alt="Stop Spild Af Mad logo"
+      data-animate-intersect="animate-fade-down animate-once"
+    />
   </section>
 
-  <!-- ANIMATION: Banner section slides up -->
+  <!-- ============================================
+       TAK BESKED - Grøn baggrund
+       Bestæftigelse på tilmelding
+       ============================================ -->
   <section
     class="py-20 bg-(--color-green--400) place-items-center mb-section_buttom mt-section_top"
     data-animate-intersect="animate-fade-up animate-once"
   >
-    <Heading size="xlarge" stylingclasses="text-green-100">
+    <Heading
+      size="xlarge"
+      stylingclasses="text-green-100"
+      data-animate-intersect="animate-fade-down animate-once"
+    >
       TAK FOR DIN STØTTE
     </Heading>
-    <Text size="xlarge" stylingclasses="text-green-100"
+    <Text
+      size="xlarge"
+      stylingclasses="text-green-100"
+      data-animate-intersect="animate-fade-up animate-once animate-delay-100"
       >Vi kontakter dig på mail inden for 4-8 hverdage</Text
     >
   </section>
 
-  <section class="flex flex-col place-self-center place-items-center gap-5">
+  <!-- ============================================
+       NAVIGATION TILBAGE
+       Links til forside og bliv aktiv
+       ============================================ -->
+  <section
+    class="flex flex-col place-self-center place-items-center gap-5"
+    data-animate-intersect="animate-fade-in animate-once"
+  >
     <Text>Gå tilbage til:</Text>
     <div class="flex flex-row gap-5">
       <Link href="/" variant="black">FORSIDEN</Link>

@@ -12,7 +12,10 @@ import Button from "../components/Button.astro";
   title="Tilmeldt"
   description="Du er nu tilmeldt Stop Spild Af Mads nyhedsbrev. Tak for din interesse i kampen mod madspild."
 >
-  <!-- ANIMATION: Content fades in -->
+  <!-- ============================================
+       TILMELDINGSBEKRÆFTELSE
+       Bekræftelse på tilmelding
+       ============================================ -->
   <section
     class="mr-section_right ml-section_left mb-section_buttom mt-section_top animate-fade-in"
   >
@@ -23,17 +26,29 @@ import Button from "../components/Button.astro";
         weight="bold"
         font="display"
         stylingclasses="mb-8 text-green--400"
+        data-animate-intersect="animate-fade-down animate-once"
       >
         TAK FOR DIN TILMELDING!
       </Heading>
-      <Text size="large" stylingclasses="mb-6">
+      <Text
+        size="large"
+        stylingclasses="mb-6"
+        data-animate-intersect="animate-fade-up animate-once animate-delay-100"
+      >
         Tak fordi du vil støtte os. Vi har modtaget dine oplysninger og vil
         kontakte dig hurtigst muligt for at bekræfte din tilmelding.
       </Text>
-      <Text size="medium" stylingclasses="mb-8">
+      <Text
+        size="medium"
+        stylingclasses="mb-8"
+        data-animate-intersect="animate-fade-up animate-once animate-delay-200"
+      >
         Du vil modtage en bekræftelse på den email-adresse, du har angivet.
       </Text>
-      <div class="mt-8">
+      <div
+        class="mt-8"
+        data-animate-intersect="animate-fade-in animate-once animate-delay-300"
+      >
         <Button variant="green" size="large">
           <a href="/">Tilbage til forsiden</a>
         </Button>

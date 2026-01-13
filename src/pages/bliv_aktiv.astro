@@ -15,10 +15,14 @@ import Card from "../components/Card.astro";
   title="Bliv Aktiv"
   description="Bliv aktiv i kampen mod madspild. Bliv frivillig, støttemedlem eller samarbejdspartner hos Stop Spild Af Mad."
 >
-  <!-- ANIMATION: Page content fades in -->
+  <!-- ============================================
+       INTRO SEKTION - "Bliv aktiv i kampen mod madspild"
+       Overskrift, beskrivelse og tilmelding
+       ============================================ -->
   <section class="mr-section_right ml-section_left pb-20 pt-10 animate-fade-in">
     <div
       class="flex flex-col items-center lg:flex-row lg:justify-between gap-6 lg:gap-12 mb-12"
+      data-animate-intersect="animate-fade-down animate-once"
     >
       <div class="flex flex-col gap-4 max-w-3xl">
         <Heading
@@ -28,14 +32,20 @@ import Card from "../components/Card.astro";
         >
           BLIV AKTIV I KAMPEM MOD MADSPILD
         </Heading>
-        <Text stylingclasses="text-center lg:text-left">
+        <Text
+          stylingclasses="text-center lg:text-left"
+          data-animate-intersect="animate-fade-up animate-once animate-delay-100"
+        >
           Der er mange måder at støtte kampen mod madspild på. Bliv frivillig,
           deltag i vores events, eller lær mere om vores initiativer.
         </Text>
       </div>
       <Link href="/form" variant="green" size="medium"> Tilmeld dig </Link>
     </div>
-    <!-- ANIMATION: Cards fade in when scrolled into view -->
+    <!-- ============================================
+         MÅDER AT HJÆLPE PÅ
+         Cards med frivillig, støttemedlem, partnere
+         ============================================ -->
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       data-animate-intersect="animate-fade-up animate-once"
@@ -81,7 +91,10 @@ import Card from "../components/Card.astro";
       />
     </div>
   </section>
-  <!-- ANIMATION: Contact section slides up -->
+  <!-- ============================================
+       KONTAKT OS - Grøn baggrund
+       Kontakt information og CTA
+       ============================================ -->
   <section data-animate-intersect="animate-fade-up animate-once">
     <div class="bg-green--400 pr-section_right pl-section_left mb-75 py-10">
       <div class="mr-section_right ml-section_left grid gap-6">

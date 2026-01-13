@@ -21,6 +21,12 @@ const navActive = "bg-[var(--color-yellow--200)] font-bold";
 const navInactive = "font-medium";
 ---
 
+<!-- ============================================
+     HEADER NAVIGATION
+     Sticky header med logo, navigation og søgefunktion
+     Desktop: Fuld menu synlig
+     Mobil: Burger menu
+     ============================================ -->
 <header
   x-data="{ showmenu: false, showsearch: false }"
   class="bg-transparent sticky top-0 z-50 pt-4 lg:pt-6 xl:pt-8 2xl:pt-10"
@@ -29,13 +35,19 @@ const navInactive = "font-medium";
     class="w-full flex items-center justify-between"
     style="padding-left: var(--margin-section_left); padding-right: var(--margin-section_right);"
   >
-    <!-- Logo on the left -->
+    <!-- ============================================
+         LOGO - Venstre side
+         Semi-transparent sort baggrund med hover effekt
+         ============================================ -->
     <a href="/" class="logo-link inline-flex items-center p-0 m-0">
       <span class="sr-only">Stop Spild Af Mad</span>
       <span class="logo-mark" aria-hidden="true"></span>
     </a>
 
-    <!-- Nav and actions on the right -->
+    <!-- ============================================
+         NAVIGATION OG ACTIONS - Højre side
+         Desktop menu, søgeknap og burger menu
+         ============================================ -->
     <div class="flex items-center gap-2 lg:gap-3 xl:gap-4 2xl:gap-6">
       <!-- Desktop menu (skjult på mobil) -->
       <nav
@@ -116,7 +128,11 @@ const navInactive = "font-medium";
         </a>
       </nav>
 
-      <!-- Søg + burger -->
+      <!-- ============================================
+           SØGEKNAP OG BURGER MENU
+           Søg: Vises altid, åbner søgefelt
+           Burger: Kun på mobil, åbner mobil menu
+           ============================================ -->
       <div class="flex items-center gap-2 lg:gap-3 xl:gap-4">
         <!-- Search button -->
         <button

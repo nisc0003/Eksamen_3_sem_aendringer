@@ -5,14 +5,28 @@ import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 ---
 
-<!-- ANIMATION: Articles fade-in on scroll -->
+<!-- ============================================
+     ARTIKLER OG VIDEOER KOMPONENT
+     Video player med lazy load og artikel links
+     Bruges på forsiden
+     ============================================ -->
 <section
   class="max-w-sm flex flex-col gap-5 mb-section_buttom mt-section_top mx-auto sm:max-w-md md:max-w-6xl md:ml-section_left md:mr-section_right lg:mr-section_right lg:ml-section_left"
   id="articles-section"
   data-animate-intersect="animate-fade-up animate-once"
 >
-  <Heading size="small" font="sans">LÆR MERE OM KAMPEN IMOD MADSPILD</Heading>
+  <Heading
+    size="small"
+    font="sans"
+    data-animate-intersect="animate-fade-down animate-once"
+    >LÆR MERE OM KAMPEN IMOD MADSPILD</Heading
+  >
 
+  <!-- ============================================
+       VIDEO OG TEKST SEKTION
+       Venstre: Video player med thumbnail
+       Højre: Artikel tekst og links
+       ============================================ -->
   <section
     class="border border-black rounded-lg p-4 flex flex-col lg:flex-row gap-6"
   >

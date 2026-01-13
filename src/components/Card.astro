@@ -8,12 +8,19 @@ const { slug, title, image } = Astro.props;
 const singleviewUrl = `/singleview/${slug}`;
 ---
 
-<!-- ANIMATION: Card hover scale -->
+<!-- ============================================
+     CARD KOMPONENT
+     Genbrugelig card til artikler/initiativer
+     Hover: Scale-up og shadow effekter
+     ============================================ -->
 <article
   class="group overflow-hidden transition-all duration-300 flex flex-col h-full @container [container-name:card] hover:scale-105 hover:shadow-xl"
 >
   <a href={singleviewUrl} class="block h-full">
-    <!-- IMAGE -->
+    <!-- ============================================
+         BILLEDE SEKTION
+         Lazy load med hover zoom effekt
+         ============================================ -->
     <div class="relative overflow-hidden h-full w-full bg-gray-100">
       <!-- PERFORMANCE: Image lazy load -->
       <img
@@ -26,7 +33,10 @@ const singleviewUrl = `/singleview/${slug}`;
       />
     </div>
 
-    <!-- CONTENT:-->
+    <!-- ============================================
+         INDHOLD SEKTION
+         Titel og "Læs mere" link
+         ============================================ -->
     <div class="flex flex-col h-full min-w-0 mt-4">
       <Heading
         htmlheading="h3"
