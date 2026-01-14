@@ -257,61 +257,66 @@ import Button from "../components/Button.astro";
 
 <script is:inline>
   // Vent på Alpine er klar
+  // Venter på at Alpine JS er klar før vi registrerer komponenten.
   document.addEventListener("alpine:init", () => {
-    // Registrer emailForm som Alpine data component
+    // Registrerer en Alpine data-komponent ved navn "emailForm".
+    // Alpine.data("navn", () => ({})) returnerer et objekt med tilstand og metoder.
     Alpine.data("emailForm", () => ({
-      // Initial state
-      type: "privat", // Standard valg er privatperson
-      error: "", // Fejlbesked (tom ved start)
+      // Tilstandsvariabler (almindelige JS-strenge) med startværdier.
+      type: "privat", // string: gemmer om brugeren er "privat" eller "firma".
+      error: "", // string: tom betyder ingen fejlbesked er vist.
 
-      // Submit funktionen kaldes når formen sendes
+      // Metode der køres når brugeren trykker send på formularen.
       submit() {
-        this.error = ""; // Nulstil fejlbesked
+        this.error = ""; // Nulstil (string) error-feltet før ny validering.
 
-        // Hent og trim værdier fra felterne
-        // x-ref giver os adgang via this.$refs
+        // Hent værdier fra formularfelter via Alpine x-ref (this.$refs peger på DOM noder).
+        // .value er en string fra input; .trim() fjerner mellemrum i begge ender.
         const email = this.$refs.email.value.trim();
         const phone = this.$refs.phone.value.trim();
+        // Dropdown giver en string direkte; ingen trim fordi options typisk ikke har whitespace.
         const subject = this.$refs.subject.value;
+        // .checked er en boolean der angiver om checkboxen er valgt.
         const accepted = this.$refs.accept.checked;
 
-        // Validering: Email skal indeholde @
+        // Krav: email skal findes og indeholde et "@".
         if (!email || !email.includes("@")) {
-          this.error = "Indtast en gyldig email";
-          return;
+          this.error = "Indtast en gyldig email"; // Sæt fejltekst (string).
+          return; // Stop funktionen tidligt.
         }
 
-        // Validering: Telefonnummer skal udfyldes
+        // Krav: telefon skal udfyldes (ikke tom string).
         if (!phone) {
           this.error = "Indtast telefonnummer";
           return;
         }
 
-        // Validering: Støtteform skal vælges
+        // Krav: en støtteform skal være valgt (subject er ikke tom).
         if (!subject) {
           this.error = "Vælg en støtteform";
           return;
         }
 
-        // Validering: Brugeren skal acceptere
+        // Krav: checkbox for accept skal være true.
         if (!accepted) {
           this.error = "Du skal acceptere";
           return;
         }
 
-        // Byg URL parametre med basis-info
+        // Opret URLSearchParams-objekt (browser-API til querystrings) med basisfelter.
         const params = new URLSearchParams({
-          type: this.type,
-          email,
-          phone,
-          subject,
+          type: this.type, // string: "privat" eller "firma".
+          email, // string: fra input.
+          phone, // string: fra input.
+          subject, // string: fra dropdown.
         });
 
-        // Tilføj besked hvis udfyldt
+        // Ekstra tekstfelt (string). Trim for at undgå tomme mellemrum.
         const message = this.$refs.message.value.trim();
+        // Kun tilføj param hvis feltet ikke er tomt.
         if (message) params.append("message", message);
 
-        // Validering og tilføjelse af privatperson-specifikke felter
+        // Privatperson: kræver fornavn og efternavn (strings) og tilføjer dem.
         if (this.type === "privat") {
           const firstName = this.$refs.firstName.value.trim();
           const lastName = this.$refs.lastName.value.trim();
@@ -325,11 +330,11 @@ import Button from "../components/Button.astro";
           params.append("lastName", lastName);
         }
 
-        // Validering og tilføjelse af firma-specifikke felter
+        // Firma: kræver firmanavn, CVR og adresse (strings) og tilføjer dem.
         if (this.type === "firma") {
-          const companyName = this.$refs.companyName.value.trim();
-          const cvr = this.$refs.cvr.value.trim();
-          const companyAddress = this.$refs.companyAddress.value.trim();
+          const companyName = this.$refs.companyName.value.trim(); // string
+          const cvr = this.$refs.cvr.value.trim(); // string
+          const companyAddress = this.$refs.companyAddress.value.trim(); // string
 
           if (!companyName || !cvr || !companyAddress) {
             this.error = "Udfyld alle firmaoplysninger";
@@ -341,7 +346,7 @@ import Button from "../components/Button.astro";
           params.append("companyAddress", companyAddress);
         }
 
-        // Redirect til bekræftelsesside med alle data som URL parametre
+        // Naviger til bekræftelsesside med alle indtastede data som querystring.
         window.location.href = `/tilmeldt?${params.toString()}`;
       },
     }));
