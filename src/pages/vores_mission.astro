@@ -128,255 +128,268 @@ import Articles from "../components/Articles.astro";
   <section class="container mt-5 flex flex-col mb-section_buttom">
     <div class="flex flex-col gap-5 lg:flex-row lg:gap-10 items-stretch">
       <div class="flex-1 flex flex-col justify-between">
-          <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
-            Hvad kan vi gøre?
-          </Heading>
+        <Heading htmlheading="h2" size="medium" stylingclasses="mb-6">
+          Hvad kan vi gøre?
+        </Heading>
 
-          <Text size="small">
-            Emner som disse kan virke store og uoverskuelige. Det kan være svært
-            at vide hvor man skal starte, hvis man gerne vil hjælpe med at gøre
-            en forskel. Derfor har vi her nogle simple vaner man kan indfører i
-            hverdagen, som hjælper til med at mindske mængden af madspild:</Text
+        <Text size="small">
+          Emner som disse kan virke store og uoverskuelige. Det kan være svært
+          at vide hvor man skal starte, hvis man gerne vil hjælpe med at gøre en
+          forskel. Derfor har vi her nogle simple vaner man kan indfører i
+          hverdagen, som hjælper til med at mindske mængden af madspild:</Text
+        >
+
+        <!-- SEO & ACCESSIBILITY: Using semantic button elements with proper styling -->
+        <div class="flex flex-col gap-3 mt-5 lg:mt-20">
+          <button
+            onclick="ScrollToTip1()"
+            class="cursor-pointer text-left w-full bg-green--400 hover:bg-green--200 text-white px-4 py-3 rounded-CTA transition-colors duration-300"
           >
-
-          <!-- SEO & ACCESSIBILITY: Using semantic button elements with proper styling -->
-          <div class="flex flex-col gap-3 mt-5 lg:mt-20">
-            <button
-              onclick="ScrollToTip1()"
-              class="cursor-pointer text-left w-full bg-green--400 hover:bg-green--200 text-white px-4 py-3 rounded-CTA transition-colors duration-300"
+            <Text size="small" weight="medium" stylingclasses="text-white"
+              >KØB ENKELT VARE</Text
             >
-              <Text size="small" weight="medium" stylingclasses="text-white"
-                >KØB ENKELT VARE</Text
-              >
-            </button>
-            <button
-              onclick="ScrollToTip2()"
-              class="cursor-pointer text-left w-full bg-orange--400 hover:bg-orange--200 text-white px-4 py-3 rounded-CTA transition-colors duration-300"
+          </button>
+          <button
+            onclick="ScrollToTip2()"
+            class="cursor-pointer text-left w-full bg-orange--400 hover:bg-orange--200 text-white px-4 py-3 rounded-CTA transition-colors duration-300"
+          >
+            <Text size="small" weight="medium" stylingclasses="text-white"
+              >KØB IND MED OMTANKE</Text
             >
-              <Text size="small" weight="medium" stylingclasses="text-white"
-                >KØB IND MED OMTANKE</Text
-              >
-            </button>
-            <button
-              onclick="ScrollToTip3()"
-              class="cursor-pointer text-left w-full bg-purple--400 hover:bg-purple--200 text-white px-4 py-3 rounded-CTA transition-colors duration-300"
+          </button>
+          <button
+            onclick="ScrollToTip3()"
+            class="cursor-pointer text-left w-full bg-purple--400 hover:bg-purple--200 text-white px-4 py-3 rounded-CTA transition-colors duration-300"
+          >
+            <Text size="small" weight="medium" stylingclasses="text-white"
+              >DOGGY BAGS</Text
             >
-              <Text size="small" weight="medium" stylingclasses="text-white"
-                >DOGGY BAGS</Text
-              >
-            </button>
-          </div>
+          </button>
         </div>
-
-        <!-- SEO & PERFORMANCE: Alt-text and lazy loading -->
-        <img
-          src="/img/food_bag.webp"
-          alt="Pose med frukt og grøntsager - Stop madspild"
-          class="shrink-0 w-auto h-auto lg:h-full rounded-lg"
-          width="400"
-          height="600"
-          loading="lazy"
-        />
       </div>
+
+      <!-- SEO & PERFORMANCE: Alt-text and lazy loading -->
+      <img
+        src="/img/food_bag.webp"
+        alt="Pose med frukt og grøntsager - Stop madspild"
+        class="shrink-0 w-auto h-auto lg:h-full rounded-lg"
+        width="400"
+        height="600"
+        loading="lazy"
+      />
     </div>
   </section>
+</MainLayout>
 
-  <!-- ============================================
+<!-- ============================================
        TIP 1 - Køb enkelt-varer
        Om mængderabatter og madspild
        ============================================ -->
-  <section class="container mb-section_buttom mt-section_top">
-    <div id="tip1" class="flex flex-col gap-5 lg:flex-row lg:gap-20 items-stretch">
-      <div class="flex-1 flex flex-col justify-between">
-        <Link variant="green-inverted" size="small">Tip 1</Link>
-        <Heading
-          htmlheading="h2"
-          font="sans"
-          size="medium"
-          stylingclasses="my-6"
+<section class="container mb-section_buttom mt-section_top">
+  <div
+    id="tip1"
+    class="flex flex-col gap-5 lg:flex-row lg:gap-20 items-stretch"
+  >
+    <div class="flex-1 flex flex-col justify-between">
+      <Link variant="green-inverted" size="small">Tip 1</Link>
+      <Heading htmlheading="h2" font="sans" size="medium" stylingclasses="my-6">
+        Fortsæt med at købe enkelt-varer
+      </Heading>
+
+      <div class="sm:flex flex-col gap-3">
+        <Text size="small"
+          >I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede
+          mængerabatter i alle kædens danske butikker.</Text
         >
-          Fortsæt med at købe enkelt-varer
-        </Heading>
-
-        <div class="sm:flex flex-col gap-3">
-          <Text size="small"
-            >I 2017 medvirkede Stop Spild Af Mad til at Rema 1000 droppede
-            mængerabatter i alle kædens danske butikker.</Text
-          >
-          <Text size="small" stylingclasses="mb-3"
-            >Mængden af madspild faldt her efter fra ca. 80-100 bananer blev
-            smidt ud om dagen, til kun 10 bananer om dagen.
-          </Text>
-        </div>
+        <Text size="small" stylingclasses="mb-3"
+          >Mængden af madspild faldt her efter fra ca. 80-100 bananer blev smidt
+          ud om dagen, til kun 10 bananer om dagen.
+        </Text>
       </div>
+    </div>
 
-      <div class="shrink-0 w-auto h-auto lg:h-full flex items-center justify-center">
-        <div class="relative w-72 h-80 lg:w-96 lg:h-96 flex items-center justify-center">
-          <div class="shuffleImg absolute inset-0 flex items-center justify-center">
-            <!-- Changed: Added alt-text for banana image - better SEO -->
-            <img src="/img/banan1.webp" alt="En enkelt gul banan" class="h-full w-auto object-contain" />
-          </div>
-          <div class="shuffleImg absolute inset-0 flex items-center justify-center">
-            <!-- Changed: Added alt-text for bananas image - better SEO -->
-            <img src="/img/bananer.png" alt="Bundt af gule bananer" class="h-full w-auto object-contain" />
-          </div>
+    <div
+      class="shrink-0 w-auto h-auto lg:h-full flex items-center justify-center"
+    >
+      <div
+        class="relative w-72 h-80 lg:w-96 lg:h-96 flex items-center justify-center"
+      >
+        <div
+          class="shuffleImg absolute inset-0 flex items-center justify-center"
+        >
+          <!-- Changed: Added alt-text for banana image - better SEO -->
+          <img
+            src="/img/banan1.webp"
+            alt="En enkelt gul banan"
+            class="h-full w-auto object-contain"
+          />
+        </div>
+        <div
+          class="shuffleImg absolute inset-0 flex items-center justify-center"
+        >
+          <!-- Changed: Added alt-text for bananas image - better SEO -->
+          <img
+            src="/img/bananer.png"
+            alt="Bundt af gule bananer"
+            class="h-full w-auto object-contain"
+          />
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-    <!-- ============================================
+<!-- ============================================
          TIP 2 - Køb ind med omtanke
          Statistik om madspild fra indkøb
          ============================================ -->
-    <section class="container mb-section_buttom mt-section_top" id="tip2">
-      <Link variant="orange" size="small">TIP 2</Link>
-      <Heading htmlheading="h2" font="sans" size="medium" stylingclasses="my-6">
-        Køb in med omtanke
-      </Heading>
+<section class="container mb-section_buttom mt-section_top" id="tip2">
+  <Link variant="orange" size="small">TIP 2</Link>
+  <Heading htmlheading="h2" font="sans" size="medium" stylingclasses="my-6">
+    Køb in med omtanke
+  </Heading>
 
-      <Text size="small" stylingclasses="mb-2"
-        >I gennemsnittet ender vi med at smide 25% af maden vi køber ud.</Text
-      >
-      <Text size="small">
-        Det vil svare til at hver fjerede indkøbsvogn man ser i supermarkedet
-        bliver smidt ud.</Text
-      >
+  <Text size="small" stylingclasses="mb-2"
+    >I gennemsnittet ender vi med at smide 25% af maden vi køber ud.</Text
+  >
+  <Text size="small">
+    Det vil svare til at hver fjerede indkøbsvogn man ser i supermarkedet bliver
+    smidt ud.</Text
+  >
 
-      <div
-        class="mt-8 flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:gap-10"
-        id="stagger"
-      >
-        <div class="flex flex-col gap-4 lg:flex-row lg:gap-8 justify-center items-center">
-          <!-- Changed: Added alt-text to shopping carts for better SEO -->
-          <img
-            src="/img/cart.webp"
-            alt="Indkøbsvogn med fødevarer"
-            class="h-40 lg:h-48 w-auto object-contain"
-          />
-          <img
-            src="/img/cart.webp"
-            alt="Indkøbsvogn med fødevarer"
-            class="h-40 lg:h-48 w-auto object-contain"
-          />
-        </div>
+  <div
+    class="mt-8 flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:gap-10"
+    id="stagger"
+  >
+    <div
+      class="flex flex-col gap-4 lg:flex-row lg:gap-8 justify-center items-center"
+    >
+      <!-- Changed: Added alt-text to shopping carts for better SEO -->
+      <img
+        src="/img/cart.webp"
+        alt="Indkøbsvogn med fødevarer"
+        class="h-40 lg:h-48 w-auto object-contain"
+      />
+      <img
+        src="/img/cart.webp"
+        alt="Indkøbsvogn med fødevarer"
+        class="h-40 lg:h-48 w-auto object-contain"
+      />
+    </div>
 
-        <div class="flex flex-col gap-4 lg:flex-row lg:gap-8 justify-center items-center">
-          <!-- Changed: Added alt-text to shopping carts for better SEO -->
-          <img
-            src="/img/cart.webp"
-            alt="Indkøbsvogn med fødevarer"
-            class="h-40 lg:h-48 w-auto object-contain"
-          />
-          <img
-            src="/img/cart.webp"
-            alt="Indkøbsvogn uden fødevarer - symboliserer madspild"
-            class="grayscale h-40 lg:h-48 w-auto object-contain"
-          />
-        </div>
-      </div>
-    </section>
+    <div
+      class="flex flex-col gap-4 lg:flex-row lg:gap-8 justify-center items-center"
+    >
+      <!-- Changed: Added alt-text to shopping carts for better SEO -->
+      <img
+        src="/img/cart.webp"
+        alt="Indkøbsvogn med fødevarer"
+        class="h-40 lg:h-48 w-auto object-contain"
+      />
+      <img
+        src="/img/cart.webp"
+        alt="Indkøbsvogn uden fødevarer - symboliserer madspild"
+        class="grayscale h-40 lg:h-48 w-auto object-contain"
+      />
+    </div>
+  </div>
+</section>
 
-    <!-- ============================================
+<!-- ============================================
          TIP 3 - Doggy Bags
          Restauranter med Doggy Bag samarbejde
          ============================================ -->
-    <section class="container mb-section_buttom mt-section_top" id="tip3">
-      <Link variant="purple" size="small">Tip 3</Link>
-      <Heading htmlheading="h2" font="sans" size="small" stylingclasses="my-6">
-        Doggy Bags
-      </Heading>
+<section class="container mb-section_buttom mt-section_top" id="tip3">
+  <Link variant="purple" size="small">Tip 3</Link>
+  <Heading htmlheading="h2" font="sans" size="small" stylingclasses="my-6">
+    Doggy Bags
+  </Heading>
 
-      <div class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-20 lg:items-start">
-        <!-- doggy bag billede og tekst -->
-        <div class="flex flex-col gap-6">
-          <div class="bg-[url('/img/star.svg')] bg-no-repeat bg-contain bg-center h-72 lg:h-96 flex items-center justify-center">
-            <img
-              src="/img/doggy_bag.webp"
-              alt="Doggy bag ikon"
-              class="h-48 lg:h-56 w-auto object-contain"
-            />
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <Text size="small"
-              >I adskellige forskellige resturanter har vi samarbejdskab og
-              har implimenteret vores Doggy bag!</Text
-            >
-            <Text size="small"
-              >Hvis du ikke kan spise din mad færdig kan du spørge om en doggy
-              bag og tage maden med hjem!</Text
-            >
-          </div>
-        </div>
-
-        <!-- kort og knap -->
-        <div class="flex flex-col gap-6">
-          <div id="mapContainer" class="map-container h-80 lg:h-96">
-            <img
-              src="/img/cph_map.webp"
-              alt="Kort over København med restauranter"
-              id="mapImage"
-              class="map-image w-full h-full"
-            />
-          </div>
-          <div class="flex justify-center lg:justify-start">
-            <Link href="/wip" variant="purple" size="large">
-              SE RESTURANTER
-            </Link>
-          </div>
-        </div>
+  <div class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-20 lg:items-start">
+    <!-- doggy bag billede og tekst -->
+    <div class="flex flex-col gap-6">
+      <div
+        class="bg-[url('/img/star.svg')] bg-no-repeat bg-contain bg-center h-72 lg:h-96 flex items-center justify-center"
+      >
+        <img
+          src="/img/doggy_bag.webp"
+          alt="Doggy bag ikon"
+          class="h-48 lg:h-56 w-auto object-contain"
+        />
       </div>
-    </section>
-  </section>
 
-  <!-- ============================================
+      <div class="flex flex-col gap-2">
+        <Text size="small"
+          >I adskellige forskellige resturanter har vi samarbejdskab og har
+          implimenteret vores Doggy bag!</Text
+        >
+        <Text size="small"
+          >Hvis du ikke kan spise din mad færdig kan du spørge om en doggy bag
+          og tage maden med hjem!</Text
+        >
+      </div>
+    </div>
+
+    <!-- kort og knap -->
+    <div class="flex flex-col gap-6">
+      <div id="mapContainer" class="map-container h-80 lg:h-96">
+        <img
+          src="/img/cph_map.webp"
+          alt="Kort over København med restauranter"
+          id="mapImage"
+          class="map-image w-full h-full"
+        />
+      </div>
+      <div class="flex justify-center lg:justify-start">
+        <Link href="/wip" variant="purple" size="large"> SE RESTURANTER </Link>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
        VORES HISTORIE
        Tidslinje med vigtige milepæle siden 2008
        ============================================ -->
-  <section
-    class="container text-center mb-section_buttom mt-section_top"
-    id="historie"
-  >
-    <div class="max-w-3xl mx-auto">
-      <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
-        VORES HISTORIE
-      </Heading>
-      <Text
-        >Vi er meget stolte af hvor meget Stop Spild Af Mad har mulighed for at
-        udrette.
-        <br />
-        Her er nogle af vores højdepunkter.</Text
-      >
-    </div>
-  </section>
+<section
+  class="container text-center mb-section_buttom mt-section_top"
+  id="historie"
+>
+  <div class="max-w-3xl mx-auto">
+    <Heading htmlheading="h1" size="medium" stylingclasses="mb-6">
+      VORES HISTORIE
+    </Heading>
+    <Text
+      >Vi er meget stolte af hvor meget Stop Spild Af Mad har mulighed for at
+      udrette.
+      <br />
+      Her er nogle af vores højdepunkter.</Text
+    >
+  </div>
+</section>
 
-  <!-- ============================================
+<!-- ============================================
        TIDSLINJE - Interactive timeline
        Vigtige begivenheder fra 2008 til 2020
        ============================================ -->
-  <section class="container mb-section_buttom">
-    <div
-      class="tidslinje flex flex-col lg:flex-row gap-10 lg:gap-20"
-    >
-      <div
-        class="order-2 lg:order-1 lg:w-40 shrink-0"
+<section class="container mb-section_buttom">
+  <div class="tidslinje flex flex-col lg:flex-row gap-10 lg:gap-20">
+    <div class="order-2 lg:order-1 lg:w-40 shrink-0">
+      <ul
+        class="flex flex-row overflow-x-auto overflow-y-hidden lg:flex-col gap-4 lg:gap-6 pb-4 lg:pb-0 pr-8 lg:pr-0"
       >
-        <ul
-          class="flex flex-row overflow-x-auto overflow-y-hidden lg:flex-col gap-4 lg:gap-6 pb-4 lg:pb-0 pr-8 lg:pr-0"
-        >
-          <li class="li1 activeTime my-2" id="li1">
-            <Text size="large">2008</Text>
-          </li>
-          <li class="li2 my-2" id="li2"><Text size="large">2010</Text></li>
-          <li class="li3 my-2" id="li3"><Text size="large">2011</Text></li>
-          <li class="li4 my-2" id="li4"><Text size="large">2013</Text></li>
-          <li class="li5 my-2" id="li5"><Text size="large">2014</Text></li>
-          <li class="li6 my-2" id="li6"><Text size="large">2016</Text></li>
-          <li class="li7 my-2" id="li7"><Text size="large">2019</Text></li>
-          <li class="li8 my-2" id="li8"><Text size="large">2024</Text></li>
-        </ul>
-        <!-- 
+        <li class="li1 activeTime my-2" id="li1">
+          <Text size="large">2008</Text>
+        </li>
+        <li class="li2 my-2" id="li2"><Text size="large">2010</Text></li>
+        <li class="li3 my-2" id="li3"><Text size="large">2011</Text></li>
+        <li class="li4 my-2" id="li4"><Text size="large">2013</Text></li>
+        <li class="li5 my-2" id="li5"><Text size="large">2014</Text></li>
+        <li class="li6 my-2" id="li6"><Text size="large">2016</Text></li>
+        <li class="li7 my-2" id="li7"><Text size="large">2019</Text></li>
+        <li class="li8 my-2" id="li8"><Text size="large">2024</Text></li>
+      </ul>
+      <!-- 
         <ul class="overflow-auto w-auto pr-25 sm:hidden lg:inline">
           <li class="li1 activeTime" id="li1"><h1>2008</h1></li>
           <li class="li2" id="li2"><h1>2009</h1></li>
@@ -384,239 +397,213 @@ import Articles from "../components/Articles.astro";
           <li class="li4" id="li4"><h1>2011</h1></li>
           <li class="li5" id="li5"><h1>2012</h1></li>
         </ul> -->
+    </div>
+    <div class="order-1 lg:order-2 flex flex-col lg:flex-1">
+      <div class="flex flex-col lg:flex-row li1_content gap-5" id="li1_content">
+        <!-- SEO & PERFORMANCE: Improved alt-text and lazy loading -->
+        <img
+          src="/img/2008.webp"
+          alt="Billede fra år 2008 - Begyndelsen af Stop Spild Af Mad"
+          width="600"
+          height="400"
+          loading="lazy"
+        />
+        <div class="flex flex-col gap-5">
+          <Heading font="sans">Begyndelsen</Heading>
+          <Text>
+            Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en facebook
+            gruppe, men voksede hurtigt til en anderkendt frivilligt og
+            selvstændigt non-profit. Selina Juul var motiveret af hendes fortid
+            i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom til
+            Danmark tog hun derfor kampen op i mod madspild.
+          </Text>
+        </div>
       </div>
-      <div class="order-1 lg:order-2 flex flex-col lg:flex-1">
-        <div
-          class="flex flex-col lg:flex-row li1_content gap-5"
-          id="li1_content"
-        >
-          <!-- SEO & PERFORMANCE: Improved alt-text and lazy loading -->
-          <img
-            src="/img/2008.webp"
-            alt="Billede fra år 2008 - Begyndelsen af Stop Spild Af Mad"
-            width="600"
-            height="400"
-            loading="lazy"
-          />
-          <div class="flex flex-col gap-5">
-            <Heading font="sans">Begyndelsen</Heading>
-            <Text>
-              Stop Spild Af Mad blev stiftet af Selina Juul i 2008 som en
-              facebook gruppe, men voksede hurtigt til en anderkendt frivilligt
-              og selvstændigt non-profit. Selina Juul var motiveret af hendes
-              fortid i Moskva, hvor hun oplevede stor fødevaremangel. Da hun kom
-              til Danmark tog hun derfor kampen op i mod madspild.
-            </Text>
-          </div>
+
+      <div class="flex flex-col li2_content inactiveBox gap-5" id="li2_content">
+        <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
+        <img
+          src="/img/2010.webp"
+          alt="Billede fra år 2010 - Stop Spild Af Mad underskriver europæisk erklæring"
+        />
+        <div class="flex flex-col gap-10">
+          <Heading font="sans">Med fra start</Heading>
+          <Text>
+            I 2010 skrev Stop Spild Af Mad i Europa-Parlamentet sammen med flere
+            europæiske organisationer under på Joint Declaration Against Food
+            Waste, en europæisk erklæring med formål at reducere madspild med
+            minimum 50% inden 2025. Erklæringen var med til at påvirke EU og FN.
+          </Text>
         </div>
+      </div>
 
-        <div
-          class="flex flex-col li2_content inactiveBox gap-5"
-          id="li2_content"
-        >
-          <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
-          <img
-            src="/img/2010.webp"
-            alt="Billede fra år 2010 - Stop Spild Af Mad underskriver europæisk erklæring"
-          />
-          <div class="flex flex-col gap-10">
-            <Heading font="sans">Med fra start</Heading>
-            <Text>
-              I 2010 skrev Stop Spild Af Mad i Europa-Parlamentet sammen med
-              flere europæiske organisationer under på Joint Declaration Against
-              Food Waste, en europæisk erklæring med formål at reducere madspild
-              med minimum 50% inden 2025. Erklæringen var med til at påvirke EU
-              og FN.
-            </Text>
-          </div>
+      <div class="flex flex-col li3_content inactiveBox gap-5" id="li3_content">
+        <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
+        <img
+          src="/img/2011.webp"
+          alt="Billede fra år 2011 - Overskudsmad videreformidlet til udsatte"
+        />
+        <div class="flex flex-col gap-10">
+          <Heading font="sans">Overskudsmad til udsatte</Heading>
+          <Text>
+            Siden 2011 har Stop Spild Af Mad, samarbejdspartnere og frivillige
+            indsamlet og videreformidlet over 300 tons god gratis overskudsmad
+            til herberger, væresteder, asylcentre, krisecentre, kvindehjem samt
+            andre hjælpeorganisationer for hjemløse og socialt udsatte.
+          </Text>
         </div>
+      </div>
 
-        <div
-          class="flex flex-col li3_content inactiveBox gap-5"
-          id="li3_content"
-        >
-          <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
-          <img
-            src="/img/2011.webp"
-            alt="Billede fra år 2011 - Overskudsmad videreformidlet til udsatte"
-          />
-          <div class="flex flex-col gap-10">
-            <Heading font="sans">Overskudsmad til udsatte</Heading>
-            <Text>
-              Siden 2011 har Stop Spild Af Mad, samarbejdspartnere og frivillige
-              indsamlet og videreformidlet over 300 tons god gratis overskudsmad
-              til herberger, væresteder, asylcentre, krisecentre, kvindehjem
-              samt andre hjælpeorganisationer for hjemløse og socialt udsatte.
-            </Text>
-          </div>
+      <div class="flex flex-col li4_content inactiveBox" id="li4_content">
+        <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
+        <img
+          src="/img/2013.webp"
+          alt="Billede fra år 2013 - Doggy bags initiativet lanceres"
+        />
+
+        <div class="flex flex-col gap-10">
+          <Heading font="sans">Doggy bags</Heading>
+          <Text>
+            Siden 2013 har Stop Spild Af Mad og Unilever Food Solutions uddelt
+            over 60.000 gratis doggybags til over 200 restauranter og
+            spisesteder i hele landet. Analyse af TNS Gallup for Stop Spild Af
+            Mad viser, at over halvdelen af danskere vil tage imod en doggybag.
+          </Text>
         </div>
+      </div>
 
-        <div class="flex flex-col li4_content inactiveBox" id="li4_content">
-          <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
-          <img
-            src="/img/2013.webp"
-            alt="Billede fra år 2013 - Doggy bags initiativet lanceres"
-          />
-
-          <div class="flex flex-col gap-10">
-            <Heading font="sans">Doggy bags</Heading>
-            <Text>
-              Siden 2013 har Stop Spild Af Mad og Unilever Food Solutions uddelt
-              over 60.000 gratis doggybags til over 200 restauranter og
-              spisesteder i hele landet. Analyse af TNS Gallup for Stop Spild Af
-              Mad viser, at over halvdelen af danskere vil tage imod en
-              doggybag.
-            </Text>
-          </div>
+      <div class="flex flex-col li5_content inactiveBox gap-5" id="li5_content">
+        <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
+        <img
+          src="/img/2014.webp"
+          alt="Billede fra år 2014 - Roskilde Festival madspild indsats"
+        />
+        <div class="flex flex-col gap-10">
+          <Heading font="sans">Roskilde Festival</Heading>
+          <Text>
+            I 2014 har Stop Spild Af Mad, samarbejdspartnere og frivillige
+            indsamlet og videreformidlet 27,5 tons god gratis overskudsmad fra
+            Roskilde Festival til socialt udsatte. Indsatsen vandt den
+            anerkendte internationale festivalpris Green Operations Award.
+          </Text>
         </div>
+      </div>
 
-        <div
-          class="flex flex-col li5_content inactiveBox gap-5"
-          id="li5_content"
-        >
-          <!-- Changed: Added alt-text for historical images - better SEO and accessibility -->
-          <img
-            src="/img/2014.webp"
-            alt="Billede fra år 2014 - Roskilde Festival madspild indsats"
-          />
-          <div class="flex flex-col gap-10">
-            <Heading font="sans">Roskilde Festival</Heading>
-            <Text>
-              I 2014 har Stop Spild Af Mad, samarbejdspartnere og frivillige
-              indsamlet og videreformidlet 27,5 tons god gratis overskudsmad fra
-              Roskilde Festival til socialt udsatte. Indsatsen vandt den
-              anerkendte internationale festivalpris Green Operations Award.
-            </Text>
-          </div>
+      <div class="flex flex-col li6_content inactiveBox gap-5" id="li6_content">
+        <!-- SEO & PERFORMANCE: Alt-text and lazy loading -->
+        <img
+          src="/img/2016.webp"
+          alt="Billede fra år 2016 - Stop Spild Af Mad bliver forening"
+          width="600"
+          height="400"
+          loading="lazy"
+        />
+        <div class="flex flex-col gap-10">
+          <Heading font="sans">Officielt en forening</Heading>
+          <Text>
+            Den 16. november 2016 blev Stop Spild Af Mad formelt omdannet til en
+            forening.
+            <br />
+            <br />
+            Hendes Kongelige Højhed Prinsesse Marie har siden 2016 været samarbejdspartner
+            til foreningen Stop Spild Af Mad.
+          </Text>
         </div>
+      </div>
 
-        <div
-          class="flex flex-col li6_content inactiveBox gap-5"
-          id="li6_content"
-        >
-          <!-- SEO & PERFORMANCE: Alt-text and lazy loading -->
-          <img
-            src="/img/2016.webp"
-            alt="Billede fra år 2016 - Stop Spild Af Mad bliver forening"
-            width="600"
-            height="400"
-            loading="lazy"
-          />
-          <div class="flex flex-col gap-10">
-            <Heading font="sans">Officielt en forening</Heading>
-            <Text>
-              Den 16. november 2016 blev Stop Spild Af Mad formelt omdannet til
-              en forening.
-              <br />
-              <br />
-              Hendes Kongelige Højhed Prinsesse Marie har siden 2016 været samarbejdspartner
-              til foreningen Stop Spild Af Mad.
-            </Text>
-          </div>
+      <div class="flex flex-col li7_content inactiveBox gap-5" id="li7_content">
+        <!-- SEO & PERFORMANCE: Alt-text and lazy loading -->
+        <img
+          src="/img/2019.webp"
+          alt="Billede fra år 2019 - Selina Juul holder TEDx Talk"
+          width="600"
+          height="400"
+          loading="lazy"
+        />
+        <div class="flex flex-col gap-10">
+          <Heading font="sans">Tedx Talks</Heading>
+          <Text>
+            Stifter Selina Juul fik i 2019 igen mulighed for at holde en Tedx
+            Talk. Dette skabte både mulighed for at komme længere ud i verden
+            med vores mission og værdier, og var med til at sætte Danmark på
+            verdens kortet i kampen mod madspild.
+            <br />
+            <br />
+            Hendes Kongelige Højhed Prinsesse Marie har siden 2016 været samarbejdspartner
+            til foreningen Stop Spild Af Mad.
+          </Text>
         </div>
+      </div>
 
-        <div
-          class="flex flex-col li7_content inactiveBox gap-5"
-          id="li7_content"
-        >
-          <!-- SEO & PERFORMANCE: Alt-text and lazy loading -->
-          <img
-            src="/img/2019.webp"
-            alt="Billede fra år 2019 - Selina Juul holder TEDx Talk"
-            width="600"
-            height="400"
-            loading="lazy"
-          />
-          <div class="flex flex-col gap-10">
-            <Heading font="sans">Tedx Talks</Heading>
-            <Text>
-              Stifter Selina Juul fik i 2019 igen mulighed for at holde en Tedx
-              Talk. Dette skabte både mulighed for at komme længere ud i verden
-              med vores mission og værdier, og var med til at sætte Danmark på
-              verdens kortet i kampen mod madspild.
-              <br />
-              <br />
-              Hendes Kongelige Højhed Prinsesse Marie har siden 2016 været samarbejdspartner
-              til foreningen Stop Spild Af Mad.
-            </Text>
-          </div>
-        </div>
-
-        <div
-          class="flex flex-col li8_content inactiveBox gap-5"
-          id="li8_content"
-        >
-          <!-- SEO & PERFORMANCE: Alt-text and lazy loading -->
-          <img
-            src="/img/2024.webp"
-            alt="Billede fra år 2024 - Prinsesse Marie bliver protektor"
-            width="600"
-            height="400"
-            loading="lazy"
-          />
-          <div class="flex flex-col gap-10">
-            <Heading font="sans">Kongelig Protektion</Heading>
-            <Text>
-              Stop Spild Af Mad har Hendes Kongelige Højhed Prinsesse Marie som
-              protektor. Hendes Kongelige Højhed Prinsesse Marie blev protektor
-              for foreningen Stop Spild Af Mad den 30. maj 2024.
-            </Text>
-          </div>
+      <div class="flex flex-col li8_content inactiveBox gap-5" id="li8_content">
+        <!-- SEO & PERFORMANCE: Alt-text and lazy loading -->
+        <img
+          src="/img/2024.webp"
+          alt="Billede fra år 2024 - Prinsesse Marie bliver protektor"
+          width="600"
+          height="400"
+          loading="lazy"
+        />
+        <div class="flex flex-col gap-10">
+          <Heading font="sans">Kongelig Protektion</Heading>
+          <Text>
+            Stop Spild Af Mad har Hendes Kongelige Højhed Prinsesse Marie som
+            protektor. Hendes Kongelige Højhed Prinsesse Marie blev protektor
+            for foreningen Stop Spild Af Mad den 30. maj 2024.
+          </Text>
         </div>
       </div>
     </div>
-  </section>
-
-  <section
-    class="container mb-section_buttom mt-section_top"
-  >
-    <Heading htmlheading="h2" size="medium" font="sans" stylingclasses="mb-6">
-      Vores TEDx Talks
-    </Heading>
-
-    <div class="w-full aspect-video bg-black rounded-lg overflow-hidden mb-6">
-      <div class="active" id="vid2012">
-        <video width="100%" height="100%" controls class="w-full h-full">
-          <source src="img/vids/TedX_2012.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div class="inactive" id="vid2016">
-        <video width="100%" height="100%" controls class="w-full h-full">
-          <source src="img/vids/TedX_2016.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2 gap-5 max-w-md">
-      <button
-        id="2012_btn"
-        class="hover:cursor-pointer bg-(--color-orange--100) hover:bg-(--color-orange--400) text-(--color-orange--400) hover:text-(--color-orange--100) transition-all duration-300 font-semibold uppercase py-4 rounded-CTA flex items-center justify-center"
-      >
-        2012
-      </button>
-
-      <button
-        id="2016_btn"
-        class="hover:cursor-pointer bg-(--color-orange--400) hover:bg-(--color-orange--100) text-(--color-orange--100) hover:text-(--color-orange--400) transition-all duration-300 font-semibold uppercase py-4 rounded-CTA flex items-center justify-center"
-      >
-        2016
-      </button>
-    </div>
-  </section>
-
-  <Articles />
-
-  <div class="my-60">
-    <a
-      href="#"
-      id="scrollToTop"
-      class="material-icons-outlined hover:cursor-pointer"
-    >
-      <Button variant="black">TILBAGE TIL TOPPEN</Button>
-    </a>
   </div>
-</MainLayout>
+</section>
+
+<section class="container mb-section_buttom mt-section_top">
+  <Heading htmlheading="h2" size="medium" font="sans" stylingclasses="mb-6">
+    Vores TEDx Talks
+  </Heading>
+
+  <div class="w-full aspect-video bg-black rounded-lg overflow-hidden mb-6">
+    <div class="active" id="vid2012">
+      <video width="100%" height="100%" controls class="w-full h-full">
+        <source src="img/vids/TedX_2012.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="inactive" id="vid2016">
+      <video width="100%" height="100%" controls class="w-full h-full">
+        <source src="img/vids/TedX_2016.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-5 max-w-md">
+    <button
+      id="2012_btn"
+      class="hover:cursor-pointer bg-(--color-orange--100) hover:bg-(--color-orange--400) text-(--color-orange--400) hover:text-(--color-orange--100) transition-all duration-300 font-semibold uppercase py-4 rounded-CTA flex items-center justify-center"
+    >
+      2012
+    </button>
+
+    <button
+      id="2016_btn"
+      class="hover:cursor-pointer bg-(--color-orange--400) hover:bg-(--color-orange--100) text-(--color-orange--100) hover:text-(--color-orange--400) transition-all duration-300 font-semibold uppercase py-4 rounded-CTA flex items-center justify-center"
+    >
+      2016
+    </button>
+  </div>
+</section>
+
+<Articles />
+
+<div class="my-60">
+  <a
+    href="#"
+    id="scrollToTop"
+    class="material-icons-outlined hover:cursor-pointer"
+  >
+    <Button variant="black">TILBAGE TIL TOPPEN</Button>
+  </a>
+</div>
 
 <style>
   .shuffleImg {
